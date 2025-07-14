@@ -1,29 +1,40 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="https://w3id.org/reno#"
      xml:base="https://w3id.org/reno"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:ns1="http://www.w3.org/2006/vcard/ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:wot="http://xmlns.com/wot/0.1/"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:reno="https://w3id.org/reno#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:terms="http://purl.org/dc/terms/"
-     xmlns:schema="https://schema.org/"
-     xmlns:Process="http://www.daml.org/services/owl-s/1.1/Process.owl#">
+     xmlns:schema="https://schema.org/">
     <owl:Ontology rdf:about="https://w3id.org/reno#">
-        <terms:abstract xml:lang="nl">Deze ontologie werd ontwikkeld als onderdeel van het RE-ENNOVATE project. Het doel is om concepten vast te leggen, die relevant zijn bij het ontwerpend van energetische renovatie suggesties.</terms:abstract>
+        <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl"/>
+        <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <owl:imports rdf:resource="https://bimerr.iot.linkeddata.es/def/material-properties/ontology.ttl"/>
+        <owl:imports rdf:resource="https://pi.pauwel.be/voc/buildingelement"/>
+        <owl:imports rdf:resource="https://saref.etsi.org/saref4bldg/v2.1.1/"/>
+        <owl:imports rdf:resource="https://w3id.org/bot"/>
+        <terms:abstract xml:lang="nl">Deze ontologie werd ontwikkeld als onderdeel van het RE-ENNOVATE project. Het doel is om concepten vast te leggen, die relevant zijn bij het ontwerpen van energetische renovatie suggesties.</terms:abstract>
         <terms:abstract xml:lang="en">This ontology was developed as part of the RE-ENNOVATE project. It aims to capture concepts that are relevant when designing energy renovation suggestions.</terms:abstract>
         <terms:creator>Emma Nuyts</terms:creator>
         <terms:creator>Femke Ongenae</terms:creator>
         <terms:creator>Mathias De Brouwer</terms:creator>
         <terms:license>https://creativecommons.org/licenses/by/4.0/</terms:license>
-        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-03-06</terms:modified>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-07-14</terms:modified>
         <terms:title xml:lang="nl">Renovatie en ENergie Optimalisatie (RENO)</terms:title>
         <terms:title xml:lang="en">Renovation and ENergy Optimization (RENO)</terms:title>
         <vann:preferredNamespacePrefix>reno</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri>https://w3id.org/reno#</vann:preferredNamespaceUri>
-        <owl:versionInfo>0.0.1</owl:versionInfo>
+        <owl:versionInfo>1.0.0</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -68,13 +79,6 @@
     
 
 
-    <!-- http://purl.org/dc/terms/modified -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
-    
-
-
     <!-- http://purl.org/dc/terms/title -->
 
 
@@ -96,26 +100,72 @@
     
 
 
-    <!-- https://schema.org/domainIncludes -->
+    <!-- https://w3id.org/reno#hasNuisanceLevel -->
 
 
-    <owl:AnnotationProperty rdf:about="https://schema.org/domainIncludes">
-        <rdfs:comment>Relates a property to a class that is (one of) the type(s) the property is expected to be used on.</rdfs:comment>
-        <rdfs:label>domainIncludes</rdfs:label>
-        <schema:domainIncludes rdf:resource="https://schema.org/Property"/>
-        <schema:rangeIncludes rdf:resource="https://schema.org/Class"/>
+    <owl:AnnotationProperty rdf:about="https://w3id.org/reno#hasNuisanceLevel">
+        <rdfs:comment xml:lang="nl">Geeft het overlastniveau van een renovatiesuggestie aan.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Indicates the nuisance level of a renovation suggestion.</rdfs:comment>
+        <rdfs:label xml:lang="en">has nuisance level</rdfs:label>
+        <rdfs:label xml:lang="nl">heeft overlastniveau</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:domain rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
     </owl:AnnotationProperty>
     
 
 
-    <!-- https://schema.org/rangeIncludes -->
+    <!-- https://w3id.org/reno#hasPointOfAttention -->
 
 
-    <owl:AnnotationProperty rdf:about="https://schema.org/rangeIncludes">
-        <rdfs:comment>Relates a property to a class that constitutes (one of) the expected type(s) for values of the property.</rdfs:comment>
-        <rdfs:label>rangeIncludes</rdfs:label>
-        <schema:domainIncludes rdf:resource="https://schema.org/Property"/>
-        <schema:rangeIncludes rdf:resource="https://schema.org/Class"/>
+    <owl:AnnotationProperty rdf:about="https://w3id.org/reno#hasPointOfAttention">
+        <rdfs:comment xml:lang="nl">De relatie tussen een renovatie suggestie en zijn aandachtspunt(en).</rdfs:comment>
+        <rdfs:comment xml:lang="en">The relationship between a renovation suggestion and its point(s) of attention.</rdfs:comment>
+        <rdfs:label xml:lang="en">has point of attention</rdfs:label>
+        <rdfs:label xml:lang="nl">heeft aandachtspunt</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:domain rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- https://w3id.org/reno#hasUnitPrice -->
+
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/reno#hasUnitPrice">
+        <rdfs:comment xml:lang="nl">Geeft de eenheidsprijs aan voor de renovatiesuggestie. Dit kan per stuk of per vierkante meter zijn, afhankelijk van het type renovatie.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Indicates the unit price for the renovation suggestion. This can be per piece or per sqm, depending on the type of renovation.</rdfs:comment>
+        <rdfs:label xml:lang="en">has unit price</rdfs:label>
+        <rdfs:label xml:lang="nl">heeft eenheidsprijs</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:domain rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- https://w3id.org/reno#permitNeeded -->
+
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/reno#permitNeeded">
+        <rdfs:comment xml:lang="nl">Geeft aan of een omgevingsvergunning nodig is voor de renovatiesuggestie.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Indicates whether or not a permit is required for the renovation suggestion.</rdfs:comment>
+        <rdfs:label xml:lang="en">permit needed</rdfs:label>
+        <rdfs:label xml:lang="nl">vergunning nodig</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:domain rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- https://w3id.org/reno#requiresMultiPhase -->
+
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/reno#requiresMultiPhase">
+        <rdfs:comment xml:lang="nl">Geeft aan of een renovatiesuggestie een meerfasige elektriciteitsaansluiting vereist.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Indicates whether or not a renovation suggestion requires a multi-phase electricity connection.</rdfs:comment>
+        <rdfs:label xml:lang="en">requires multi-phase</rdfs:label>
+        <rdfs:label xml:lang="nl">vereist meerfasig</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:domain rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
     </owl:AnnotationProperty>
     
 
@@ -129,13 +179,6 @@
      -->
 
 
-    
-
-
-    <!-- http://www.w3.org/2001/XMLSchema#date -->
-
-
-    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
     
 
 
@@ -165,311 +208,6 @@
     
 
 
-    <!-- http://bimerr.iot.linkeddata.es/def/material-properties#hasMaterial -->
-
-
-    <owl:ObjectProperty rdf:about="http://bimerr.iot.linkeddata.es/def/material-properties#hasMaterial">
-        <rdfs:range rdf:resource="http://bimerr.iot.linkeddata.es/def/material-properties#Material"/>
-        <rdfs:comment>Relation between a construction component (Layer, profile, constituent) and the materials that define them.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://bimerr.iot.linkeddata.es/def/material-properties#hasMaterialLayer -->
-
-
-    <owl:ObjectProperty rdf:about="http://bimerr.iot.linkeddata.es/def/material-properties#hasMaterialLayer">
-        <rdfs:domain rdf:resource="http://bimerr.iot.linkeddata.es/def/material-properties#MaterialLayerSet"/>
-        <rdfs:range rdf:resource="http://bimerr.iot.linkeddata.es/def/material-properties#MaterialLayer"/>
-        <rdfs:comment>A relation between a layer set and the specific material layers.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://bimerr.iot.linkeddata.es/def/material-properties#hasMaterialLayerSet -->
-
-
-    <owl:ObjectProperty rdf:about="http://bimerr.iot.linkeddata.es/def/material-properties#hasMaterialLayerSet">
-        <rdfs:range rdf:resource="http://bimerr.iot.linkeddata.es/def/material-properties#MaterialLayerSet"/>
-        <rdfs:comment>Relation between an element and its construction based in material layers.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.daml.org/services/owl-s/1.1/Process.owl#composedOf -->
-
-
-    <owl:ObjectProperty rdf:about="http://www.daml.org/services/owl-s/1.1/Process.owl#composedOf">
-        <rdfs:domain rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#CompositeProcess"/>
-        <rdfs:range rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#ControlConstruct"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.daml.org/services/owl-s/1.1/Process.owl#hasPrecondition -->
-
-
-    <owl:ObjectProperty rdf:about="http://www.daml.org/services/owl-s/1.1/Process.owl#hasPrecondition">
-        <rdfs:domain rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#Process"/>
-        <rdfs:range rdf:resource="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#Condition"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.daml.org/services/owl-s/1.1/Process.owl#hasResult -->
-
-
-    <owl:ObjectProperty rdf:about="http://www.daml.org/services/owl-s/1.1/Process.owl#hasResult">
-        <rdfs:domain rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#Process"/>
-        <rdfs:range rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#Result"/>
-        <rdfs:label>hasResult</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.daml.org/services/owl-s/1.1/Process.owl#process -->
-
-
-    <owl:ObjectProperty rdf:about="http://www.daml.org/services/owl-s/1.1/Process.owl#process">
-        <rdfs:domain rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#Perform"/>
-        <rdfs:range rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#Process"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://saref.etsi.org/core/accomplishes -->
-
-
-    <owl:ObjectProperty rdf:about="https://saref.etsi.org/core/accomplishes">
-        <owl:inverseOf rdf:resource="https://saref.etsi.org/core/isAccomplishedBy"/>
-        <rdfs:range rdf:resource="https://saref.etsi.org/core/Task"/>
-        <rdfs:comment>Links a certain entity (e.g., a device) to the task it accomplishes.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://saref.etsi.org/core/consumes -->
-
-
-    <owl:ObjectProperty rdf:about="https://saref.etsi.org/core/consumes">
-        <owl:inverseOf rdf:resource="https://saref.etsi.org/core/isConsumedBy"/>
-        <rdfs:comment>Links a feature kind, feature of interest, or device, to the commodity it consumes</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://saref.etsi.org/core/isAccomplishedBy -->
-
-
-    <owl:ObjectProperty rdf:about="https://saref.etsi.org/core/isAccomplishedBy">
-        <rdfs:comment>A relationship identifying an entity (e.g., a device) that can accomplish a task.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://saref.etsi.org/core/isConsumedBy -->
-
-
-    <owl:ObjectProperty rdf:about="https://saref.etsi.org/core/isConsumedBy">
-        <rdfs:comment>Links a commodity to the feature kind, feature of interest, or device, that consumes it</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/bot#adjacentElement -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/bot#adjacentElement">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/bot#hasElement"/>
-        <owl:propertyDisjointWith rdf:resource="https://w3id.org/bot#intersectingElement"/>
-        <rdfs:comment xml:lang="nl">Relatie tussen een zone en zijn aangrenzende gebouwelementen. Het gebouwelement begrenst de zone.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Relation between a zone and its adjacent building elements, bounding the zone.</rdfs:comment>
-        <rdfs:label xml:lang="nl">aangrenzend element</rdfs:label>
-        <rdfs:label xml:lang="en">adjacent element</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/bot#adjacentZone -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/bot#adjacentZone">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/bot#Zone"/>
-        <rdfs:range rdf:resource="https://w3id.org/bot#Zone"/>
-        <owl:propertyDisjointWith rdf:resource="https://w3id.org/bot#intersectsZone"/>
-        <rdfs:comment xml:lang="nl">Relatie tussen twee zones die een interface delen, maar niet doorsnijdend zijn</rdfs:comment>
-        <rdfs:comment xml:lang="en">Relationship between two zones that share a common interface, but do not intersect.</rdfs:comment>
-        <rdfs:label xml:lang="nl">aangrenzende zone</rdfs:label>
-        <rdfs:label xml:lang="en">adjacent zone</rdfs:label>
-        <schema:domainIncludes rdf:resource="https://w3id.org/bot#Building"/>
-        <schema:domainIncludes rdf:resource="https://w3id.org/bot#Site"/>
-        <schema:domainIncludes rdf:resource="https://w3id.org/bot#Space"/>
-        <schema:domainIncludes rdf:resource="https://w3id.org/bot#Storey"/>
-        <schema:rangeIncludes rdf:resource="https://w3id.org/bot#Building"/>
-        <schema:rangeIncludes rdf:resource="https://w3id.org/bot#Site"/>
-        <schema:rangeIncludes rdf:resource="https://w3id.org/bot#Space"/>
-        <schema:rangeIncludes rdf:resource="https://w3id.org/bot#Storey"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/bot#containsElement -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/bot#containsElement">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/bot#hasElement"/>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://w3id.org/bot#containsZone"/>
-            <rdf:Description rdf:about="https://w3id.org/bot#containsElement"/>
-        </owl:propertyChainAxiom>
-        <rdfs:comment xml:lang="nl">Relatie tussen zone en een gebouwelement bevat in die zone.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Relation to a building element contained in a zone.</rdfs:comment>
-        <rdfs:label xml:lang="nl">bevat element</rdfs:label>
-        <rdfs:label xml:lang="en">contains element</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/bot#containsZone -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/bot#containsZone">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/bot#Zone"/>
-        <rdfs:range rdf:resource="https://w3id.org/bot#Zone"/>
-        <rdfs:comment xml:lang="nl">Relatie tussen subzones van een hoofd zone. Een ruimtezone kan bijvoorbeeld worden bevat door een verdiepingszone, die wederom bevat wordt door een gebouwzone. bot:containsZone is een transitieve eigenschap, wat betekent dat in het vorige voorbeeld de ruimtezone ook bevat wordt door de gebouwzone.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Relationship to the subzones of a major zone. A space zone could for instance be contained in a storey zone which is further contained in a building zone. bot:containsZone is a transitive property. This implies that in the previous example a bot:containsZone relationship holds between the space zone and the building zone.</rdfs:comment>
-        <rdfs:label xml:lang="nl">bevat zone</rdfs:label>
-        <rdfs:label xml:lang="en">contains zone</rdfs:label>
-        <schema:domainIncludes rdf:resource="https://w3id.org/bot#Building"/>
-        <schema:domainIncludes rdf:resource="https://w3id.org/bot#Site"/>
-        <schema:domainIncludes rdf:resource="https://w3id.org/bot#Space"/>
-        <schema:domainIncludes rdf:resource="https://w3id.org/bot#Storey"/>
-        <schema:rangeIncludes rdf:resource="https://w3id.org/bot#Building"/>
-        <schema:rangeIncludes rdf:resource="https://w3id.org/bot#Site"/>
-        <schema:rangeIncludes rdf:resource="https://w3id.org/bot#Space"/>
-        <schema:rangeIncludes rdf:resource="https://w3id.org/bot#Storey"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/bot#hasBuilding -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/bot#hasBuilding">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/bot#containsZone"/>
-        <rdfs:domain rdf:resource="https://w3id.org/bot#Zone"/>
-        <rdfs:range rdf:resource="https://w3id.org/bot#Building"/>
-        <rdfs:comment xml:lang="nl">Relatie tot gebouwen die zich in een zone bevinden. De typische domeinen van bot:hasBuilding zijn instanties van bot:Site</rdfs:comment>
-        <rdfs:comment xml:lang="en">Relation to buildings contained in a zone. The typical domains of bot:hasBuilding are instances of bot:Site.</rdfs:comment>
-        <rdfs:label xml:lang="en">has building</rdfs:label>
-        <rdfs:label xml:lang="nl">heeft gebouw</rdfs:label>
-        <schema:domainIncludes rdf:resource="https://w3id.org/bot#Site"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/bot#hasElement -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/bot#hasElement">
-        <rdfs:domain rdf:resource="https://w3id.org/bot#Zone"/>
-        <rdfs:range rdf:resource="https://w3id.org/bot#Element"/>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://w3id.org/bot#containsZone"/>
-            <rdf:Description rdf:about="https://w3id.org/bot#hasElement"/>
-        </owl:propertyChainAxiom>
-        <rdfs:comment xml:lang="en">Links a Zone to an Element that is either contained in, adjacent to or intersecting with the Zone. The intended use of this relationship is not to be stated explicitly, but to be inferred from its sub-properties. It will, for example, allow one to query for all the doors of a building given that they have an adjacency to spaces of the building.</rdfs:comment>
-        <rdfs:comment xml:lang="nl">Verbindt een bot:Zone instantie met een bot:Element instantie die er ofwel door bevat wordt, aangrenzend aan is of snijdend mee is. Het is aangeraden om deze relatie niet expliciet te maken, maar af te leiden uit het gebruik van zijn sub relaties. Deze relatie maakt het bijvoorbeeld mogelijk om alle deuren van een gebouw op te vragen als die aangrenzend gedefinieerd zijn aan de ruimtes van het gebouw.</rdfs:comment>
-        <rdfs:label xml:lang="en">has element</rdfs:label>
-        <rdfs:label xml:lang="nl">heeft element</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/bot#hasSpace -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/bot#hasSpace">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/bot#containsZone"/>
-        <rdfs:domain rdf:resource="https://w3id.org/bot#Zone"/>
-        <rdfs:range rdf:resource="https://w3id.org/bot#Space"/>
-        <rdfs:comment xml:lang="nl">Relatie tot ruimtes die zich in een zone bevinden. De typische domeinen van bot:hasSpace zijn instanties van bot:Storey of bot:Building.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Relation to spaces contained in a zone. The typical domains of bot:hasSpace are instances of bot:Storey or bot:Building.</rdfs:comment>
-        <rdfs:label xml:lang="en">has space</rdfs:label>
-        <rdfs:label xml:lang="nl">heeft ruimte</rdfs:label>
-        <schema:domainIncludes rdf:resource="https://w3id.org/bot#Storey"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/bot#hasStorey -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/bot#hasStorey">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/bot#containsZone"/>
-        <rdfs:domain rdf:resource="https://w3id.org/bot#Zone"/>
-        <rdfs:range rdf:resource="https://w3id.org/bot#Storey"/>
-        <rdfs:comment xml:lang="nl">Relatie tot de verdiepingen die zich in een zone bevinden. De typische domeinen van bot:hasStorey zijn instanties van bot:Building.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Relation to storeys contained in a zone. The typical domains of bot:hasStorey are instances of bot:Building.</rdfs:comment>
-        <rdfs:label xml:lang="en">has storey</rdfs:label>
-        <rdfs:label xml:lang="nl">heeft verdieping</rdfs:label>
-        <schema:domainIncludes rdf:resource="https://w3id.org/bot#Building"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/bot#hasSubElement -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/bot#hasSubElement">
-        <rdfs:domain rdf:resource="https://w3id.org/bot#Element"/>
-        <rdfs:range rdf:resource="https://w3id.org/bot#Element"/>
-        <rdfs:comment xml:lang="nl">Relatie tussen twee gebouwelementen, ofwel één element dat een andere element bevat (bv. een muur die een raam bevat) of een subcompositie van een gebouwelement in kleinere delen (bv. een luchtbehandelingskast die een ventilator bevat).</rdfs:comment>
-        <rdfs:comment xml:lang="en">Relation between two building elements, either one element hosting another (e.g. a wall hosts a window) or a subcomposition of a building element into smaller parts (e.g. an air handling unit has as a part a fan).</rdfs:comment>
-        <rdfs:label xml:lang="en">has sub-element</rdfs:label>
-        <rdfs:label xml:lang="nl">heeft subelement</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/bot#intersectingElement -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/bot#intersectingElement">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/bot#hasElement"/>
-        <rdfs:comment xml:lang="nl">Relatie tussen een zone en een gebouwelement die de zone doorsnijdt.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Relation between a Zone and a building Element that intersects it.</rdfs:comment>
-        <rdfs:label xml:lang="nl">doorsnijdend element</rdfs:label>
-        <rdfs:label xml:lang="en">intersecting element</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/bot#intersectsZone -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/bot#intersectsZone">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/bot#Zone"/>
-        <rdfs:range rdf:resource="https://w3id.org/bot#Zone"/>
-        <rdfs:comment xml:lang="nl">Een relatie tussen twee zones waarvan de driedimensionale omvang doorsnijdend is. Bijvoorbeeld een traphal die verschillende verdiepingen doorsnijdt.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Relationship between two zones whose 3D extent intersect. For example, a stairwell intersects different storeys.</rdfs:comment>
-        <rdfs:label xml:lang="en">intersects zone</rdfs:label>
-        <rdfs:label xml:lang="nl">snijdt door zone</rdfs:label>
-        <schema:domainIncludes rdf:resource="https://w3id.org/bot#Building"/>
-        <schema:domainIncludes rdf:resource="https://w3id.org/bot#Site"/>
-        <schema:domainIncludes rdf:resource="https://w3id.org/bot#Space"/>
-        <schema:domainIncludes rdf:resource="https://w3id.org/bot#Storey"/>
-        <schema:rangeIncludes rdf:resource="https://w3id.org/bot#Building"/>
-        <schema:rangeIncludes rdf:resource="https://w3id.org/bot#Site"/>
-        <schema:rangeIncludes rdf:resource="https://w3id.org/bot#Space"/>
-        <schema:rangeIncludes rdf:resource="https://w3id.org/bot#Storey"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://w3id.org/reno#changedDuring -->
 
 
@@ -496,6 +234,20 @@
     
 
 
+    <!-- https://w3id.org/reno#clustering -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/reno#clustering">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/spec/Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/reno#Persona"/>
+        <rdfs:comment xml:lang="en">Links a person to their clustered persona.</rdfs:comment>
+        <rdfs:comment xml:lang="nl">Linkt een persoon aan zijn geclusterde persona.</rdfs:comment>
+        <rdfs:label xml:lang="en">clustering</rdfs:label>
+        <rdfs:label xml:lang="nl">clustering</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/reno#commodityAccomplishes -->
 
 
@@ -514,10 +266,25 @@
     
 
 
+    <!-- https://w3id.org/reno#forRenovationIntervention -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/reno#forRenovationIntervention">
+        <rdfs:domain rdf:resource="https://w3id.org/reno#Tender"/>
+        <rdfs:range rdf:resource="https://w3id.org/reno#RenovationIntervention"/>
+        <rdfs:comment xml:lang="en">Links a tender to the renovation intervention to which the tender is related.</rdfs:comment>
+        <rdfs:comment xml:lang="nl">Linkt een offerte aan de renovatie interventie waarop de offerte betrekking heeft.</rdfs:comment>
+        <rdfs:label xml:lang="en">for renovation intervention</rdfs:label>
+        <rdfs:label xml:lang="nl">voor renovatie interventie</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/reno#hasAddress -->
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/reno#hasAddress">
+        <owl:inverseOf rdf:resource="https://w3id.org/reno#isAddressOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/reno#Resident"/>
         <rdfs:range rdf:resource="https://w3id.org/reno#Address"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
@@ -536,6 +303,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/reno#hasAffectedElement">
+        <owl:inverseOf rdf:resource="https://w3id.org/reno#isAffectedBy"/>
         <rdfs:domain rdf:resource="https://w3id.org/reno#Tender"/>
         <rdfs:range rdf:resource="https://w3id.org/bot#Element"/>
         <rdfs:comment xml:lang="nl">De relatie tussen een offerte en de (bouw)elementen die erdoor worden beïnvloed.</rdfs:comment>
@@ -550,6 +318,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/reno#hasCreator">
+        <owl:inverseOf rdf:resource="https://w3id.org/reno#isCreatorOf"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/reno#EnergyPerformanceCertificate"/>
         <rdfs:range rdf:resource="https://w3id.org/reno#EnergyExpert"/>
@@ -597,6 +366,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/reno#hasFrame">
+        <owl:inverseOf rdf:resource="https://w3id.org/reno#isFrameOf"/>
         <rdfs:domain rdf:resource="https://pi.pauwel.be/voc/buildingelement#Window"/>
         <rdfs:range rdf:resource="https://w3id.org/reno#WindowFrame"/>
         <rdfs:comment xml:lang="nl">De relatie tussen een raam en zijn kader.</rdfs:comment>
@@ -626,6 +396,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/reno#hasGlazing">
+        <owl:inverseOf rdf:resource="https://w3id.org/reno#isGlazingOf"/>
         <rdfs:domain rdf:resource="https://pi.pauwel.be/voc/buildingelement#Window"/>
         <rdfs:range rdf:resource="https://w3id.org/reno#WindowGlazing"/>
         <rdfs:comment xml:lang="nl">De relatie tussen een raam en zijn beglazing.</rdfs:comment>
@@ -655,6 +426,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/reno#hasHeatingPeriod">
+        <owl:inverseOf rdf:resource="https://w3id.org/reno#isHeatingPeriodOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/bot#Space"/>
         <rdfs:range rdf:resource="https://w3id.org/reno#HeatingPeriod"/>
         <rdfs:comment xml:lang="nl">De relatie tussen een ruimte en zijn verwarmingsperiode.</rdfs:comment>
@@ -669,6 +441,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/reno#hasInsulationGrade">
+        <owl:inverseOf rdf:resource="https://w3id.org/reno#isInsulationGradeOf"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://pi.pauwel.be/voc/buildingelement#BuildingElement"/>
         <rdfs:range rdf:resource="https://w3id.org/reno#InsulationGrade"/>
@@ -684,6 +457,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/reno#hasMotivation">
+        <owl:inverseOf rdf:resource="https://w3id.org/reno#isMotivationOf"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/spec/Person"/>
         <rdfs:range rdf:resource="https://w3id.org/reno#Motivation"/>
         <rdfs:comment xml:lang="nl">De relatie tussen een persoon en hun motivatie.</rdfs:comment>
@@ -713,6 +487,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/reno#hasOwner">
+        <owl:inverseOf rdf:resource="https://w3id.org/reno#isOwnerOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/bot#Zone"/>
         <rdfs:range rdf:resource="https://w3id.org/reno#Owner"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
@@ -780,6 +555,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/reno#hasRenovationIntervention">
+        <owl:inverseOf rdf:resource="https://w3id.org/reno#isRenovationInterventionOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/reno#Renovation"/>
         <rdfs:range rdf:resource="https://w3id.org/reno#RenovationIntervention"/>
         <rdfs:comment xml:lang="nl">De relatie tussen een renovatie en de bijhorende renovatie interventie.</rdfs:comment>
@@ -794,6 +570,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/reno#hasResident">
+        <owl:inverseOf rdf:resource="https://w3id.org/reno#isResidentOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/bot#Zone"/>
         <rdfs:range rdf:resource="https://w3id.org/reno#Resident"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
@@ -812,6 +589,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/reno#hasSigned">
+        <owl:inverseOf rdf:resource="https://w3id.org/reno#isSignedBy"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/spec/Person"/>
         <rdfs:range rdf:resource="https://w3id.org/reno#Tender"/>
         <rdfs:comment xml:lang="nl">De relatie tussen een persoon en de offerte die door hen ondertekend is.</rdfs:comment>
@@ -840,6 +618,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/reno#hasState">
+        <owl:inverseOf rdf:resource="https://w3id.org/reno#isStateOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/bot#Element"/>
         <rdfs:range rdf:resource="https://w3id.org/reno#State"/>
         <rdfs:comment xml:lang="nl">The relatie tussen een element en de staat van dat element.</rdfs:comment>
@@ -854,7 +633,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/reno#isAddressOf">
-        <owl:inverseOf rdf:resource="https://w3id.org/reno#hasAddress"/>
         <rdfs:comment xml:lang="nl">De relatie tussen een adres en de persoon die er woont.</rdfs:comment>
         <rdfs:comment xml:lang="en">The relationship between an address and the person who lives there.</rdfs:comment>
         <rdfs:label xml:lang="en">is address of</rdfs:label>
@@ -867,7 +645,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/reno#isAffectedBy">
-        <owl:inverseOf rdf:resource="https://w3id.org/reno#hasAffectedElement"/>
         <rdfs:comment xml:lang="nl">De relatie tussen een (bouw)element en de offerte waardoor het wordt beïnvloed.</rdfs:comment>
         <rdfs:comment xml:lang="en">The relationship between a (building) element and a tender by which it is affected.</rdfs:comment>
         <rdfs:label xml:lang="en">is affected by</rdfs:label>
@@ -880,7 +657,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/reno#isCreatorOf">
-        <owl:inverseOf rdf:resource="https://w3id.org/reno#hasCreator"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:comment xml:lang="nl">De relatie tussen een energiedeskundige en het energieprestatiecertificaat dat door hen werd opgesteld.</rdfs:comment>
         <rdfs:comment xml:lang="en">The relationship between an energy expert and the energy performance certificate they made.</rdfs:comment>
@@ -894,7 +670,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/reno#isFrameOf">
-        <owl:inverseOf rdf:resource="https://w3id.org/reno#hasFrame"/>
         <rdfs:comment xml:lang="nl">De relatie tussen een kader en het raam waartoe het behoort.</rdfs:comment>
         <rdfs:comment xml:lang="en">The relationship between a frame and the window it belongs to.</rdfs:comment>
         <rdfs:label xml:lang="en">is frame of</rdfs:label>
@@ -907,7 +682,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/reno#isGlazingOf">
-        <owl:inverseOf rdf:resource="https://w3id.org/reno#hasGlazing"/>
         <rdfs:comment xml:lang="nl">De relatie tussen een beglazing en het raam waartoe het behoort.</rdfs:comment>
         <rdfs:comment xml:lang="en">The relationship between a glazing and the window it belongs to.</rdfs:comment>
         <rdfs:label xml:lang="nl">is beglazing van</rdfs:label>
@@ -920,7 +694,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/reno#isHeatingPeriodOf">
-        <owl:inverseOf rdf:resource="https://w3id.org/reno#hasHeatingPeriod"/>
         <rdfs:comment xml:lang="nl">De relatie tussen een verwarmingsperiode en de bijhorende ruimte.</rdfs:comment>
         <rdfs:comment xml:lang="en">The relationship between a heating period and the space it belongs to.</rdfs:comment>
         <rdfs:label xml:lang="en">is heating period of</rdfs:label>
@@ -933,7 +706,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/reno#isInsulationGradeOf">
-        <owl:inverseOf rdf:resource="https://w3id.org/reno#hasInsulationGrade"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:comment xml:lang="nl">De relatie tussen een isolatiegraad en het bouwelement waartoe het behoort.</rdfs:comment>
         <rdfs:comment xml:lang="en">The relationship between a grade of insulation and the building element it belongs to.</rdfs:comment>
@@ -947,7 +719,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/reno#isMotivationOf">
-        <owl:inverseOf rdf:resource="https://w3id.org/reno#hasMotivation"/>
         <rdfs:comment xml:lang="nl">De relatie tussen een motivatie en de bijhorende persoon.</rdfs:comment>
         <rdfs:comment xml:lang="en">The relationship between a motivation and the person it belongs to.</rdfs:comment>
         <rdfs:label xml:lang="nl">is motivatie van</rdfs:label>
@@ -960,7 +731,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/reno#isOwnerOf">
-        <owl:inverseOf rdf:resource="https://w3id.org/reno#hasOwner"/>
         <rdfs:comment xml:lang="nl">De relatie tussen een persoon en het gebouw dat ze bezitten.</rdfs:comment>
         <rdfs:comment xml:lang="en">The relationship between a person and the building they own.</rdfs:comment>
         <rdfs:label xml:lang="nl">is eigenaar van</rdfs:label>
@@ -973,7 +743,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/reno#isRenovationInterventionOf">
-        <owl:inverseOf rdf:resource="https://w3id.org/reno#hasRenovationIntervention"/>
         <rdfs:comment xml:lang="nl">De relatie tussen een renovatie interventie en de renovatie waar die bij hoort.</rdfs:comment>
         <rdfs:comment xml:lang="en">The relationship between a renovation intervention and the renovation it belongs to.</rdfs:comment>
         <rdfs:label xml:lang="nl">is renovatie interventie van</rdfs:label>
@@ -986,7 +755,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/reno#isResidentOf">
-        <owl:inverseOf rdf:resource="https://w3id.org/reno#hasResident"/>
         <rdfs:comment xml:lang="nl">De relatie tussen een zone en de persoon die erin woont.</rdfs:comment>
         <rdfs:comment xml:lang="en">The relationship between a zone and the person that resides in it.</rdfs:comment>
         <rdfs:label xml:lang="nl">is bewoner van</rdfs:label>
@@ -999,7 +767,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/reno#isSignedBy">
-        <owl:inverseOf rdf:resource="https://w3id.org/reno#hasSigned"/>
         <rdfs:comment xml:lang="nl">De relatie tussen een offerte en de persoon die hem ondertekend heeft.</rdfs:comment>
         <rdfs:comment xml:lang="en">The relationship between a tender and the person who signed it.</rdfs:comment>
         <rdfs:label xml:lang="nl">is ondertekend door</rdfs:label>
@@ -1012,11 +779,23 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/reno#isStateOf">
-        <owl:inverseOf rdf:resource="https://w3id.org/reno#hasState"/>
         <rdfs:comment xml:lang="nl">De relatie tussen een toestand en het element waarmee het overeenkomt.</rdfs:comment>
         <rdfs:comment xml:lang="en">The relationship between a state and the element it corresponds to.</rdfs:comment>
         <rdfs:label xml:lang="nl">is staat van</rdfs:label>
         <rdfs:label xml:lang="en">is state of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/reno#recommendation -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/reno#recommendation">
+        <rdfs:range rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
+        <rdfs:comment xml:lang="en">A recommendation is an advice or suggestion about what someone should do, often based on an assessment or research.</rdfs:comment>
+        <rdfs:comment xml:lang="nl">Een aanbeveling is een advies of suggestie over wat iemand zou moeten doen, vaak op basis van een beoordeling of onderzoek.</rdfs:comment>
+        <rdfs:label xml:lang="nl">aanbeveling</rdfs:label>
+        <rdfs:label xml:lang="en">recommendation</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1047,60 +826,6 @@
     
 
 
-    <!-- http://bimerr.iot.linkeddata.es/def/material-properties#position -->
-
-
-    <owl:DatatypeProperty rdf:about="http://bimerr.iot.linkeddata.es/def/material-properties#position">
-        <rdfs:domain rdf:resource="http://bimerr.iot.linkeddata.es/def/material-properties#MaterialLayer"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <rdfs:comment>Position of the layer</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://bimerr.iot.linkeddata.es/def/material-properties#thickness -->
-
-
-    <owl:DatatypeProperty rdf:about="http://bimerr.iot.linkeddata.es/def/material-properties#thickness">
-        <rdfs:domain rdf:resource="http://bimerr.iot.linkeddata.es/def/material-properties#MaterialLayer"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <rdfs:comment>Thickness of the layer</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://xmlns.com/foaf/spec/age -->
-
-
-    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/spec/age">
-        <rdfs:domain rdf:resource="http://xmlns.com/foaf/spec/Person"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <rdfs:comment>The age property is a relationship between a Agent and an integer string representing their age in years. See also birthday.</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://saref.etsi.org/saref4bldg/temperatureClassification -->
-
-
-    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4bldg/temperatureClassification">
-        <rdfs:domain rdf:resource="https://saref.etsi.org/saref4bldg/SpaceHeater"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Enumeration defining the temperature classification of the space heater surface temperature. low temperature - surface temperature is relatively low, usually heated by hot water or electricity. high temperature - surface temperature is relatively high, usually heated by gas or steam.</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://saref.etsi.org/saref4bldg/thermalEfficiency -->
-
-
-    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4bldg/thermalEfficiency">
-        <rdfs:domain rdf:resource="https://saref.etsi.org/saref4bldg/SpaceHeater"/>
-        <rdfs:comment>Overall Thermal Efficiency is defined as gross energy output of the heat transfer device divided by the energy input.</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- https://w3id.org/reno#containsAsbestos -->
 
 
@@ -1112,6 +837,34 @@
         <rdfs:comment xml:lang="en">Indicates whether or not a material contains asbestos.</rdfs:comment>
         <rdfs:label xml:lang="nl">bevat asbest</rdfs:label>
         <rdfs:label xml:lang="en">contains asbestos</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/reno#hadNegativeExperiencesWithPastRenovations -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/reno#hadNegativeExperiencesWithPastRenovations">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/spec/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">Denotes if a person had negative experiences with past renovations based on the Likert scale.</rdfs:comment>
+        <rdfs:comment xml:lang="nl">Duidt aan of een persoon negatieve ervaringen had met eerdere renovaties gebaseeerd op de Likert schaal.</rdfs:comment>
+        <rdfs:label xml:lang="nl">had negatieve ervaringen met eerdere renovaties</rdfs:label>
+        <rdfs:label xml:lang="en">had negative experiences with past renovations</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/reno#hasAmountOfStories -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/reno#hasAmountOfStories">
+        <rdfs:domain rdf:resource="https://w3id.org/bot#Building"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">Denotes how many stories a building has.</rdfs:comment>
+        <rdfs:comment xml:lang="nl">Duidt aan hoeveel verdiepingen een gebouw heeft.</rdfs:comment>
+        <rdfs:label xml:lang="en">has amount of stories</rdfs:label>
+        <rdfs:label xml:lang="nl">heeft aantal verdiepingen</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1326,6 +1079,20 @@
     
 
 
+    <!-- https://w3id.org/reno#hasHighConsumption -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/reno#hasHighConsumption">
+        <rdfs:domain rdf:resource="https://w3id.org/bot#Building"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Denotes whether a building has a high consumption.</rdfs:comment>
+        <rdfs:comment xml:lang="nl">Duidt aan of een gebouw een hoog verbruik heeft.</rdfs:comment>
+        <rdfs:label xml:lang="en">has high consumption</rdfs:label>
+        <rdfs:label xml:lang="nl">heeft hoog verbruik</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/reno#hasHistoricalProtection -->
 
 
@@ -1496,6 +1263,20 @@
     
 
 
+    <!-- https://w3id.org/reno#hasReasonToChangeEmissionSystem -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/reno#hasReasonToChangeEmissionSystem">
+        <rdfs:domain rdf:resource="https://w3id.org/bot#Building"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Denotes whether there are reasons to change the emission system of the building.</rdfs:comment>
+        <rdfs:comment xml:lang="nl">Duidt aan of er redenen zijn om het afgiftesysteem van een gebouw te wijzigen.</rdfs:comment>
+        <rdfs:label xml:lang="en">has reason to change emission system</rdfs:label>
+        <rdfs:label xml:lang="nl">heeft redenen om afgiftesysteem te wijzigen</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/reno#hasRenovationBudget -->
 
 
@@ -1522,6 +1303,34 @@
         <rdfs:comment xml:lang="nl">Linkt een renovatie aan zijn (geraamde) kostprijs.</rdfs:comment>
         <rdfs:label xml:lang="en">has renovation cost</rdfs:label>
         <rdfs:label xml:lang="nl">heeft renovatiekost</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/reno#hasRoofUnderlayment -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/reno#hasRoofUnderlayment">
+        <rdfs:domain rdf:resource="https://pi.pauwel.be/voc/buildingelement#Roof-GABLE_ROOF"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Denotes whether a gable roof has a roof underlayment.</rdfs:comment>
+        <rdfs:comment xml:lang="nl">Geeft aan of een zadeldak een onderlaag heeft.</rdfs:comment>
+        <rdfs:label xml:lang="en">has roof underlayment</rdfs:label>
+        <rdfs:label xml:lang="nl">heeft onderdak</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/reno#hasRoomsWithHeatIssue -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/reno#hasRoomsWithHeatIssue">
+        <rdfs:domain rdf:resource="https://w3id.org/bot#Building"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="nl">Duidt aan hoeveel ruimtes in het gebouw een hitteprobleem hebben.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Indicates the amount of rooms within the building have a heat issue.</rdfs:comment>
+        <rdfs:label xml:lang="en">has rooms with heat issue</rdfs:label>
+        <rdfs:label xml:lang="nl">heeft ruimtes met hitteprobleem</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1679,6 +1488,20 @@
     
 
 
+    <!-- https://w3id.org/reno#hasSurfaceArea -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/reno#hasSurfaceArea">
+        <rdfs:domain rdf:resource="https://pi.pauwel.be/voc/buildingelement#BuildingElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment xml:lang="nl">Koppelt een bouwelement aan de bijbehorende oppervlakte.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Links a building element to its corresponding surface area.</rdfs:comment>
+        <rdfs:label xml:lang="en">has surface area</rdfs:label>
+        <rdfs:label xml:lang="nl">heeft oppervlakte</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/reno#hasTemperatureSetPoint -->
 
 
@@ -1705,6 +1528,34 @@
         <rdfs:comment xml:lang="en">Indicates whether a window frame has a thermal break or not.</rdfs:comment>
         <rdfs:label xml:lang="en">has thermal break</rdfs:label>
         <rdfs:label xml:lang="nl">heeft thermische onderbreking</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/reno#hasUValue -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/reno#hasUValue">
+        <rdfs:domain rdf:resource="https://pi.pauwel.be/voc/buildingelement#BuildingElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment xml:lang="nl">De relatie tussen een bouwelement en zijn U-waarde in W/m²K</rdfs:comment>
+        <rdfs:comment xml:lang="en">The relationship between a building element and its U-value in W/m²K.</rdfs:comment>
+        <rdfs:label xml:lang="en">has U-value</rdfs:label>
+        <rdfs:label xml:lang="nl">heeft U-waarde</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/reno#hasWidth -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/reno#hasWidth">
+        <rdfs:domain rdf:resource="https://pi.pauwel.be/voc/buildingelement#BuildingElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment xml:lang="en">Denotes the width of a building element (e.g. of a wall).</rdfs:comment>
+        <rdfs:comment xml:lang="nl">Geeft de breedte van een bouwelement aan (bijvoorbeeld van een muur).</rdfs:comment>
+        <rdfs:label xml:lang="en">has width</rdfs:label>
+        <rdfs:label xml:lang="nl">heeft breedte</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1766,6 +1617,20 @@
     
 
 
+    <!-- https://w3id.org/reno#inFavourOfPlugAndPlayPV -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/reno#inFavourOfPlugAndPlayPV">
+        <rdfs:domain rdf:resource="https://w3id.org/reno#Owner"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Denotes whether an owner is in favour of plug and play PV-panels.</rdfs:comment>
+        <rdfs:comment xml:lang="nl">Duidt aan of een persoon voor plug-and-play PV-panelen is.</rdfs:comment>
+        <rdfs:label xml:lang="en">in favour of plug and play PV</rdfs:label>
+        <rdfs:label xml:lang="nl">voor plug-and-play PV</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/reno#inProtectedArea -->
 
 
@@ -1777,6 +1642,48 @@
         <rdfs:comment xml:lang="en">Indicates whether or not the site is located in a protected area or not.</rdfs:comment>
         <rdfs:label xml:lang="nl">in beschermde zone</rdfs:label>
         <rdfs:label xml:lang="en">in protected area</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/reno#isAfraidRenovationCausesDistraction -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/reno#isAfraidRenovationCausesDistraction">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/spec/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">Denotes if a person is afraid a renovation causes distraction based on the Likert scale.</rdfs:comment>
+        <rdfs:comment xml:lang="nl">Duidt aan of een persoon bang is dat een renovatie afleiding veroorzaakt gebaseeerd op de Likert schaal.</rdfs:comment>
+        <rdfs:label xml:lang="en">is afraid renovation causes distraction</rdfs:label>
+        <rdfs:label xml:lang="nl">is bang dat renovatie afleiding veroorzaakt</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/reno#isSureRenovationLeadsToMoreComfort -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/reno#isSureRenovationLeadsToMoreComfort">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/spec/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">Denotes if a person is sure a renovation leads to more comfort based on the Likert scale.</rdfs:comment>
+        <rdfs:comment xml:lang="nl">Duidt aan of een persoon zeker is dat een renovatie leidt tot meer comfort gebaseeerd op de Likert schaal.</rdfs:comment>
+        <rdfs:label xml:lang="en">is sure renovation leads to more comfort</rdfs:label>
+        <rdfs:label xml:lang="nl">is zeker dat renovatie leidt tot meer comfort</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/reno#isUnsureAboutSavingsOfRenovation -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/reno#isUnsureAboutSavingsOfRenovation">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/spec/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">Denotes if a person is unsure about the savings of a renovation based on the Likert scale.</rdfs:comment>
+        <rdfs:comment xml:lang="nl">Duidt aan of een persoon onzeker is over de besparingen van een renovatie gebaseeerd op de Likert schaal.</rdfs:comment>
+        <rdfs:label xml:lang="nl">is onzeker over besparingen van renovatie</rdfs:label>
+        <rdfs:label xml:lang="en">is unsure about savings of renovation</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1924,365 +1831,10 @@
     
 
 
-    <!-- http://bimerr.iot.linkeddata.es/def/material-properties#Air -->
-
-
-    <owl:Class rdf:about="http://bimerr.iot.linkeddata.es/def/material-properties#Air">
-        <rdfs:subClassOf rdf:resource="http://bimerr.iot.linkeddata.es/def/material-properties#Material"/>
-    </owl:Class>
-    
-
-
-    <!-- http://bimerr.iot.linkeddata.es/def/material-properties#BuildingBoard -->
-
-
-    <owl:Class rdf:about="http://bimerr.iot.linkeddata.es/def/material-properties#BuildingBoard">
-        <rdfs:subClassOf rdf:resource="http://bimerr.iot.linkeddata.es/def/material-properties#Material"/>
-    </owl:Class>
-    
-
-
-    <!-- http://bimerr.iot.linkeddata.es/def/material-properties#Concrete -->
-
-
-    <owl:Class rdf:about="http://bimerr.iot.linkeddata.es/def/material-properties#Concrete">
-        <rdfs:subClassOf rdf:resource="http://bimerr.iot.linkeddata.es/def/material-properties#Material"/>
-    </owl:Class>
-    
-
-
-    <!-- http://bimerr.iot.linkeddata.es/def/material-properties#ConstructiveSolidWood -->
-
-
-    <owl:Class rdf:about="http://bimerr.iot.linkeddata.es/def/material-properties#ConstructiveSolidWood">
-        <rdfs:subClassOf rdf:resource="http://bimerr.iot.linkeddata.es/def/material-properties#Material"/>
-    </owl:Class>
-    
-
-
-    <!-- http://bimerr.iot.linkeddata.es/def/material-properties#FacadeCladding -->
-
-
-    <owl:Class rdf:about="http://bimerr.iot.linkeddata.es/def/material-properties#FacadeCladding">
-        <rdfs:subClassOf rdf:resource="http://bimerr.iot.linkeddata.es/def/material-properties#Material"/>
-    </owl:Class>
-    
-
-
-    <!-- http://bimerr.iot.linkeddata.es/def/material-properties#FloorCoveringAndSkirtingBoard -->
-
-
-    <owl:Class rdf:about="http://bimerr.iot.linkeddata.es/def/material-properties#FloorCoveringAndSkirtingBoard">
-        <rdfs:subClassOf rdf:resource="http://bimerr.iot.linkeddata.es/def/material-properties#Material"/>
-    </owl:Class>
-    
-
-
-    <!-- http://bimerr.iot.linkeddata.es/def/material-properties#InsulationMaterial -->
-
-
-    <owl:Class rdf:about="http://bimerr.iot.linkeddata.es/def/material-properties#InsulationMaterial">
-        <rdfs:subClassOf rdf:resource="http://bimerr.iot.linkeddata.es/def/material-properties#Material"/>
-    </owl:Class>
-    
-
-
-    <!-- http://bimerr.iot.linkeddata.es/def/material-properties#Masonry -->
-
-
-    <owl:Class rdf:about="http://bimerr.iot.linkeddata.es/def/material-properties#Masonry">
-        <rdfs:subClassOf rdf:resource="http://bimerr.iot.linkeddata.es/def/material-properties#Material"/>
-    </owl:Class>
-    
-
-
-    <!-- http://bimerr.iot.linkeddata.es/def/material-properties#Material -->
-
-
-    <owl:Class rdf:about="http://bimerr.iot.linkeddata.es/def/material-properties#Material">
-        <rdfs:comment>A homogeneous or inhomogeneous substance that can be used to form elements (physical products or their components). (Definition taken from IFC)</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://bimerr.iot.linkeddata.es/def/material-properties#MaterialLayer -->
-
-
-    <owl:Class rdf:about="http://bimerr.iot.linkeddata.es/def/material-properties#MaterialLayer">
-        <rdfs:comment>A single and identifiable part of an element which is constructed of a number of layers (one or more).</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://bimerr.iot.linkeddata.es/def/material-properties#MaterialLayerSet -->
-
-
-    <owl:Class rdf:about="http://bimerr.iot.linkeddata.es/def/material-properties#MaterialLayerSet">
-        <rdfs:comment>A designation by which materials of an element constructed of a number of material layers is known and through which the relative positioning of individual layers can be expressed.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://bimerr.iot.linkeddata.es/def/material-properties#NaturalStone -->
-
-
-    <owl:Class rdf:about="http://bimerr.iot.linkeddata.es/def/material-properties#NaturalStone">
-        <rdfs:subClassOf rdf:resource="http://bimerr.iot.linkeddata.es/def/material-properties#Material"/>
-    </owl:Class>
-    
-
-
-    <!-- http://bimerr.iot.linkeddata.es/def/material-properties#PlasterAndMortar -->
-
-
-    <owl:Class rdf:about="http://bimerr.iot.linkeddata.es/def/material-properties#PlasterAndMortar">
-        <rdfs:subClassOf rdf:resource="http://bimerr.iot.linkeddata.es/def/material-properties#Material"/>
-    </owl:Class>
-    
-
-
-    <!-- http://bimerr.iot.linkeddata.es/def/material-properties#RoofCovering -->
-
-
-    <owl:Class rdf:about="http://bimerr.iot.linkeddata.es/def/material-properties#RoofCovering">
-        <rdfs:subClassOf rdf:resource="http://bimerr.iot.linkeddata.es/def/material-properties#Material"/>
-    </owl:Class>
-    
-
-
-    <!-- http://bimerr.iot.linkeddata.es/def/material-properties#Screed -->
-
-
-    <owl:Class rdf:about="http://bimerr.iot.linkeddata.es/def/material-properties#Screed">
-        <rdfs:subClassOf rdf:resource="http://bimerr.iot.linkeddata.es/def/material-properties#Material"/>
-    </owl:Class>
-    
-
-
-    <!-- http://bimerr.iot.linkeddata.es/def/material-properties#WallPaintAndCovering -->
-
-
-    <owl:Class rdf:about="http://bimerr.iot.linkeddata.es/def/material-properties#WallPaintAndCovering">
-        <rdfs:subClassOf rdf:resource="http://bimerr.iot.linkeddata.es/def/material-properties#Material"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.daml.org/services/owl-s/1.1/Process.owl#AtomicProcess -->
-
-
-    <owl:Class rdf:about="http://www.daml.org/services/owl-s/1.1/Process.owl#AtomicProcess">
-        <rdfs:subClassOf rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#Process"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.daml.org/services/owl-s/1.1/Process.owl#CompositeProcess -->
-
-
-    <owl:Class rdf:about="http://www.daml.org/services/owl-s/1.1/Process.owl#CompositeProcess">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.daml.org/services/owl-s/1.1/Process.owl#Process"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#composedOf"/>
-                        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#Process"/>
-        <rdfs:comment>A CompositeProcess can have at most one invocable property. Similarly for computedInput, computedOutput, computedEffect, and computedPrecondition.</rdfs:comment>
-        <rdfs:comment>A CompositeProcess must have exactly 1 composedOf property.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.daml.org/services/owl-s/1.1/Process.owl#ControlConstruct -->
-
-
-    <owl:Class rdf:about="http://www.daml.org/services/owl-s/1.1/Process.owl#ControlConstruct">
-        <rdfs:comment>A ControlConstruct can have at most one instance of timeout.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.daml.org/services/owl-s/1.1/Process.owl#Perform -->
-
-
-    <owl:Class rdf:about="http://www.daml.org/services/owl-s/1.1/Process.owl#Perform">
-        <rdfs:subClassOf rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#ControlConstruct"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#process"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>The PERFORM construct is how one references a process in a composite process. This is analogous to a function call in a program body. The inputs to the PERFORM are described using the hasDataFrom property.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.daml.org/services/owl-s/1.1/Process.owl#Process -->
-
-
-    <owl:Class rdf:about="http://www.daml.org/services/owl-s/1.1/Process.owl#Process">
-        <rdfs:comment>A Process can have at most one name, but names need not be unique.</rdfs:comment>
-        <rdfs:comment>The most general class of processes</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.daml.org/services/owl-s/1.1/Process.owl#Result -->
-
-
-    <owl:Class rdf:about="http://www.daml.org/services/owl-s/1.1/Process.owl#Result">
-        <rdfs:label>Result</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.daml.org/services/owl-s/1.1/Process.owl#Sequence -->
-
-
-    <owl:Class rdf:about="http://www.daml.org/services/owl-s/1.1/Process.owl#Sequence">
-        <rdfs:comment>Sequence is defined as having a list of component processes that specify the body. The Preconditions, parameters and effects of the sequence are not defined in the minimal version.  An obvious extension would be to define the effect of the sequence to be the union of the effect of the individual members, and the parameters of the sequence to be the union of the parameters of individual members. However, some implementations may decide to use the last event&apos;s effects as the effect of the sequence, etc.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.daml.org/services/owl-s/1.1/Process.owl#SimpleProcess -->
-
-
-    <owl:Class rdf:about="http://www.daml.org/services/owl-s/1.1/Process.owl#SimpleProcess">
-        <rdfs:subClassOf rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#Process"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#Condition -->
-
-
-    <owl:Class rdf:about="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#Condition"/>
-    
-
-
-    <!-- http://xmlns.com/foaf/spec/Agent -->
-
-
-    <owl:Class rdf:about="http://xmlns.com/foaf/spec/Agent">
-        <rdfs:comment>The Agent class is the class of agents; things that do stuff. A well known sub-class is Person, representing people. Other kinds of agents include Organization and Group. The Agent class is useful in a few places in FOAF where Person would have been overly specific. For example, the IM chat ID properties such as jabberID are typically associated with people, but sometimes belong to software bots.</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- http://xmlns.com/foaf/spec/Person -->
 
 
-    <owl:Class rdf:about="http://xmlns.com/foaf/spec/Person">
-        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/spec/Agent"/>
-        <rdfs:comment>The Person class represents people. Something is a Person if it is a person. We don&apos;t nitpic about whether they&apos;re alive, dead, real, or imaginary. The Person class is a sub-class of the Agent class, since all people are considered &apos;agents&apos; in FOAF.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- https://pi.pauwel.be/voc/buildingelement#BuildingElement -->
-
-
-    <owl:Class rdf:about="https://pi.pauwel.be/voc/buildingelement#BuildingElement">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/bot#Element"/>
-        <rdfs:comment>Comprises all elements that are primarily part of the construction of a building, i.e., its structural and space separating system. Building elements are all physically existent and tangible things.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- https://pi.pauwel.be/voc/buildingelement#Floor -->
-
-
-    <owl:Class rdf:about="https://pi.pauwel.be/voc/buildingelement#Floor">
-        <rdfs:subClassOf rdf:resource="https://pi.pauwel.be/voc/buildingelement#Slab"/>
-        <rdfs:comment>http://bsdd.buildingsmart.org/#concept/details/0jBALpJIv7vvlWkbd9HdCx</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- https://pi.pauwel.be/voc/buildingelement#Roof -->
-
-
-    <owl:Class rdf:about="https://pi.pauwel.be/voc/buildingelement#Roof">
-        <rdfs:subClassOf rdf:resource="https://pi.pauwel.be/voc/buildingelement#BuildingElement"/>
-        <rdfs:comment>A covering of the top part of a building. Protects the building against the effects of weather.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- https://pi.pauwel.be/voc/buildingelement#Roof-FLAT_ROOF -->
-
-
-    <owl:Class rdf:about="https://pi.pauwel.be/voc/buildingelement#Roof-FLAT_ROOF">
-        <rdfs:subClassOf rdf:resource="https://pi.pauwel.be/voc/buildingelement#Roof"/>
-        <rdfs:comment>http://bsdd.buildingsmart.org/#concept/details/3IeKrtrMz2SQN7qpJt82e5</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- https://pi.pauwel.be/voc/buildingelement#Roof-GABLE_ROOF -->
-
-
-    <owl:Class rdf:about="https://pi.pauwel.be/voc/buildingelement#Roof-GABLE_ROOF">
-        <rdfs:subClassOf rdf:resource="https://pi.pauwel.be/voc/buildingelement#Roof"/>
-        <rdfs:comment>http://bsdd.buildingsmart.org/#concept/details/0gHJNRNhz6LOTHVbnW$nEj</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- https://pi.pauwel.be/voc/buildingelement#Slab -->
-
-
-    <owl:Class rdf:about="https://pi.pauwel.be/voc/buildingelement#Slab">
-        <rdfs:subClassOf rdf:resource="https://pi.pauwel.be/voc/buildingelement#BuildingElement"/>
-        <rdfs:comment>A component of the construction that normally encloses a space vertically. May provide the lower support (floor) or upper construction (roof slab) in any space in a building. Only the core or constructional part of this construction is considered to be a slab. The upper finish (flooring, roofing) and the lower finish (ceiling, suspended ceiling) are considered to be coverings.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- https://pi.pauwel.be/voc/buildingelement#Wall -->
-
-
-    <owl:Class rdf:about="https://pi.pauwel.be/voc/buildingelement#Wall">
-        <rdfs:subClassOf rdf:resource="https://pi.pauwel.be/voc/buildingelement#BuildingElement"/>
-        <rdfs:comment>A vertical construction that bounds or subdivides spaces. Usually vertical, or nearly vertical, planar elements, often designed to bear structural loads. However not required to be load bearing.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- https://pi.pauwel.be/voc/buildingelement#Window -->
-
-
-    <owl:Class rdf:about="https://pi.pauwel.be/voc/buildingelement#Window">
-        <rdfs:subClassOf rdf:resource="https://pi.pauwel.be/voc/buildingelement#BuildingElement"/>
-        <rdfs:comment>building component for closing an opening in a wall or pitched roof that will admit light and may provide ventilation</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- https://saref.etsi.org/core/Commodity -->
-
-
-    <owl:Class rdf:about="https://saref.etsi.org/core/Commodity">
-        <rdfs:comment>A marketable item which may be supplied without qualitative differentiation.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- https://saref.etsi.org/core/Device -->
-
-
-    <owl:Class rdf:about="https://saref.etsi.org/core/Device">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/bot#Element"/>
-        <rdfs:comment>A tangible object designed to accomplish a particular task. In order to accomplish this task, the device performs one or more functions. An instance of saref:Device represents one specific real world entity.</rdfs:comment>
-    </owl:Class>
+    <owl:Class rdf:about="http://xmlns.com/foaf/spec/Person"/>
     
 
 
@@ -2291,7 +1843,7 @@
 
     <owl:Class rdf:about="https://saref.etsi.org/core/EnergyCommodity">
         <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Commodity"/>
-        <rdfs:comment>The class of energy commodities</rdfs:comment>
+        <rdfs:comment xml:lang="en">The class of energy commodities</rdfs:comment>
     </owl:Class>
     
 
@@ -2301,229 +1853,7 @@
 
     <owl:Class rdf:about="https://saref.etsi.org/core/NaturalResourceCommodity">
         <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Commodity"/>
-        <rdfs:comment>The class of natural resource commodities</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- https://saref.etsi.org/core/Task -->
-
-
-    <owl:Class rdf:about="https://saref.etsi.org/core/Task">
-        <rdfs:comment>The goal for which a device is designed, from a user perspective.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- https://saref.etsi.org/saref4bldg/Boiler -->
-
-
-    <owl:Class rdf:about="https://saref.etsi.org/saref4bldg/Boiler">
-        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/saref4bldg/EnergyConversionDevice"/>
-        <rdfs:comment>A boiler is a closed, pressure-rated vessel in which water or other fluid is heated using an energy source such as natural gas, heating oil, or electricity. The fluid in the vessel is then circulated out of the boiler for use in various processes or heating applications.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- https://saref.etsi.org/saref4bldg/BuildingDevice -->
-
-
-    <owl:Class rdf:about="https://saref.etsi.org/saref4bldg/BuildingDevice">
-        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Device"/>
-        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/saref4bldg/BuildingObject"/>
-        <rdfs:comment>A tangible object designed to accomplish a particular task in a building.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- https://saref.etsi.org/saref4bldg/BuildingObject -->
-
-
-    <owl:Class rdf:about="https://saref.etsi.org/saref4bldg/BuildingObject">
-        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/saref4bldg/PhysicalObject"/>
-        <rdfs:comment>An object in the building that can be controlled by devices, such as a door or a window that can be automatically opened or closed by an actuator. (Definition taken from SAREF 1.0)</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- https://saref.etsi.org/saref4bldg/Chiller -->
-
-
-    <owl:Class rdf:about="https://saref.etsi.org/saref4bldg/Chiller">
-        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/saref4bldg/EnergyConversionDevice"/>
-        <rdfs:comment>A chiller is a device used to remove heat from a liquid via a vapor-compression or absorption refrigeration cycle to cool a fluid, typically water or a mixture of water and glycol. The chilled fluid is then used to cool and dehumidify air in a building.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- https://saref.etsi.org/saref4bldg/DistributionDevice -->
-
-
-    <owl:Class rdf:about="https://saref.etsi.org/saref4bldg/DistributionDevice">
-        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/saref4bldg/BuildingDevice"/>
-        <rdfs:comment>Generalization of all devices that participate in a distribution system. (Definition adapated from http://www.buildingsmart-tech.org/ifc/IFC4/Add1/html/schema/ifcproductextension/lexical/ifcdistributionelement.htm)</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- https://saref.etsi.org/saref4bldg/DistributionFlowDevice -->
-
-
-    <owl:Class rdf:about="https://saref.etsi.org/saref4bldg/DistributionFlowDevice">
-        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/saref4bldg/DistributionDevice"/>
-        <rdfs:comment>Represents devices of a distribution system that facilitate the distribution of energy or matter, such as air, water or power. (Definition adapated from http://www.buildingsmart-tech.org/ifc/IFC4/Add1/html/schema/ifcsharedbldgserviceelements/lexical/ifcdistributionflowelement.htm)</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- https://saref.etsi.org/saref4bldg/EnergyConversionDevice -->
-
-
-    <owl:Class rdf:about="https://saref.etsi.org/saref4bldg/EnergyConversionDevice">
-        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/saref4bldg/DistributionFlowDevice"/>
-        <rdfs:comment>The distribution flow element EnergyConversionDevice defines the occurrence of a device used to perform energy conversion or heat transfer and typically participates in a flow distribution system.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- https://saref.etsi.org/saref4bldg/FlowMovingDevice -->
-
-
-    <owl:Class rdf:about="https://saref.etsi.org/saref4bldg/FlowMovingDevice">
-        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/saref4bldg/DistributionFlowDevice"/>
-        <rdfs:comment>The distribution flow element FlowMovingDevice defines the occurrence of an apparatus used to distribute, circulate or perform conveyance of fluids, including liquids and gases (such as a pump or fan), and typically participates in a flow distribution system.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- https://saref.etsi.org/saref4bldg/FlowTerminal -->
-
-
-    <owl:Class rdf:about="https://saref.etsi.org/saref4bldg/FlowTerminal">
-        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/saref4bldg/DistributionFlowDevice"/>
-        <rdfs:comment>The distribution flow element FlowTerminal defines the occurrence of a permanently attached element that acts as a terminus or beginning of a distribution system (such as an air outlet, drain, water closet, or sink). A terminal is typically a point at which a system interfaces with an external environment.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- https://saref.etsi.org/saref4bldg/PhysicalObject -->
-
-
-    <owl:Class rdf:about="https://saref.etsi.org/saref4bldg/PhysicalObject">
-        <rdfs:comment>Any Object that has a proper space region. (Definition extracted from DUL ontology)</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- https://saref.etsi.org/saref4bldg/ShadingDevice -->
-
-
-    <owl:Class rdf:about="https://saref.etsi.org/saref4bldg/ShadingDevice">
-        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/saref4bldg/BuildingDevice"/>
-        <rdfs:comment>Shading devices are purpose built devices to protect from the sunlight, from natural light, or screening them from view. Shading devices can form part of the facade or can be mounted inside the building, they can be fixed or operable.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- https://saref.etsi.org/saref4bldg/SolarDevice -->
-
-
-    <owl:Class rdf:about="https://saref.etsi.org/saref4bldg/SolarDevice">
-        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/saref4bldg/EnergyConversionDevice"/>
-        <rdfs:comment>A solar device converts solar radiation into other energy such as electric current or thermal energy.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- https://saref.etsi.org/saref4bldg/SpaceHeater -->
-
-
-    <owl:Class rdf:about="https://saref.etsi.org/saref4bldg/SpaceHeater">
-        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/saref4bldg/FlowTerminal"/>
-        <rdfs:comment>Space heaters utilize a combination of radiation and/or natural convection using a heating source such as electricity, steam or hot water to heat a limited space or area. Examples of space heaters include radiators, convectors, baseboard and finned-tube heaters. UnitaryEquipment should be used for packaged units supporting a combination of heating, cooling, and/or dehumidification; Coil should be used for coil-based floor heating.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/bot#Building -->
-
-
-    <owl:Class rdf:about="https://w3id.org/bot#Building">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/bot#Zone"/>
-        <owl:disjointWith rdf:resource="https://w3id.org/bot#Site"/>
-        <owl:disjointWith rdf:resource="https://w3id.org/bot#Space"/>
-        <owl:disjointWith rdf:resource="https://w3id.org/bot#Storey"/>
-        <rdfs:comment xml:lang="en">An independent unit of the built environment with a characteristic spatial structure, intended to serve at least one function or user activity [ISO 12006-2:2013]. A bot:Building is a part of the physical world or a virtual world that is inherently both located in this world and having a 3D spatial extent, is contained in a building site, and can contain one or more storeys that are vertically connected.</rdfs:comment>
-        <rdfs:comment xml:lang="nl">Een onafhankelijke entiteit met een ruimtelijke structuur die onderdeel is van de gebouwde omgeving, en bedoeld is om minimaal één functie of gebruikersactiviteit te bedienen [ISO 12006-2:2013]. Een bot:Building is deel van de fysieke wereld of een virtuele wereld dat zowel gelokaliseerd kan worden in deze wereld als een ruimtelijke omvang heeft, is deel van een gebouwsite, en kan één of meerder verdiepingen bevatten die verticaal verbonden zijn.</rdfs:comment>
-        <rdfs:label xml:lang="en">Building</rdfs:label>
-        <rdfs:label xml:lang="nl">Gebouw</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/bot#Element -->
-
-
-    <owl:Class rdf:about="https://w3id.org/bot#Element">
-        <owl:disjointWith rdf:resource="https://w3id.org/bot#Zone"/>
-        <rdfs:comment xml:lang="nl">Bestanddeel van een gebouwde entiteit met een karakteristieke technische functie, vorm of positie [ISO 12006-2:2015, 3.4.7]</rdfs:comment>
-        <rdfs:comment xml:lang="en">Constituent of a construction entity with a characteristic technical function, form or position [ISO 12006-2:2015, 3.4.7]</rdfs:comment>
-        <rdfs:label xml:lang="en">Building element</rdfs:label>
-        <rdfs:label xml:lang="nl">Gebouwelement</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/bot#Site -->
-
-
-    <owl:Class rdf:about="https://w3id.org/bot#Site">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/bot#Zone"/>
-        <owl:disjointWith rdf:resource="https://w3id.org/bot#Space"/>
-        <owl:disjointWith rdf:resource="https://w3id.org/bot#Storey"/>
-        <rdfs:comment xml:lang="en">A part of the physical world or a virtual world that is inherently both located in this world and having a 3D spatial extent. It is intended to contain or contains one or more buildings.</rdfs:comment>
-        <rdfs:comment xml:lang="nl">Een deel van de fysieke wereld of een virtuele wereld dat zowel gelokaliseerd kan worden in deze wereld als een ruimtelijke omvang heeft. Het is bedoeld om één of meerdere gebouwen te bevatten of bevat al één of meerdere gebouwen.</rdfs:comment>
-        <rdfs:label xml:lang="en">Site</rdfs:label>
-        <rdfs:label xml:lang="nl">Terrein</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/bot#Space -->
-
-
-    <owl:Class rdf:about="https://w3id.org/bot#Space">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/bot#Zone"/>
-        <owl:disjointWith rdf:resource="https://w3id.org/bot#Storey"/>
-        <rdfs:comment xml:lang="en">A part of the physical world or a virtual world whose 3D spatial extent is bounded actually or theoretically, and provides for certain functions within the zone it is contained in.</rdfs:comment>
-        <rdfs:comment xml:lang="nl">Een deel van de fysieke wereld of een virtuele wereld waarvan de driedimensionale omvang feitelijk of virtueel begrensd is, en dat bepaalde activiteiten faciliteert in de zone die de ruimte bevat.</rdfs:comment>
-        <rdfs:label xml:lang="nl">Ruimte</rdfs:label>
-        <rdfs:label xml:lang="en">Space</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/bot#Storey -->
-
-
-    <owl:Class rdf:about="https://w3id.org/bot#Storey">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/bot#Zone"/>
-        <rdfs:comment xml:lang="en">A part of the physical world or a virtual world that is inherently both located in this world and having a 3D spatial extent. A bot:Storey is contained in one or more buildings, and is intended to contain one or more spaces that are horizontally connected. Storeys of a building are connected by means of vertical connections such as elevators and stairs. A bot:Storey encompasses both zones above and below ground, for example, a building with 21 floors above ground, one ground floor and 3 basements is equal to the sentence: A building has 25 instances of bot:Storey.</rdfs:comment>
-        <rdfs:comment xml:lang="nl">Een deel van de fysieke wereld of een virtuele wereld dat zowel gelokaliseerd kan worden in deze wereld als een ruimtelijke omvang heeft. Een bot:Storey is deel van één of meerdere gebouwen, en is bedoeld om één of meerdere ruimtes te bevatten die horizontaal geconnecteerd zijn. De verdiepingen van een gebouw zijn verbonden door middel van verticale connecties zoals liften en trappen. Een bot:Storey omvat zowel zones boven als onder de grond, bijvoorbeeld een gebouw met 21 verdiepingen boven de grond, één gelijkvloers en 3 kelderverdiepingen is evenwaardig aan de zin: Een gebouw heeft 25 instanties van bot:Storey.</rdfs:comment>
-        <rdfs:label xml:lang="en">Storey</rdfs:label>
-        <rdfs:label xml:lang="nl">Verdieping</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/bot#Zone -->
-
-
-    <owl:Class rdf:about="https://w3id.org/bot#Zone">
-        <rdfs:comment xml:lang="en">A part of the physical world or a virtual world that is inherently both located in this world and has a 3D spatial extent; Sub-classes of bot:Zone include bot:Site, bot:Building, bot:Storey, or bot:Space.  An instance of bot:Zone can contain other bot:Zone instances, making it possible to group or subdivide zones. An instance of bot:Zone can be adjacent to or intersecting other bot:Zone instances. Finally, a bot:Zone can instantiate three relations to bot:Element, which are either contained in (bot:containsElement), adjacent to it (bot:adjacentElement) or intersecting (bot:intersectingElement).</rdfs:comment>
-        <rdfs:comment xml:lang="nl">Een deel van de fysieke wereld of een virtuele wereld dat zowel gelokaliseerd kan worden in deze wereld als een ruimtelijke omvang heeft; subklasses van bot:Zone zijn bot:Site, bot:Building, bot:Storey of bot:Space. Een instantie van bot:Zone kan een ander bot:Zone instantie bevatten, wat gebruikt kan worden om zones te groeperen of op te delen. Een instantie van bot:Zone kan aangrenzend zijn aan of snijdend met een andere bot:Zone instantie. Ten slotte kan een bot:Zone instantie drie relaties hebben met een bot:Element instantie dat het ofwel bevat (bot:containsElement), waar het aangrenzend aan is (bot:adjacentElement) of waarmee het snijdt (bot:intersectingElement).</rdfs:comment>
-        <rdfs:label xml:lang="en">Zone</rdfs:label>
-        <rdfs:label xml:lang="nl">Zone</rdfs:label>
+        <rdfs:comment xml:lang="en">The class of natural resource commodities</rdfs:comment>
     </owl:Class>
     
 
@@ -2668,6 +1998,19 @@
     
 
 
+    <!-- https://w3id.org/reno#AsRoom -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#AsRoom">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#SpaceUsage"/>
+        <rdfs:comment xml:lang="nl">Wanneer een ruimte wordt gebruikt als gebruiksruimte (bv. slaapkamer, badkamer...).</rdfs:comment>
+        <rdfs:comment xml:lang="en">When a space is used as a room (e.g. bedroom, bathroom...).</rdfs:comment>
+        <rdfs:label xml:lang="nl">als ruimte</rdfs:label>
+        <rdfs:label xml:lang="en">as room</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/reno#AsbestosContaining -->
 
 
@@ -2716,6 +2059,34 @@
     
 
 
+    <!-- https://w3id.org/reno#AtticFloor -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#AtticFloor">
+        <rdfs:subClassOf rdf:resource="https://pi.pauwel.be/voc/buildingelement#Slab-FLOOR"/>
+        <rdfs:comment xml:lang="en">An attic floor is the floor of the attic, the space above the top floor of a building, just below the gable roof.</rdfs:comment>
+        <rdfs:comment xml:lang="nl">Een zoldervloer is de vloer van de zolder, de ruimte boven de bovenste verdieping van een gebouw, net onder het schuin dak.</rdfs:comment>
+        <rdfs:label xml:lang="en">attic floor</rdfs:label>
+        <rdfs:label xml:lang="nl">zoldervloer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#AtticSpace -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#AtticSpace">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/bot#Space"/>
+        <rdfs:comment xml:lang="en">An attic is the top floor of a building, located directly under the gable roof.</rdfs:comment>
+        <rdfs:comment xml:lang="nl">Een zolder is de bovenste verdieping van een gebouw, direct gelegen onder het schuin dak.</rdfs:comment>
+        <rdfs:label xml:lang="en">attic space</rdfs:label>
+        <rdfs:label xml:lang="nl">zolderruimte</rdfs:label>
+        <rdfs:seeAlso xml:lang="en">https://en.wikipedia.org/wiki/Attic</rdfs:seeAlso>
+        <rdfs:seeAlso xml:lang="nl">https://nl.wikipedia.org/wiki/Zolder_(gebouw)</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/reno#BLabel -->
 
 
@@ -2747,6 +2118,19 @@
         <rdfs:comment xml:lang="en">The B label indicates energy performance certificates which have an energy score between 100 and 200 kWh/m²year.</rdfs:comment>
         <rdfs:label xml:lang="en">B label</rdfs:label>
         <rdfs:label xml:lang="nl">B label</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#Bathing -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#Bathing">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Task"/>
+        <rdfs:comment xml:lang="nl">Wanneer iets (bijv. een apparaat of drager) wordt gebruikt om te baden.</rdfs:comment>
+        <rdfs:comment xml:lang="en">When something (e.g. a device or commodity) is used for bathing.</rdfs:comment>
+        <rdfs:label xml:lang="nl">baden</rdfs:label>
+        <rdfs:label xml:lang="en">bathing</rdfs:label>
     </owl:Class>
     
 
@@ -2801,6 +2185,97 @@
     
 
 
+    <!-- https://w3id.org/reno#Carlos -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#Carlos">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#Persona"/>
+        <rdfs:comment xml:lang="en">Carlos is a persona that clusters a specific type of renovators, based on the conference paper http://hdl.handle.net/1854/LU-01HHY1FWVC9EDMAAYY0MT7R6M9.</rdfs:comment>
+        <rdfs:comment xml:lang="nl">Carlos is een persona that een specifiek type van renoveerders clustert, gebaseerd op de conferentiepaper http://hdl.handle.net/1854/LU-01HHY1FWVC9EDMAAYY0MT7R6M9.</rdfs:comment>
+        <rdfs:label xml:lang="en">Carlos</rdfs:label>
+        <rdfs:label xml:lang="nl">Carlos</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#CavityWall -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#CavityWall">
+        <rdfs:subClassOf rdf:resource="https://pi.pauwel.be/voc/buildingelement#Wall"/>
+        <rdfs:comment xml:lang="en">A cavity wall is a type of wall that has an airspace between the outer face and the inner construction.</rdfs:comment>
+        <rdfs:comment xml:lang="nl">Een spouwmuur is een type muur met een luchtruimte tussen de buitenkant en de binnenkant.</rdfs:comment>
+        <rdfs:label xml:lang="en">cavity wall</rdfs:label>
+        <rdfs:label xml:lang="nl">spouwmuur</rdfs:label>
+        <rdfs:seeAlso xml:lang="en">https://en.wikipedia.org/wiki/Cavity_wall</rdfs:seeAlso>
+        <rdfs:seeAlso xml:lang="nl">https://nl.wikipedia.org/wiki/Spouwmuur</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#Coal -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#Coal">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/EnergyCommodity"/>
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/NaturalResourceCommodity"/>
+        <rdfs:comment xml:lang="en">Charcoal is a lightweight black carbon residue produced by strongly heating wood (or other animal and plant materials) in minimal oxygen to remove all water and volatile constituents.</rdfs:comment>
+        <rdfs:comment xml:lang="nl">Houtskool is een lichtgewicht zwart koolstofresidu dat wordt geproduceerd door hout (of andere dierlijke en plantaardige materialen) sterk te verhitten in een minimale hoeveelheid zuurstof om alle water en vluchtige bestanddelen te verwijderen.</rdfs:comment>
+        <rdfs:label xml:lang="en">coal</rdfs:label>
+        <rdfs:label xml:lang="nl">kolen</rdfs:label>
+        <rdfs:seeAlso xml:lang="en">https://en.wikipedia.org/wiki/Charcoal</rdfs:seeAlso>
+        <rdfs:seeAlso xml:lang="nl">https://nl.wikipedia.org/wiki/Houtskool</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#ColdWater -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#ColdWater">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#Water"/>
+        <rdfs:comment xml:lang="nl">Water met een temperatuur lager dan 49°C (120°F).</rdfs:comment>
+        <rdfs:comment xml:lang="en">Water with a temperature below 49°C (120°F).</rdfs:comment>
+        <rdfs:label xml:lang="en">cold water</rdfs:label>
+        <rdfs:label xml:lang="nl">koud water</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#ConnectToHeatGrid -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#ConnectToHeatGrid">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
+        <rdfs:label xml:lang="en">connect to heatgrid</rdfs:label>
+        <rdfs:label xml:lang="nl">sluit aan op warmtenet</rdfs:label>
+        <hasNuisanceLevel xml:lang="nl">laag</hasNuisanceLevel>
+        <hasNuisanceLevel xml:lang="en">low</hasNuisanceLevel>
+        <hasPointOfAttention xml:lang="en">Check that your emission system corresponds to the supply and return temperatures of the heat grid.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="en">Contact your municipality or grid operator for more information.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="nl">Contacteer uw gemeente of netbeheerder voor meer informatie.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="nl">Controleer of uw afgiftesysteem correspondeert met de aanvoer- en retourtemperatuur van het warmtenet.</hasPointOfAttention>
+        <permitNeeded xml:lang="nl">niet nodig (Vlaanderen)</permitNeeded>
+        <permitNeeded xml:lang="en">not necessary (Flanders)</permitNeeded>
+        <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
+        <requiresMultiPhase xml:lang="en">no</requiresMultiPhase>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#Cooking -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#Cooking">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Task"/>
+        <rdfs:comment xml:lang="nl">Wanneer iets (bijv. een apparaat of drager) wordt gebruikt om te koken.</rdfs:comment>
+        <rdfs:comment xml:lang="en">When something (e.g. a device or commodity) is used for cooking.</rdfs:comment>
+        <rdfs:label xml:lang="en">cooking</rdfs:label>
+        <rdfs:label xml:lang="nl">koken</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/reno#DLabel -->
 
 
@@ -2832,6 +2307,19 @@
         <rdfs:comment xml:lang="en">The D label indicates energy performance certificates which have an energy score between 300 and 400 kWh/m²year.</rdfs:comment>
         <rdfs:label xml:lang="en">D label</rdfs:label>
         <rdfs:label xml:lang="nl">D label</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#Daniel -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#Daniel">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#Persona"/>
+        <rdfs:comment xml:lang="en">Daniel is a persona that clusters a specific type of renovators, based on the conference paper http://hdl.handle.net/1854/LU-01HHY1FWVC9EDMAAYY0MT7R6M9.</rdfs:comment>
+        <rdfs:comment xml:lang="nl">Daniel is een persona that een specifiek type van renoveerders clustert, gebaseerd op de conferentiepaper http://hdl.handle.net/1854/LU-01HHY1FWVC9EDMAAYY0MT7R6M9.</rdfs:comment>
+        <rdfs:label xml:lang="en">Daniel</rdfs:label>
+        <rdfs:label xml:lang="nl">Daniel</rdfs:label>
     </owl:Class>
     
 
@@ -3035,6 +2523,19 @@
     
 
 
+    <!-- https://w3id.org/reno#EnvironmentalConsideration -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#EnvironmentalConsideration">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#EnergyReductionMotivation"/>
+        <rdfs:comment xml:lang="nl">Wanneer de eigenaar zijn energieverbruik wil verminderen uit milieuoverwegingen.</rdfs:comment>
+        <rdfs:comment xml:lang="en">When the owner wants to reduce their energy consumption due to environmental considerations.</rdfs:comment>
+        <rdfs:label xml:lang="en">environmental consideration</rdfs:label>
+        <rdfs:label xml:lang="nl">milieuoverweging</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/reno#FLabel -->
 
 
@@ -3067,6 +2568,32 @@
     
 
 
+    <!-- https://w3id.org/reno#FillingPool -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#FillingPool">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Task"/>
+        <rdfs:comment xml:lang="nl">Wanneer iets (bijv. een apparaat of drager) wordt gebruikt om het zwembad te vullen.</rdfs:comment>
+        <rdfs:comment xml:lang="en">When something (e.g. a device or commodity) is used for filling the pool.</rdfs:comment>
+        <rdfs:label xml:lang="en">filling pool</rdfs:label>
+        <rdfs:label xml:lang="nl">zwembad vullen</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#FinancialConsideration -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#FinancialConsideration">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#EnergyReductionMotivation"/>
+        <rdfs:comment xml:lang="nl">Wanneer de eigenaar zijn energieverbruik wil verminderen uit financiële overwegingen.</rdfs:comment>
+        <rdfs:comment xml:lang="en">When the owner wants to reduce their energy consumption due to financial considerations.</rdfs:comment>
+        <rdfs:label xml:lang="en">financial consideration</rdfs:label>
+        <rdfs:label xml:lang="nl">financiële overweging</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/reno#FirePlace -->
 
 
@@ -3078,6 +2605,19 @@
         <rdfs:label xml:lang="nl">open haard</rdfs:label>
         <rdfs:seeAlso xml:lang="en">https://en.wikipedia.org/wiki/Fireplace</rdfs:seeAlso>
         <rdfs:seeAlso xml:lang="nl">https://nl.wikipedia.org/wiki/Open_haard</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#FloorAboveBasement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#FloorAboveBasement">
+        <rdfs:subClassOf rdf:resource="https://pi.pauwel.be/voc/buildingelement#Slab-FLOOR"/>
+        <rdfs:comment xml:lang="en">A floor above basement is the floor above the space below ground level.</rdfs:comment>
+        <rdfs:comment xml:lang="nl">Een vloer boven de kelder is de vloer boven de ruimte onder het maaiveld.</rdfs:comment>
+        <rdfs:label xml:lang="en">floor above basement</rdfs:label>
+        <rdfs:label xml:lang="nl">vloer boven kelder</rdfs:label>
     </owl:Class>
     
 
@@ -3097,6 +2637,32 @@
     
 
 
+    <!-- https://w3id.org/reno#ForStorage -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#ForStorage">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#SpaceUsage"/>
+        <rdfs:comment xml:lang="nl">Wanneer een ruimte alleen wordt gebruikt om dingen in op te bergen.</rdfs:comment>
+        <rdfs:comment xml:lang="en">When a space is used solely to store things.</rdfs:comment>
+        <rdfs:label xml:lang="en">for storage</rdfs:label>
+        <rdfs:label xml:lang="nl">voor stockage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#ForTechnicalInstallations -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#ForTechnicalInstallations">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#SpaceUsage"/>
+        <rdfs:comment xml:lang="nl">Wanneer een ruimte wordt gebruikt om technische installaties te plaatsen.</rdfs:comment>
+        <rdfs:comment xml:lang="en">When a space is used to place technical installations.</rdfs:comment>
+        <rdfs:label xml:lang="en">for technical installations</rdfs:label>
+        <rdfs:label xml:lang="nl">voor technische installaties</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/reno#FuelOil -->
 
 
@@ -3108,6 +2674,33 @@
         <rdfs:label xml:lang="nl">stookolie</rdfs:label>
         <rdfs:seeAlso xml:lang="en">https://en.wikipedia.org/wiki/Fuel_oil</rdfs:seeAlso>
         <rdfs:seeAlso xml:lang="nl">https://nl.wikipedia.org/wiki/Stookolie</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#FullBrickWall -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#FullBrickWall">
+        <rdfs:subClassOf rdf:resource="https://pi.pauwel.be/voc/buildingelement#Wall"/>
+        <rdfs:comment xml:lang="en">A full brick wall is a wall that has the thickness of the length of the stone</rdfs:comment>
+        <rdfs:comment xml:lang="nl">Een volsteense muur is een muur die de dikte heeft van de lengte van de steen.</rdfs:comment>
+        <rdfs:label xml:lang="en">full brick wall</rdfs:label>
+        <rdfs:label xml:lang="nl">volsteense muur</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#FullFloor -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#FullFloor">
+        <rdfs:subClassOf rdf:resource="https://pi.pauwel.be/voc/buildingelement#Slab-FLOOR"/>
+        <rdfs:comment xml:lang="en">A full floor is a floor slab in contact with the ground over its entire surface</rdfs:comment>
+        <rdfs:comment xml:lang="nl">Een vloer op volle grond is een vloerplaat die over zijn volledige oppervlakte in contact is met de grond.</rdfs:comment>
+        <rdfs:label xml:lang="en">full floor</rdfs:label>
+        <rdfs:label xml:lang="nl">vloer op volle grond</rdfs:label>
+        <rdfs:seeAlso xml:lang="nl">https://www.vlaanderen.be/epb-pedia/gebouw/scheidingsconstructies/vloeren/vloeren-op-volle-grond</rdfs:seeAlso>
     </owl:Class>
     
 
@@ -3200,6 +2793,156 @@
     
 
 
+    <!-- https://w3id.org/reno#HotWater -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#HotWater">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#Water"/>
+        <rdfs:comment xml:lang="en">Water at a temperature greater than 49°C (120°F).</rdfs:comment>
+        <rdfs:comment xml:lang="nl">Water met een temperatuur hoger dan 49°C (120°F).</rdfs:comment>
+        <rdfs:label xml:lang="nl">heet water</rdfs:label>
+        <rdfs:label xml:lang="en">hot water</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#InsulateAtticFloor -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#InsulateAtticFloor">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
+        <rdfs:label xml:lang="en">insulate attic floor</rdfs:label>
+        <rdfs:label xml:lang="nl">isoleer zoldervloer</rdfs:label>
+        <hasNuisanceLevel xml:lang="nl">laag</hasNuisanceLevel>
+        <hasNuisanceLevel xml:lang="en">low</hasNuisanceLevel>
+        <hasPointOfAttention xml:lang="en">In many cases, a vapour barries is necessary when insulating the attic floor. Condensation problems can occur without a vapour barrier. Always install the vapour barrier on the warm side of the insulation.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="nl">In veel gevallen is een dampscherm noodzakelijk bij het isoleren van de zoldervloer. Zonder een dampscherm kunnen zich condensatieproblemen voordoen. Plaats het dampscherm steeds aan de warme zijde van de isolatie.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="nl">Niet elk type isolatie is beloopbaar. Afhankelijk van uw situatie, kan beloopbare isolatie de voorkeur krijgen.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="en">Not every type of insulation is walkable. Depending on your situation, walkable insulation may be preferred.</hasPointOfAttention>
+        <permitNeeded xml:lang="nl">niet nodig (Vlaanderen)</permitNeeded>
+        <permitNeeded xml:lang="en">not necessary (Flanders)</permitNeeded>
+        <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
+        <requiresMultiPhase xml:lang="en">no</requiresMultiPhase>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#InsulateFlatRoof -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#InsulateFlatRoof">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
+        <rdfs:label xml:lang="en">insulate flat roof</rdfs:label>
+        <rdfs:label xml:lang="nl">isoleer plat dak</rdfs:label>
+        <hasNuisanceLevel xml:lang="en">high</hasNuisanceLevel>
+        <hasNuisanceLevel xml:lang="nl">hoog</hasNuisanceLevel>
+        <hasPointOfAttention xml:lang="en">Opt for an inverted roof structure, not a cold roof. Place the insulation on top of the roof covering, do not insulate the flat roof on the inside.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="nl">Opteer voor een omgekeerde dakopbouw, niet voor een koud dak. Plaats de isolatie dus bovenop de dakbedekking, isoleer het plat dak niet aan de binnenzijde.</hasPointOfAttention>
+        <permitNeeded xml:lang="nl">enkel indien dikte totaal pakket &gt;26cm (Vlaanderen)</permitNeeded>
+        <permitNeeded xml:lang="en">only if thickness of total pack &gt;26cm (Flanders)</permitNeeded>
+        <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
+        <requiresMultiPhase xml:lang="en">no</requiresMultiPhase>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#InsulateFloorAboveBasement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#InsulateFloorAboveBasement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
+        <rdfs:label xml:lang="en">insulate floor above basement</rdfs:label>
+        <rdfs:label xml:lang="nl">isoleer vloer boven kelder</rdfs:label>
+        <hasNuisanceLevel xml:lang="nl">laag</hasNuisanceLevel>
+        <hasNuisanceLevel xml:lang="en">low</hasNuisanceLevel>
+        <permitNeeded xml:lang="nl">niet nodig (Vlaanderen)</permitNeeded>
+        <permitNeeded xml:lang="en">not necessary (Flanders)</permitNeeded>
+        <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
+        <requiresMultiPhase xml:lang="en">no</requiresMultiPhase>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#InsulateGableRoof -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#InsulateGableRoof">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
+        <rdfs:label xml:lang="en">insulate gable roof</rdfs:label>
+        <rdfs:label xml:lang="nl">isoleer hellend dak</rdfs:label>
+        <hasNuisanceLevel xml:lang="nl">laag</hasNuisanceLevel>
+        <hasNuisanceLevel xml:lang="en">low</hasNuisanceLevel>
+        <hasPointOfAttention xml:lang="nl">Besteed extra aandacht bij de plaatsing van het onderdak, zodat dit volledig lucht- en waterdicht wordt uitgevoerd.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="en">Condensation problems can occur without a vapour barrier. Always install the vapour barrier on the warm side of the insulation.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="en">Pay extra attention when installing the roof underlayment so that it is completely air- and watertight.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="nl">Zonder een dampscherm kunnen zich condensatieproblemen voordoen. Plaats het dampscherm steeds aan de warme zijde van de isolatie.</hasPointOfAttention>
+        <permitNeeded xml:lang="nl">niet nodig (Vlaanderen)</permitNeeded>
+        <permitNeeded xml:lang="en">not necessary (Flanders)</permitNeeded>
+        <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
+        <requiresMultiPhase xml:lang="en">no</requiresMultiPhase>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#InsulateWallCavity -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#InsulateWallCavity">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
+        <rdfs:label xml:lang="en">insulate wall cavity</rdfs:label>
+        <rdfs:label xml:lang="nl">isoleer spouwmuur</rdfs:label>
+        <hasNuisanceLevel xml:lang="nl">laag</hasNuisanceLevel>
+        <hasNuisanceLevel xml:lang="en">low</hasNuisanceLevel>
+        <hasPointOfAttention xml:lang="en">Have an inspection carried out by a contractor, who can determine whether the cavity wall is suitable for injecting insulation. Namely, it should be checked whether the cavity is wide enough, whether there is no contamination in the cavity, whether the cladding is vapour-permeable enough, etc.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="nl">Laat een inspectie uitvoeren door een aannemer, die kan bepalen of de spouwmuur geschikt is om isolatie in te spuiten. Er moet namelijk nagegaan worden of de spouw breed genoeg is, of er geen vervuiling in de spouw is, of de gevelbekleding dampopen genoeg is, etc.</hasPointOfAttention>
+        <permitNeeded xml:lang="nl">niet nodig (Vlaanderen)</permitNeeded>
+        <permitNeeded xml:lang="en">not necessary (Flanders)</permitNeeded>
+        <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
+        <requiresMultiPhase xml:lang="en">no</requiresMultiPhase>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#InsulateWallExterior -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#InsulateWallExterior">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
+        <rdfs:label xml:lang="en">insulate wall on exterior</rdfs:label>
+        <rdfs:label xml:lang="nl">isoleer wand aan buitenzijde</rdfs:label>
+        <hasNuisanceLevel xml:lang="en">high</hasNuisanceLevel>
+        <hasNuisanceLevel xml:lang="nl">hoog</hasNuisanceLevel>
+        <hasPointOfAttention xml:lang="nl">Niet elk type gevelbekleding zal mogelijk zijn, afhankelijk van de positie van de rooilijn en de richtlijnen van de gemeente.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="en">Not every type of cladding will be possible, depending on the position of the building line and the council&apos;s guidelines.</hasPointOfAttention>
+        <permitNeeded xml:lang="nl">enkel indien dikte totaal pakket &gt;26cm of de rooilijn wordt overgeschreden (Vlaanderen)</permitNeeded>
+        <permitNeeded xml:lang="en">only if thickness of total pack &gt;26cm or the building line is overrun (Flanders)</permitNeeded>
+        <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
+        <requiresMultiPhase xml:lang="en">no</requiresMultiPhase>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#InsulateWallInterior -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#InsulateWallInterior">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
+        <rdfs:label xml:lang="en">insulate wall on interior</rdfs:label>
+        <rdfs:label xml:lang="nl">isoleer wand aan binnenzijde</rdfs:label>
+        <hasNuisanceLevel xml:lang="nl">matig</hasNuisanceLevel>
+        <hasNuisanceLevel xml:lang="en">moderate</hasNuisanceLevel>
+        <hasPointOfAttention xml:lang="nl">Het isoleren van muren aan de binnenzijde is een delicaat werk. Laat u bijstaan door een architect, aannemer of vakman voor deskundig advies en een goede uitvoering van de werken.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="en">Insulating walls on the inside is a delicate job. Get assistance from an architect, contractor or craftsman for expert advice and proper execution of the works.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="en">Sockets, pipes and radiators against the outer walls will have to be relocated.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="nl">Stopcontacten, leidingen en radiatoren tegen de buitenwanden zullen verplaatst moeten worden.</hasPointOfAttention>
+        <permitNeeded xml:lang="nl">niet nodig (Vlaanderen)</permitNeeded>
+        <permitNeeded xml:lang="en">not necessary (Flanders)</permitNeeded>
+        <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
+        <requiresMultiPhase xml:lang="en">no</requiresMultiPhase>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/reno#InsulationGrade -->
 
 
@@ -3252,6 +2995,32 @@
     
 
 
+    <!-- https://w3id.org/reno#NoMotivation -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#NoMotivation">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationMotivation"/>
+        <rdfs:comment xml:lang="nl">Wanneer de eigenaar zijn woning wil renoveren zonder concrete motivatie.</rdfs:comment>
+        <rdfs:comment xml:lang="en">When the owner wants to renovate their property without any concrete motivation.</rdfs:comment>
+        <rdfs:label xml:lang="nl">geen motivatie</rdfs:label>
+        <rdfs:label xml:lang="en">no motivation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#Normal -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#Normal">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#SoundLevel"/>
+        <rdfs:comment xml:lang="nl">Wanneer het (gewenste) geluidsniveau van een kamer normaal is.</rdfs:comment>
+        <rdfs:comment xml:lang="en">When the (desired) sound level of a room is normal.</rdfs:comment>
+        <rdfs:label xml:lang="nl">normaal</rdfs:label>
+        <rdfs:label xml:lang="en">normal</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/reno#North -->
 
 
@@ -3261,6 +3030,52 @@
         <rdfs:comment xml:lang="en">One of the four cardinal directions, commonly denoted as N.</rdfs:comment>
         <rdfs:label xml:lang="nl">noorden</rdfs:label>
         <rdfs:label xml:lang="en">north</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#NotAsbestosContaining -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#NotAsbestosContaining">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://bimerr.iot.linkeddata.es/def/material-properties#MaterialLayerSet"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://bimerr.iot.linkeddata.es/def/material-properties#hasMaterialLayer"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://bimerr.iot.linkeddata.es/def/material-properties#hasMaterial"/>
+                                <owl:someValuesFrom>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="https://w3id.org/reno#containsAsbestos"/>
+                                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:hasValue>
+                                    </owl:Restriction>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">An not asbestos containing element is an element where none of the materials contains asbestos.</rdfs:comment>
+        <rdfs:comment xml:lang="nl">Een niet asbesthoudend element is een element waarvan geen van de materialen asbest bevat.</rdfs:comment>
+        <rdfs:label xml:lang="nl">niet asbesthoudend</rdfs:label>
+        <rdfs:label xml:lang="en">not asbestos containing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#NotInUse -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#NotInUse">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#SpaceUsage"/>
+        <rdfs:comment xml:lang="nl">Wanneer een ruimte niet in gebruik is.</rdfs:comment>
+        <rdfs:comment xml:lang="en">When a space is not in use.</rdfs:comment>
+        <rdfs:label xml:lang="nl">niet in gebruik</rdfs:label>
+        <rdfs:label xml:lang="en">not in use</rdfs:label>
     </owl:Class>
     
 
@@ -3288,6 +3103,32 @@
         <rdfs:label xml:lang="nl">oriëntatie</rdfs:label>
         <rdfs:seeAlso xml:lang="en">https://en.wikipedia.org/wiki/Cardinal_direction</rdfs:seeAlso>
         <rdfs:seeAlso xml:lang="nl">https://nl.wikipedia.org/wiki/Windstreek</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#Oscar -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#Oscar">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#Persona"/>
+        <rdfs:comment xml:lang="en">Oscar is a persona that clusters a specific type of renovators, based on the conference paper http://hdl.handle.net/1854/LU-01HHY1FWVC9EDMAAYY0MT7R6M9.</rdfs:comment>
+        <rdfs:comment xml:lang="nl">Oscar is een persona that een specifiek type van renoveerders clustert, gebaseerd op de conferentiepaper http://hdl.handle.net/1854/LU-01HHY1FWVC9EDMAAYY0MT7R6M9.</rdfs:comment>
+        <rdfs:label xml:lang="en">Oscar</rdfs:label>
+        <rdfs:label xml:lang="nl">Oscar</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#OtherMotivation -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#OtherMotivation">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationMotivation"/>
+        <rdfs:comment xml:lang="nl">Wanneer de eigenaar zijn woning wil renoveren zonder concrete motivatie.</rdfs:comment>
+        <rdfs:comment xml:lang="en">When the owner wants to renovate their property without any concrete motivation.</rdfs:comment>
+        <rdfs:label xml:lang="nl">andere motivatie</rdfs:label>
+        <rdfs:label xml:lang="en">other motivation</rdfs:label>
     </owl:Class>
     
 
@@ -3370,6 +3211,276 @@
     
 
 
+    <!-- https://w3id.org/reno#Persona -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#Persona">
+        <rdfs:comment xml:lang="en">A persona is a semi-fictional characterization or representation of a typical customer segment or end user.</rdfs:comment>
+        <rdfs:comment xml:lang="nl">Een persona is een archetype van een gebruiker, ofwel een karakterisering van een bepaald type gebruiker.</rdfs:comment>
+        <rdfs:label xml:lang="en">persona</rdfs:label>
+        <rdfs:label xml:lang="nl">persona</rdfs:label>
+        <rdfs:seeAlso xml:lang="en">https://en.wikipedia.org/wiki/Persona_(user_experience)</rdfs:seeAlso>
+        <rdfs:seeAlso xml:lang="nl">https://nl.wikipedia.org/wiki/Persona_(IT)</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#PlaceAirAirHeatpump -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#PlaceAirAirHeatpump">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
+        <rdfs:label xml:lang="nl">plaats lucht-lucht warmtepomp</rdfs:label>
+        <rdfs:label xml:lang="en">place air-air heatpump</rdfs:label>
+        <hasNuisanceLevel xml:lang="nl">matig</hasNuisanceLevel>
+        <hasNuisanceLevel xml:lang="en">moderate</hasNuisanceLevel>
+        <permitNeeded xml:lang="nl">niet nodig indien de bovengrondse onderdelen minstens 2m verwijderd zijn van de perceelsgrens (Vlaanderen)</permitNeeded>
+        <permitNeeded xml:lang="en">not necessary if the above-ground parts are at least 2m away from the parcel boundary (Flanders)</permitNeeded>
+        <requiresMultiPhase xml:lang="en">maybe, depending on the system</requiresMultiPhase>
+        <requiresMultiPhase xml:lang="nl">mogelijks, afhankelijk van het systeem</requiresMultiPhase>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#PlaceAirWaterHeatpump -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#PlaceAirWaterHeatpump">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
+        <rdfs:label xml:lang="nl">plaats lucht-water warmtepomp</rdfs:label>
+        <rdfs:label xml:lang="en">place air-water heatpump</rdfs:label>
+        <hasNuisanceLevel xml:lang="nl">matig</hasNuisanceLevel>
+        <hasNuisanceLevel xml:lang="en">moderate</hasNuisanceLevel>
+        <permitNeeded xml:lang="nl">niet nodig indien de bovengrondse onderdelen minstens 2m verwijderd zijn van de perceelsgrens (Vlaanderen)</permitNeeded>
+        <permitNeeded xml:lang="en">not necessary if the above-ground parts are at least 2m away from the parcel boundary (Flanders)</permitNeeded>
+        <requiresMultiPhase xml:lang="en">maybe, depending on the system</requiresMultiPhase>
+        <requiresMultiPhase xml:lang="nl">mogelijks, afhankelijk van het systeem</requiresMultiPhase>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#PlaceAirWaterHeatpumpWithCooling -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#PlaceAirWaterHeatpumpWithCooling">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
+        <rdfs:label xml:lang="nl">plaats lucht-water warmtepomp met koeling</rdfs:label>
+        <rdfs:label xml:lang="en">place air-water heatpump with cooling</rdfs:label>
+        <hasNuisanceLevel xml:lang="nl">matig</hasNuisanceLevel>
+        <hasNuisanceLevel xml:lang="en">moderate</hasNuisanceLevel>
+        <permitNeeded xml:lang="nl">niet nodig indien de bovengrondse onderdelen minstens 2m verwijderd zijn van de perceelsgrens (Vlaanderen)</permitNeeded>
+        <permitNeeded xml:lang="en">not necessary if the above-ground parts are at least 2m away from the parcel boundary (Flanders)</permitNeeded>
+        <requiresMultiPhase xml:lang="en">maybe, depending on the system</requiresMultiPhase>
+        <requiresMultiPhase xml:lang="nl">mogelijks, afhankelijk van het systeem</requiresMultiPhase>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#PlaceAirconditioning -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#PlaceAirconditioning">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
+        <rdfs:label xml:lang="nl">plaats airconditioning</rdfs:label>
+        <rdfs:label xml:lang="en">place airconditioning</rdfs:label>
+        <hasNuisanceLevel xml:lang="nl">laag</hasNuisanceLevel>
+        <hasNuisanceLevel xml:lang="en">low</hasNuisanceLevel>
+        <permitNeeded xml:lang="nl">niet nodig (Vlaanderen)</permitNeeded>
+        <permitNeeded xml:lang="en">not necessary (Flanders)</permitNeeded>
+        <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
+        <requiresMultiPhase xml:lang="en">no</requiresMultiPhase>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#PlaceFloorHeating -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#PlaceFloorHeating">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
+        <rdfs:label xml:lang="nl">plaats vloerverwarming</rdfs:label>
+        <rdfs:label xml:lang="en">place floor heating</rdfs:label>
+        <hasNuisanceLevel xml:lang="nl">matig</hasNuisanceLevel>
+        <hasNuisanceLevel xml:lang="en">moderate</hasNuisanceLevel>
+        <permitNeeded xml:lang="nl">niet nodig (Vlaanderen)</permitNeeded>
+        <permitNeeded xml:lang="en">not necessary (Flanders)</permitNeeded>
+        <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
+        <requiresMultiPhase xml:lang="en">no</requiresMultiPhase>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#PlaceGeothermalHeatpumpHorizontal -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#PlaceGeothermalHeatpumpHorizontal">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
+        <rdfs:label xml:lang="nl">plaats horizontale geothermische warmtepomp</rdfs:label>
+        <rdfs:label xml:lang="en">place horizontal geothermal heatpump</rdfs:label>
+        <hasNuisanceLevel xml:lang="nl">matig</hasNuisanceLevel>
+        <hasNuisanceLevel xml:lang="en">moderate</hasNuisanceLevel>
+        <permitNeeded xml:lang="nl">niet nodig (Vlaanderen)</permitNeeded>
+        <permitNeeded xml:lang="en">not necessary (Flanders)</permitNeeded>
+        <requiresMultiPhase xml:lang="en">maybe, depending on the system</requiresMultiPhase>
+        <requiresMultiPhase xml:lang="nl">mogelijks, afhankelijk van het systeem</requiresMultiPhase>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#PlaceGeothermalHeatpumpVertical -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#PlaceGeothermalHeatpumpVertical">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
+        <rdfs:label xml:lang="nl">plaats verticale geothermische warmtepomp</rdfs:label>
+        <rdfs:label xml:lang="en">place vertical geothermal heatpump</rdfs:label>
+        <hasNuisanceLevel xml:lang="nl">matig</hasNuisanceLevel>
+        <hasNuisanceLevel xml:lang="en">moderate</hasNuisanceLevel>
+        <permitNeeded xml:lang="nl">meldings- of vergunningsplicht is afhankelijk van diepte boring, bodemkenmerken en grondwater(Vlaanderen)</permitNeeded>
+        <permitNeeded xml:lang="en">reporting or permit requirement depends on depth of drilling, soil characteristics and groundwater(Flanders)</permitNeeded>
+        <requiresMultiPhase xml:lang="en">maybe, depending on the system</requiresMultiPhase>
+        <requiresMultiPhase xml:lang="nl">mogelijks, afhankelijk van het systeem</requiresMultiPhase>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#PlaceHeatPumpBoiler -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#PlaceHeatPumpBoiler">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
+        <rdfs:label xml:lang="nl">plaats warmtepompboiler</rdfs:label>
+        <rdfs:label xml:lang="en">place heatpumpboiler</rdfs:label>
+        <hasNuisanceLevel xml:lang="nl">matig</hasNuisanceLevel>
+        <hasNuisanceLevel xml:lang="en">moderate</hasNuisanceLevel>
+        <permitNeeded xml:lang="nl">niet nodig (Vlaanderen)</permitNeeded>
+        <permitNeeded xml:lang="en">not necessary (Flanders)</permitNeeded>
+        <requiresMultiPhase xml:lang="en">maybe, depending on the system</requiresMultiPhase>
+        <requiresMultiPhase xml:lang="nl">mogelijks, afhankelijk van het systeem</requiresMultiPhase>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#PlaceLowTemperatureEmission -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#PlaceLowTemperatureEmission">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
+        <rdfs:label xml:lang="nl">plaats afgiftesysteem op lage temperatuur</rdfs:label>
+        <rdfs:label xml:lang="en">place emission system on low temperature</rdfs:label>
+        <hasNuisanceLevel xml:lang="nl">matig</hasNuisanceLevel>
+        <hasNuisanceLevel xml:lang="en">moderate</hasNuisanceLevel>
+        <permitNeeded xml:lang="nl">niet nodig (Vlaanderen)</permitNeeded>
+        <permitNeeded xml:lang="en">not necessary (Flanders)</permitNeeded>
+        <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
+        <requiresMultiPhase xml:lang="en">no</requiresMultiPhase>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#PlacePVPanelsInGarden -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#PlacePVPanelsInGarden">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
+        <rdfs:label xml:lang="nl">plaats PV-panelen in tuin</rdfs:label>
+        <rdfs:label xml:lang="en">place PV-panels in garden</rdfs:label>
+        <hasNuisanceLevel xml:lang="nl">laag</hasNuisanceLevel>
+        <hasNuisanceLevel xml:lang="en">low</hasNuisanceLevel>
+        <permitNeeded xml:lang="nl">niet nodig (Vlaanderen)</permitNeeded>
+        <permitNeeded xml:lang="en">not necessary (Flanders)</permitNeeded>
+        <requiresMultiPhase xml:lang="en">maybe, depending on the system</requiresMultiPhase>
+        <requiresMultiPhase xml:lang="nl">mogelijks, afhankelijk van het systeem</requiresMultiPhase>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#PlacePVPanelsOnRoof -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#PlacePVPanelsOnRoof">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
+        <rdfs:label xml:lang="nl">plaats PV-panelen op dak</rdfs:label>
+        <rdfs:label xml:lang="en">place PV-panels on roof</rdfs:label>
+        <hasNuisanceLevel xml:lang="nl">laag</hasNuisanceLevel>
+        <hasNuisanceLevel xml:lang="en">low</hasNuisanceLevel>
+        <hasPointOfAttention xml:lang="nl">Aangezien PV-panelen aan de dakconstructie worden bevestigd, is het cruciaal om eerst het aanwezige asbest in het dak te verwijderen. Het plaatsen van zonnepanelen op een gebouw met een asbesthoudende dakbekleding of een asbesthoudend onderdak is verboden.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="nl">Bekijk op de Zonnekaart of uw dak goed georiënteerd is en voldoende zonlicht opvangt. De opbrengst is het grootst als uw panelen naar het zuiden gericht zijn (zuid-oost tot zuid-west) onder een hoek van 30° tot 50°. De opbrengst van zonnepanelen daalt bij schaduw van gebouwen, schoorstenen of bomen.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="en">Check on the &apos;Zonnekaart&apos; whether your roof is properly oriented and captures enough sunlight. The yield is greatest if your panels face south (south-east to south-west) at an angle of 30° to 50°. The yield of solar panels decreases when shaded by buildings, chimneys or trees.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="en">Since PV panels are attached to the roof structure, it is crucial to remove any asbestos present in the roof first. Installing solar panels on a building with an asbestos-containing roof covering or an asbestos-containing sub-roof is prohibited.</hasPointOfAttention>
+        <permitNeeded xml:lang="en">flat roof: not necessary if less than 1m above edges (Flanders)</permitNeeded>
+        <permitNeeded xml:lang="en">gable roof: not necessary if the panels are in the same plane (Flanders)</permitNeeded>
+        <permitNeeded xml:lang="nl">plat dak: niet nodig indien minder dan 1m boven dakrand (Vlaanderen)</permitNeeded>
+        <permitNeeded xml:lang="nl">schuin dak: niet nodig indien de panelen in hetzelfde vlak zitten (Vlaanderen)</permitNeeded>
+        <requiresMultiPhase xml:lang="en">maybe, depending on the system</requiresMultiPhase>
+        <requiresMultiPhase xml:lang="nl">mogelijks, afhankelijk van het systeem</requiresMultiPhase>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#PlaceRoofUnderlayment -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#PlaceRoofUnderlayment">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
+        <rdfs:label xml:lang="nl">plaats onderdak</rdfs:label>
+        <rdfs:label xml:lang="en">place roof underlayment</rdfs:label>
+        <hasNuisanceLevel xml:lang="nl">laag</hasNuisanceLevel>
+        <hasNuisanceLevel xml:lang="en">low</hasNuisanceLevel>
+        <hasPointOfAttention xml:lang="nl">Besteed extra aandacht bij de plaatsing van het onderdak, zodat dit volledig lucht- en waterdicht wordt uitgevoerd.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="en">Pay extra attention when installing the roof underlayment so that it is completely air- and watertight.</hasPointOfAttention>
+        <permitNeeded xml:lang="nl">niet nodig (Vlaanderen)</permitNeeded>
+        <permitNeeded xml:lang="en">not necessary (Flanders)</permitNeeded>
+        <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
+        <requiresMultiPhase xml:lang="en">no</requiresMultiPhase>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#PlaceSunShade -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#PlaceSunShade">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
+        <rdfs:label xml:lang="nl">plaats zonnewering</rdfs:label>
+        <rdfs:label xml:lang="en">place sunshade</rdfs:label>
+        <hasNuisanceLevel xml:lang="nl">laag</hasNuisanceLevel>
+        <hasNuisanceLevel xml:lang="en">low</hasNuisanceLevel>
+        <hasPointOfAttention xml:lang="nl">Buitenzonwering is over het algemeen efficiënter dan binnenzonwering.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="en">Outdoor blinds are generally more efficient than indoor blinds.</hasPointOfAttention>
+        <permitNeeded xml:lang="nl">niet nodig (Vlaanderen)</permitNeeded>
+        <permitNeeded xml:lang="en">not necessary (Flanders)</permitNeeded>
+        <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
+        <requiresMultiPhase xml:lang="en">no</requiresMultiPhase>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#PlugAndPlayPanels -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#PlugAndPlayPanels">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
+        <rdfs:label xml:lang="nl">plaats plug and play PV-panelen</rdfs:label>
+        <rdfs:label xml:lang="en">place plug and play PV-panels</rdfs:label>
+        <hasNuisanceLevel xml:lang="nl">laag</hasNuisanceLevel>
+        <hasNuisanceLevel xml:lang="en">low</hasNuisanceLevel>
+        <hasPointOfAttention xml:lang="en">At the creation of this tool, these panels are only in their infancy on the Belgian commercial market. So be sure to check current recommendations and regulations yourself.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="nl">Bevestig het paneel stevig, zodat dit niet kan losraken bij bijvoorbeeld hevige rukwinden. Denk er ook aan dat u een weer- en waterbestendig stopcontact nodig zal hebben, of een verlengsnoer bestemd voor gebruik buitenshuis.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="nl">Bij de creatie van deze tool, staan deze panelen slechts in hun kinderschoenen op de Belgische commerciële markt. Controleer dus vooral zelf de huidige aanbevelingen en regelgeving.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="en">Fix the panel securely so that it cannot come loose in violent squalls, for example. Also remember that you will need a weather- and water-resistant socket, or an extension cord intended for outdoor use.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="en">In Flanders, a maximum of two solar panels may be installed per family. Furthermore, the inverter of a plug-and-play solar panel may not exceed 800W.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="nl">In Vlaanderen mogen er maximaal twee zonnepanelen per gezin geïnstalleerd worden. Verder mag de omvormer van een plug-and-play zonnepaneel maximaal 800W bedragen.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="nl">Niet alle toestellen op de (Belgische) markt zijn gehomologeerd, controleer steeds de officiële lijst van Synergrid vooraleer u een paneel aankoopt. </hasPointOfAttention>
+        <hasPointOfAttention xml:lang="en">Not all devices on the (Belgian) market are homologated, always check Synergrid&apos;s official list before purchasing a panel.</hasPointOfAttention>
+        <permitNeeded xml:lang="nl">niet nodig (Vlaanderen)</permitNeeded>
+        <permitNeeded xml:lang="en">not necessary (Flanders)</permitNeeded>
+        <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
+        <requiresMultiPhase xml:lang="en">no</requiresMultiPhase>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/reno#PowerConnection -->
 
 
@@ -3427,6 +3538,19 @@
     
 
 
+    <!-- https://w3id.org/reno#Quiet -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#Quiet">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#SoundLevel"/>
+        <rdfs:comment xml:lang="nl">Wanneer het (gewenste) geluidsniveau van een kamer stil is.</rdfs:comment>
+        <rdfs:comment xml:lang="en">When the (desired) sound level of a room is quiet.</rdfs:comment>
+        <rdfs:label xml:lang="en">quiet</rdfs:label>
+        <rdfs:label xml:lang="nl">stil</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/reno#Radiator -->
 
 
@@ -3438,6 +3562,44 @@
         <rdfs:label xml:lang="nl">radiator</rdfs:label>
         <rdfs:seeAlso xml:lang="en">https://en.wikipedia.org/wiki/Radiator</rdfs:seeAlso>
         <rdfs:seeAlso xml:lang="nl">https://nl.wikipedia.org/wiki/Radiateur</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#RemoveAsbestosFlatRoof -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#RemoveAsbestosFlatRoof">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
+        <rdfs:label xml:lang="en">remove asbestos from flat roof</rdfs:label>
+        <rdfs:label xml:lang="nl">verwijder asbest van plat dak</rdfs:label>
+        <hasNuisanceLevel xml:lang="nl">matig</hasNuisanceLevel>
+        <hasNuisanceLevel xml:lang="en">moderate</hasNuisanceLevel>
+        <hasPointOfAttention xml:lang="nl">Hechtgebonden asbest kan u zelf verwijderen, maar neem de correcte voorzorgsmaatregelen. Voor het verwijderen van niet-hechtgebonden asbest moet u een erkend asbestverwijderaar inschakelen.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="en">You can remove bonded asbestos yourself, but take the correct precautions. To remove non-bonded asbestos, hire a licensed asbestos removal company.</hasPointOfAttention>
+        <permitNeeded xml:lang="nl">niet nodig (Vlaanderen)</permitNeeded>
+        <permitNeeded xml:lang="en">not necessary (Flanders)</permitNeeded>
+        <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
+        <requiresMultiPhase xml:lang="en">no</requiresMultiPhase>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#RemoveAsbestosGableRoof -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#RemoveAsbestosGableRoof">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
+        <rdfs:label xml:lang="en">remove asbestos from gable roof</rdfs:label>
+        <rdfs:label xml:lang="nl">verwijder asbest van hellend dak</rdfs:label>
+        <hasNuisanceLevel xml:lang="nl">laag</hasNuisanceLevel>
+        <hasNuisanceLevel xml:lang="en">low</hasNuisanceLevel>
+        <hasPointOfAttention xml:lang="nl">Hechtgebonden asbest kan u zelf verwijderen, maar neem de correcte voorzorgsmaatregelen. Voor het verwijderen van niet-hechtgebonden asbest moet u een erkend asbestverwijderaar inschakelen.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="en">You can remove bonded asbestos yourself, but take the correct precautions. To remove non-bonded asbestos, hire a licensed asbestos removal company.</hasPointOfAttention>
+        <permitNeeded xml:lang="nl">niet nodig (Vlaanderen)</permitNeeded>
+        <permitNeeded xml:lang="en">not necessary (Flanders)</permitNeeded>
+        <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
+        <requiresMultiPhase xml:lang="en">no</requiresMultiPhase>
     </owl:Class>
     
 
@@ -3549,6 +3711,124 @@
     
 
 
+    <!-- https://w3id.org/reno#RenovationSuggestion -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#RenovationSuggestion">
+        <rdfs:subClassOf rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#AtomicProcess"/>
+        <rdfs:comment xml:lang="en">A renovation suggestion is a suggestion to renovate a specific part of a building. The renovation can be energetic, aesthetic, etc.</rdfs:comment>
+        <rdfs:comment xml:lang="nl">Een renovatiesuggestie is een suggestie om een specifiek deel van een gebouw te renoveren. De renovatie kan energetisch, esthetisch, etc. zijn.</rdfs:comment>
+        <rdfs:label xml:lang="nl">renovatiesuggestie</rdfs:label>
+        <rdfs:label xml:lang="en">renovation suggestion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#ReplaceFlatRoof -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#ReplaceFlatRoof">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
+        <rdfs:label xml:lang="en">replace flat roof</rdfs:label>
+        <rdfs:label xml:lang="nl">vervang plat dak</rdfs:label>
+        <hasNuisanceLevel xml:lang="en">high</hasNuisanceLevel>
+        <hasNuisanceLevel xml:lang="nl">hoog</hasNuisanceLevel>
+        <hasPointOfAttention xml:lang="en">Condensation problems can occur without a vapour barrier. Always install the vapour barrier on the warm side of the insulation.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="nl">Idealiter voorziet u een dakopstand van 15cm, en een minimale hellingsgraad van 2% om correcte afwatering te garanderen. We raden aan om voor een warme dakopbouw te opteren.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="en">Ideally, you should provide a roof edge of 15cm, and a minimum gradient of 2% to ensure correct drainage. We recommend opting for a warm roof setup.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="nl">Zonder een dampscherm kunnen zich condensatieproblemen voordoen. Plaats het dampscherm steeds aan de warme zijde van de isolatie.</hasPointOfAttention>
+        <permitNeeded xml:lang="nl">meldingsplicht (Vlaanderen)</permitNeeded>
+        <permitNeeded xml:lang="en">reporting obligation (Flanders)</permitNeeded>
+        <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
+        <requiresMultiPhase xml:lang="en">no</requiresMultiPhase>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#ReplaceGableRoof -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#ReplaceGableRoof">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
+        <rdfs:label xml:lang="en">replace gable roof</rdfs:label>
+        <rdfs:label xml:lang="nl">vervang hellend dak</rdfs:label>
+        <hasNuisanceLevel xml:lang="en">high</hasNuisanceLevel>
+        <hasNuisanceLevel xml:lang="nl">hoog</hasNuisanceLevel>
+        <hasPointOfAttention xml:lang="en">A roof renovation is an opportunity for installing roof plane windows if you want to use the space under the pitched roof.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="nl">Een dakvernieuwing is een opportuniteit voor het plaatsen van dakvlakvensters indien u de ruimte onder het schuine dak in gebruik wil nemen.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="nl">Houd bij de vernieuwing van uw dak al rekening met eventuele leidingdoorvoeren, die nodig kunnen zijn voor een ventilatiesysteem, zonneboiler of zonnepanelen.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="en">If your facades are not yet insulated, extend the roof overhangs now so that the external wall insulation can connect to the roof insulation. Also place the rainwater drains so that the external wall insulation can still be placed.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="nl">Indien uw gevels nog niet geïsoleerd zijn, verleng dan nu al de dakoversteken zodat de buitenmuurisolatie op de dakisolatie kan aansluiten. Plaats ook de regenwaterafvoer zodanig dat de buitenmuurisolatie nog geplaatst kan worden.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="en">When renewing your roof, already take into account any ducts which may be needed for a ventilation system, solar water heater or solar panels.</hasPointOfAttention>
+        <permitNeeded xml:lang="nl">enkel indien dakgebinte wordt vernieuwd (Vlaanderen)</permitNeeded>
+        <permitNeeded xml:lang="en">only if roof framework is renewed (Flanders)</permitNeeded>
+        <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
+        <requiresMultiPhase xml:lang="en">no</requiresMultiPhase>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#ReplaceGlazing -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#ReplaceGlazing">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
+        <rdfs:label xml:lang="en">replace glazing</rdfs:label>
+        <rdfs:label xml:lang="nl">vervang glas</rdfs:label>
+        <hasNuisanceLevel xml:lang="en">high</hasNuisanceLevel>
+        <hasNuisanceLevel xml:lang="nl">hoog</hasNuisanceLevel>
+        <hasPointOfAttention xml:lang="en">Check that your window frames are still in good condition, as they need to be straight enough to fit new glass in, and also strong enough, as the new glass will presumably weigh more than the old glass.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="en">Check that your window frames have the right thickness, which depends on the type of glazing you want to install in them.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="nl">Controleer of je raamkaders de juiste dikte hebben, welke afhankelijk is van het type beglazing dat je erin wil plaatsen.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="nl">Controleer of je raamkaders nog in goede staat zijn, ze moeten namelijk recht genoeg zijn om nieuw glas in te plaatsen, en ook sterk genoeg, aangezien het nieuwe glas vermoedelijk meer zal wegen dan het oude glas.</hasPointOfAttention>
+        <permitNeeded xml:lang="nl">niet nodig (Vlaanderen)</permitNeeded>
+        <permitNeeded xml:lang="en">not necessary (Flanders)</permitNeeded>
+        <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
+        <requiresMultiPhase xml:lang="en">no</requiresMultiPhase>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#ReplaceVentilationSystem -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#ReplaceVentilationSystem">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
+        <rdfs:label xml:lang="en">replace ventilation system</rdfs:label>
+        <rdfs:label xml:lang="nl">vervang ventilatiesysteem</rdfs:label>
+        <hasNuisanceLevel xml:lang="nl">matig</hasNuisanceLevel>
+        <hasNuisanceLevel xml:lang="en">moderate</hasNuisanceLevel>
+        <hasPointOfAttention xml:lang="en">A ventilation system D will have slightly more impact on your home, as it requires ductwork for both supply and return.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="nl">Een ventilatiesysteem D zal iets meer impact hebben op je woning, aangezien er kanalen nodig zijn voor zowel toe- als afvoer.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="en">For a ventilation system C, you need grilles in your window frames.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="nl">Voor een ventilatiesysteem C heb je roosters in je raamkaders nodig.</hasPointOfAttention>
+        <permitNeeded xml:lang="nl">niet nodig indien de bovengrondse onderdelen minstens 2m verwijderd zijn van de perceelsgrens (Vlaanderen)</permitNeeded>
+        <permitNeeded xml:lang="en">not necessary if the above-ground parts are at least 2m away from the parcel boundary (Flanders)</permitNeeded>
+        <requiresMultiPhase xml:lang="en">maybe, depending on the system</requiresMultiPhase>
+        <requiresMultiPhase xml:lang="nl">mogelijks, afhankelijk van het systeem</requiresMultiPhase>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#ReplaceWindows -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#ReplaceWindows">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
+        <rdfs:label xml:lang="en">replace windows</rdfs:label>
+        <rdfs:label xml:lang="nl">vervang ramen</rdfs:label>
+        <hasNuisanceLevel xml:lang="en">high</hasNuisanceLevel>
+        <hasNuisanceLevel xml:lang="nl">hoog</hasNuisanceLevel>
+        <hasPointOfAttention xml:lang="en">Do you currently have a ventilation system type A or C, or are you planning to install a natural supply system? If so, be sure to provide enough grilles on your window frames so that enough fresh air can flow into your home.</hasPointOfAttention>
+        <hasPointOfAttention xml:lang="nl">Heb je momenteel een ventilatiesysteem A of C, of ben je van plan een systeem met natuurlijke toevoer te plaatsen? Voorzie dan zeker voldoende roosters aan je raamkaders, zodat er voldoende verse lucht in je woning kan binnenstromen.</hasPointOfAttention>
+        <permitNeeded xml:lang="nl">niet nodig indien de afmetingen worden behouden (Vlaanderen)</permitNeeded>
+        <permitNeeded xml:lang="en">not necessary if the measurements are kept (Flanders)</permitNeeded>
+        <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
+        <requiresMultiPhase xml:lang="en">no</requiresMultiPhase>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/reno#Resident -->
 
 
@@ -3599,6 +3879,19 @@
         <rdfs:label xml:lang="en">semi-detached building</rdfs:label>
         <rdfs:seeAlso xml:lang="en">https://en.wikipedia.org/wiki/Semi-detached</rdfs:seeAlso>
         <rdfs:seeAlso xml:lang="nl">https://nl.wikipedia.org/wiki/Twee-onder-een-kapwoning</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#Showering -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#Showering">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Task"/>
+        <rdfs:comment xml:lang="nl">Wanneer iets (bijv. een apparaat of drager) wordt gebruikt om te douchen.</rdfs:comment>
+        <rdfs:comment xml:lang="en">When something (e.g. a device or commodity) is used for showering.</rdfs:comment>
+        <rdfs:label xml:lang="nl">douchen</rdfs:label>
+        <rdfs:label xml:lang="en">showering</rdfs:label>
     </owl:Class>
     
 
@@ -3663,6 +3956,32 @@
         <rdfs:comment xml:lang="en">One of the four cardinal directions, commonly denoted as S.</rdfs:comment>
         <rdfs:label xml:lang="en">south</rdfs:label>
         <rdfs:label xml:lang="nl">zuiden</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#SpaceCooling -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#SpaceCooling">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Task"/>
+        <rdfs:comment xml:lang="nl">Wanneer iets (bijv. een apparaat of drager) wordt gebruikt voor ruimtekoeling.</rdfs:comment>
+        <rdfs:comment xml:lang="en">When something (e.g. a device or commodity) is used for space cooling.</rdfs:comment>
+        <rdfs:label xml:lang="nl">ruimtekoeling</rdfs:label>
+        <rdfs:label xml:lang="en">space cooling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#SpaceHeating -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#SpaceHeating">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Task"/>
+        <rdfs:comment xml:lang="nl">Wanneer iets (bijv. een apparaat of drager) wordt gebruikt voor ruimteverwarming.</rdfs:comment>
+        <rdfs:comment xml:lang="en">When something (e.g. a device or commodity) is used for space heating.</rdfs:comment>
+        <rdfs:label xml:lang="nl">ruimteverwarming</rdfs:label>
+        <rdfs:label xml:lang="en">space heating</rdfs:label>
     </owl:Class>
     
 
@@ -3733,6 +4052,19 @@
     
 
 
+    <!-- https://w3id.org/reno#TakingASauna -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#TakingASauna">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Task"/>
+        <rdfs:comment xml:lang="nl">Wanneer iets (bijv. een apparaat of drager) wordt gebruikt om een sauna te nemen.</rdfs:comment>
+        <rdfs:comment xml:lang="en">When something (e.g. a device or commodity) is used to take a sauna.</rdfs:comment>
+        <rdfs:label xml:lang="nl">een sauna nemen</rdfs:label>
+        <rdfs:label xml:lang="en">taking a sauna</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/reno#Tender -->
 
 
@@ -3765,6 +4097,85 @@
     
 
 
+    <!-- https://w3id.org/reno#ToImproveEPC -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#ToImproveEPC">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#EnergyReductionMotivation"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationMotivation"/>
+        <rdfs:comment xml:lang="nl">Wanneer de eigenaar zijn woning wil renoveren om de EPC-waarde van de woning te verbeteren.</rdfs:comment>
+        <rdfs:comment xml:lang="en">When the owner wants to renovate their property to improve the EPC-value of the dwelling.</rdfs:comment>
+        <rdfs:label xml:lang="nl">EPC verbeteren</rdfs:label>
+        <rdfs:label xml:lang="en">to improve EPC</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#ToImproveSustainability -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#ToImproveSustainability">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationMotivation"/>
+        <rdfs:comment xml:lang="nl">Wanneer de eigenaar zijn woning wil renoveren om de duurzaamheid van de woning te verbeteren.</rdfs:comment>
+        <rdfs:comment xml:lang="en">When the owner wants to renovate their property to improve the sustainability of the dwelling.</rdfs:comment>
+        <rdfs:label xml:lang="nl">duurzaamheid verbeteren</rdfs:label>
+        <rdfs:label xml:lang="en">to improve sustainability</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#ToIncreaseMarketValue -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#ToIncreaseMarketValue">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationMotivation"/>
+        <rdfs:comment xml:lang="nl">Wanneer de eigenaar zijn woning wil renoveren om de marktwaarde van de woning te verhogen.</rdfs:comment>
+        <rdfs:comment xml:lang="en">When the owner wants to renovate their property to increase the market value of the dwelling.</rdfs:comment>
+        <rdfs:label xml:lang="nl">marktwaarde verhogen</rdfs:label>
+        <rdfs:label xml:lang="en">to increase market value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#ToIncreaseThermalComfort -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#ToIncreaseThermalComfort">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationMotivation"/>
+        <rdfs:comment xml:lang="nl">Wanneer de eigenaar zijn woning wil renoveren om het thermisch comfort in de woning te verhogen.</rdfs:comment>
+        <rdfs:comment xml:lang="en">When the owner wants to renovate their property to increase the thermal comfort in the dwelling.</rdfs:comment>
+        <rdfs:label xml:lang="nl">thermisch comfort verhogen</rdfs:label>
+        <rdfs:label xml:lang="en">to increase thermal comfort</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#ToLowerEnergyConsumption -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#ToLowerEnergyConsumption">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationMotivation"/>
+        <rdfs:comment xml:lang="nl">Wanneer de eigenaar zijn woning wil renoveren om het energieverbruik van de woning te verlagen.</rdfs:comment>
+        <rdfs:comment xml:lang="en">When the owner wants to renovate their property to lower the energy consumption of the dwelling.</rdfs:comment>
+        <rdfs:label xml:lang="nl">het energieverbruik te verlagen</rdfs:label>
+        <rdfs:label xml:lang="en">to lower energy consumption</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#ToLowerEnergyCost -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#ToLowerEnergyCost">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationMotivation"/>
+        <rdfs:comment xml:lang="nl">Wanneer de eigenaar zijn woning wil renoveren om de energiekost van de woning te verlagen.</rdfs:comment>
+        <rdfs:comment xml:lang="en">When the owner wants to renovate their property to lower the energy cost of the dwelling.</rdfs:comment>
+        <rdfs:label xml:lang="nl">de energiekost te verlagen</rdfs:label>
+        <rdfs:label xml:lang="en">to lower energy cost</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/reno#TripleGlazing -->
 
 
@@ -3775,6 +4186,19 @@
         <rdfs:label xml:lang="nl">driedubbel glas</rdfs:label>
         <rdfs:label xml:lang="en">triple glazing</rdfs:label>
         <rdfs:seeAlso xml:lang="en">https://en.wikipedia.org/wiki/Insulated_glazing</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#UnknownInsulationGrade -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#UnknownInsulationGrade">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#InsulationGrade"/>
+        <rdfs:comment xml:lang="nl">Dit geeft aan dat niet bekend is of het bouwelement geïsoleerd is.</rdfs:comment>
+        <rdfs:comment xml:lang="en">This indicates that it is not known whether the building element is insulated.</rdfs:comment>
+        <rdfs:label xml:lang="nl">onbekende isolatiegraad</rdfs:label>
+        <rdfs:label xml:lang="en">unknown insulation grade</rdfs:label>
     </owl:Class>
     
 
@@ -3848,6 +4272,19 @@
     
 
 
+    <!-- https://w3id.org/reno#VeryQuiet -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#VeryQuiet">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#SoundLevel"/>
+        <rdfs:comment xml:lang="nl">Wanneer het (gewenste) geluidsniveau van een kamer heel stil is.</rdfs:comment>
+        <rdfs:comment xml:lang="en">When the (desired) sound level of a room is very quiet.</rdfs:comment>
+        <rdfs:label xml:lang="nl">heel stil</rdfs:label>
+        <rdfs:label xml:lang="en">very quiet</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/reno#Water -->
 
 
@@ -3859,6 +4296,19 @@
         <rdfs:label xml:lang="nl">water</rdfs:label>
         <rdfs:seeAlso xml:lang="en">https://en.wikipedia.org/wiki/Water</rdfs:seeAlso>
         <rdfs:seeAlso xml:lang="nl">https://nl.wikipedia.org/wiki/Water</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#WaterHeating -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#WaterHeating">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Task"/>
+        <rdfs:comment xml:lang="nl">Wanneer iets (bijv. een apparaat of drager) wordt gebruikt voor waterverwarming.</rdfs:comment>
+        <rdfs:comment xml:lang="en">When something (e.g. a device or commodity) is used for water heating.</rdfs:comment>
+        <rdfs:label xml:lang="en">water heating</rdfs:label>
+        <rdfs:label xml:lang="nl">waterverwarming</rdfs:label>
     </owl:Class>
     
 
@@ -3988,548 +4438,6 @@
         <rdfs:seeAlso xml:lang="en">https://en.wikipedia.org/wiki/Wood</rdfs:seeAlso>
         <rdfs:seeAlso xml:lang="nl">https://nl.wikipedia.org/wiki/Hout</rdfs:seeAlso>
     </owl:Class>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-
-    
-
-
-    <!-- https://example.com/AsRoom -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/AsRoom">
-        <rdf:type rdf:resource="https://w3id.org/reno#SpaceUsage"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/AsbestosFreeRoof -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/AsbestosFreeRoof"/>
-    
-
-
-    <!-- https://example.com/Bathing -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/Bathing">
-        <rdf:type rdf:resource="https://saref.etsi.org/core/Task"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/ConnectToHeatGrid -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/ConnectToHeatGrid">
-        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#AtomicProcess"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/Cooking -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/Cooking">
-        <rdf:type rdf:resource="https://saref.etsi.org/core/Task"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/EnvironmentalConsideration -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/EnvironmentalConsideration">
-        <rdf:type rdf:resource="https://w3id.org/reno#EnergyReductionMotivation"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/FillingPool -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/FillingPool">
-        <rdf:type rdf:resource="https://saref.etsi.org/core/Task"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/FinancialConsideration -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/FinancialConsideration">
-        <rdf:type rdf:resource="https://w3id.org/reno#EnergyReductionMotivation"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/ForStorage -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/ForStorage">
-        <rdf:type rdf:resource="https://w3id.org/reno#SpaceUsage"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/ForTechnicalInstallations -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/ForTechnicalInstallations">
-        <rdf:type rdf:resource="https://w3id.org/reno#SpaceUsage"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/HighNuisance -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/HighNuisance">
-        <hasNuisanceScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</hasNuisanceScore>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/InsulateAtticFloor -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/InsulateAtticFloor">
-        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#AtomicProcess"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/InsulateFlatRoof -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/InsulateFlatRoof">
-        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#AtomicProcess"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/InsulateFloorAboveBasement -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/InsulateFloorAboveBasement">
-        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#AtomicProcess"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/InsulateGableRoof -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/InsulateGableRoof">
-        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#AtomicProcess"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/InsulateWallCavity -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/InsulateWallCavity">
-        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#AtomicProcess"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/InsulateWallExterior -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/InsulateWallExterior">
-        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#AtomicProcess"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/InsulateWallInterior -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/InsulateWallInterior">
-        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#AtomicProcess"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/InsulatedFloor -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/InsulatedFloor"/>
-    
-
-
-    <!-- https://example.com/LowNuisance -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/LowNuisance">
-        <hasNuisanceScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasNuisanceScore>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/ModerateNuisance -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/ModerateNuisance">
-        <hasNuisanceScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hasNuisanceScore>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/NoMotivation -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/NoMotivation">
-        <rdf:type rdf:resource="https://w3id.org/reno#RenovationMotivation"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/Normal -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/Normal">
-        <rdf:type rdf:resource="https://w3id.org/reno#SoundLevel"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/NotInUse -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/NotInUse">
-        <rdf:type rdf:resource="https://w3id.org/reno#SpaceUsage"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/NotMatterNuisance -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/NotMatterNuisance">
-        <hasNuisanceScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</hasNuisanceScore>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/OtherMotivation -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/OtherMotivation">
-        <rdf:type rdf:resource="https://w3id.org/reno#RenovationMotivation"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/PlaceAirAirHeatpump -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/PlaceAirAirHeatpump">
-        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#AtomicProcess"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/PlaceAirWaterHeatpump -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/PlaceAirWaterHeatpump">
-        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#AtomicProcess"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/PlaceAirWaterHeatpumpWithCooling -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/PlaceAirWaterHeatpumpWithCooling">
-        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#AtomicProcess"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/PlaceAirconditioning -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/PlaceAirconditioning">
-        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#AtomicProcess"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/PlaceFloorHeating -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/PlaceFloorHeating">
-        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#AtomicProcess"/>
-        <Process:hasPrecondition rdf:resource="https://example.com/InsulatedFloor"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/PlaceGeothermalHeatpumpHorizontal -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/PlaceGeothermalHeatpumpHorizontal">
-        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#AtomicProcess"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/PlaceGeothermalHeatpumpVertical -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/PlaceGeothermalHeatpumpVertical">
-        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#AtomicProcess"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/PlaceHeatPumpBoiler -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/PlaceHeatPumpBoiler">
-        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#AtomicProcess"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/PlaceLowTemperatureEmission -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/PlaceLowTemperatureEmission">
-        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#AtomicProcess"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/PlacePVPanelsInGarden -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/PlacePVPanelsInGarden">
-        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#AtomicProcess"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/PlacePVPanelsOnRoof -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/PlacePVPanelsOnRoof">
-        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#AtomicProcess"/>
-        <Process:hasPrecondition rdf:resource="https://example.com/AsbestosFreeRoof"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/PlaceRoofUnderlayment -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/PlaceRoofUnderlayment">
-        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#AtomicProcess"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/PlaceSunShade -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/PlaceSunShade">
-        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#AtomicProcess"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/Quiet -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/Quiet">
-        <rdf:type rdf:resource="https://w3id.org/reno#SoundLevel"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/RemoveAsbestosFlatRoof -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/RemoveAsbestosFlatRoof">
-        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#AtomicProcess"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/RemoveAsbestosGableRoof -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/RemoveAsbestosGableRoof">
-        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#AtomicProcess"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/ReplaceFlatRoof -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/ReplaceFlatRoof">
-        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#AtomicProcess"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/ReplaceGableRoof -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/ReplaceGableRoof">
-        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#AtomicProcess"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/ReplaceGlazing -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/ReplaceGlazing">
-        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#AtomicProcess"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/ReplaceVentilationSystem -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/ReplaceVentilationSystem">
-        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#AtomicProcess"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/ReplaceWindows -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/ReplaceWindows">
-        <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#AtomicProcess"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/Showering -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/Showering">
-        <rdf:type rdf:resource="https://saref.etsi.org/core/Task"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/SpaceCooling -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/SpaceCooling">
-        <rdf:type rdf:resource="https://saref.etsi.org/core/Task"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/SpaceHeating -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/SpaceHeating">
-        <rdf:type rdf:resource="https://saref.etsi.org/core/Task"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/TakingASauna -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/TakingASauna">
-        <rdf:type rdf:resource="https://saref.etsi.org/core/Task"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/ToImproveEPC -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/ToImproveEPC">
-        <rdf:type rdf:resource="https://w3id.org/reno#EnergyReductionMotivation"/>
-        <rdf:type rdf:resource="https://w3id.org/reno#RenovationMotivation"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/ToImproveSustainability -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/ToImproveSustainability">
-        <rdf:type rdf:resource="https://w3id.org/reno#RenovationMotivation"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/ToIncreaseMarketValue -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/ToIncreaseMarketValue">
-        <rdf:type rdf:resource="https://w3id.org/reno#RenovationMotivation"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/ToIncreaseThermalComfort -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/ToIncreaseThermalComfort">
-        <rdf:type rdf:resource="https://w3id.org/reno#RenovationMotivation"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/ToLowerEnergyConsumption -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/ToLowerEnergyConsumption">
-        <rdf:type rdf:resource="https://w3id.org/reno#RenovationMotivation"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/ToLowerEnergyCost -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/ToLowerEnergyCost">
-        <rdf:type rdf:resource="https://w3id.org/reno#RenovationMotivation"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/VeryQuiet -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/VeryQuiet">
-        <rdf:type rdf:resource="https://w3id.org/reno#SoundLevel"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://example.com/WaterHeating -->
-
-
-    <owl:NamedIndividual rdf:about="https://example.com/WaterHeating">
-        <rdf:type rdf:resource="https://saref.etsi.org/core/Task"/>
-    </owl:NamedIndividual>
 </rdf:RDF>
 
 
