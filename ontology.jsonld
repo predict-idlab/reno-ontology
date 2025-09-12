@@ -1054,6 +1054,8 @@
     "@value" : "https://w3id.org/reno#"
   } ],
   "http://www.w3.org/2002/07/owl#imports" : [ {
+    "@id" : "http://qudt.org/vocab/unit"
+  }, {
     "@id" : "http://www.daml.org/services/owl-s/1.1/Process.owl"
   }, {
     "@id" : "http://xmlns.com/foaf/0.1/"
@@ -1067,7 +1069,7 @@
     "@id" : "https://w3id.org/bot"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@value" : "1.0.0"
+    "@value" : "1.1.0"
   } ]
 }, {
   "@id" : "https://w3id.org/reno#AALabel",
@@ -1522,6 +1524,14 @@
   }, {
     "@language" : "nl",
     "@value" : "Controleer of uw afgiftesysteem correspondeert met de aanvoer- en retourtemperatuur van het warmtenet."
+  } ],
+  "https://w3id.org/reno#hasUnitPrice" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "7000"
+  } ],
+  "https://w3id.org/reno#ordering" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "55"
   } ],
   "https://w3id.org/reno#permitNeeded" : [ {
     "@language" : "nl",
@@ -2291,6 +2301,17 @@
     "@language" : "en",
     "@value" : "Not every type of insulation is walkable. Depending on your situation, walkable insulation may be preferred."
   } ],
+  "https://w3id.org/reno#hasPriceUnit" : [ {
+    "@id" : "http://qudt.org/vocab/unit/PER-M2"
+  } ],
+  "https://w3id.org/reno#hasUnitPrice" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "55"
+  } ],
+  "https://w3id.org/reno#ordering" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "31"
+  } ],
   "https://w3id.org/reno#permitNeeded" : [ {
     "@language" : "nl",
     "@value" : "niet nodig (Vlaanderen)"
@@ -2332,6 +2353,17 @@
     "@language" : "nl",
     "@value" : "Opteer voor een omgekeerde dakopbouw, niet voor een koud dak. Plaats de isolatie dus bovenop de dakbedekking, isoleer het plat dak niet aan de binnenzijde."
   } ],
+  "https://w3id.org/reno#hasPriceUnit" : [ {
+    "@id" : "http://qudt.org/vocab/unit/PER-M2"
+  } ],
+  "https://w3id.org/reno#hasUnitPrice" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "50"
+  } ],
+  "https://w3id.org/reno#ordering" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "25"
+  } ],
   "https://w3id.org/reno#permitNeeded" : [ {
     "@language" : "nl",
     "@value" : "enkel indien dikte totaal pakket >26cm (Vlaanderen)"
@@ -2365,6 +2397,17 @@
   }, {
     "@language" : "en",
     "@value" : "low"
+  } ],
+  "https://w3id.org/reno#hasPriceUnit" : [ {
+    "@id" : "http://qudt.org/vocab/unit/PER-M2"
+  } ],
+  "https://w3id.org/reno#hasUnitPrice" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "30"
+  } ],
+  "https://w3id.org/reno#ordering" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "49"
   } ],
   "https://w3id.org/reno#permitNeeded" : [ {
     "@language" : "nl",
@@ -2413,6 +2456,17 @@
     "@language" : "nl",
     "@value" : "Zonder een dampscherm kunnen zich condensatieproblemen voordoen. Plaats het dampscherm steeds aan de warme zijde van de isolatie."
   } ],
+  "https://w3id.org/reno#hasPriceUnit" : [ {
+    "@id" : "http://qudt.org/vocab/unit/PER-M2"
+  } ],
+  "https://w3id.org/reno#hasUnitPrice" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "60"
+  } ],
+  "https://w3id.org/reno#ordering" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "28"
+  } ],
   "https://w3id.org/reno#permitNeeded" : [ {
     "@language" : "nl",
     "@value" : "niet nodig (Vlaanderen)"
@@ -2454,6 +2508,17 @@
     "@language" : "nl",
     "@value" : "Laat een inspectie uitvoeren door een aannemer, die kan bepalen of de spouwmuur geschikt is om isolatie in te spuiten. Er moet namelijk nagegaan worden of de spouw breed genoeg is, of er geen vervuiling in de spouw is, of de gevelbekleding dampopen genoeg is, etc."
   } ],
+  "https://w3id.org/reno#hasPriceUnit" : [ {
+    "@id" : "http://qudt.org/vocab/unit/PER-M2"
+  } ],
+  "https://w3id.org/reno#hasUnitPrice" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "22"
+  } ],
+  "https://w3id.org/reno#ordering" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "34"
+  } ],
   "https://w3id.org/reno#permitNeeded" : [ {
     "@language" : "nl",
     "@value" : "niet nodig (Vlaanderen)"
@@ -2494,6 +2559,17 @@
   }, {
     "@language" : "en",
     "@value" : "Not every type of cladding will be possible, depending on the position of the building line and the council's guidelines."
+  } ],
+  "https://w3id.org/reno#hasPriceUnit" : [ {
+    "@id" : "http://qudt.org/vocab/unit/PER-M2"
+  } ],
+  "https://w3id.org/reno#hasUnitPrice" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "200"
+  } ],
+  "https://w3id.org/reno#ordering" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "40"
   } ],
   "https://w3id.org/reno#permitNeeded" : [ {
     "@language" : "nl",
@@ -2541,6 +2617,17 @@
   }, {
     "@language" : "nl",
     "@value" : "Stopcontacten, leidingen en radiatoren tegen de buitenwanden zullen verplaatst moeten worden."
+  } ],
+  "https://w3id.org/reno#hasPriceUnit" : [ {
+    "@id" : "http://qudt.org/vocab/unit/PER-M2"
+  } ],
+  "https://w3id.org/reno#hasUnitPrice" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "150"
+  } ],
+  "https://w3id.org/reno#ordering" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "37"
   } ],
   "https://w3id.org/reno#permitNeeded" : [ {
     "@language" : "nl",
@@ -2935,6 +3022,14 @@
     "@language" : "en",
     "@value" : "moderate"
   } ],
+  "https://w3id.org/reno#hasUnitPrice" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "2500"
+  } ],
+  "https://w3id.org/reno#ordering" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "58"
+  } ],
   "https://w3id.org/reno#permitNeeded" : [ {
     "@language" : "nl",
     "@value" : "niet nodig indien de bovengrondse onderdelen minstens 2m verwijderd zijn van de perceelsgrens (Vlaanderen)"
@@ -2968,6 +3063,14 @@
   }, {
     "@language" : "en",
     "@value" : "moderate"
+  } ],
+  "https://w3id.org/reno#hasUnitPrice" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "11500"
+  } ],
+  "https://w3id.org/reno#ordering" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "67"
   } ],
   "https://w3id.org/reno#permitNeeded" : [ {
     "@language" : "nl",
@@ -3003,6 +3106,14 @@
     "@language" : "en",
     "@value" : "moderate"
   } ],
+  "https://w3id.org/reno#hasUnitPrice" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "12500"
+  } ],
+  "https://w3id.org/reno#ordering" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "73"
+  } ],
   "https://w3id.org/reno#permitNeeded" : [ {
     "@language" : "nl",
     "@value" : "niet nodig indien de bovengrondse onderdelen minstens 2m verwijderd zijn van de perceelsgrens (Vlaanderen)"
@@ -3037,39 +3148,13 @@
     "@language" : "en",
     "@value" : "low"
   } ],
-  "https://w3id.org/reno#permitNeeded" : [ {
-    "@language" : "nl",
-    "@value" : "niet nodig (Vlaanderen)"
-  }, {
-    "@language" : "en",
-    "@value" : "not necessary (Flanders)"
+  "https://w3id.org/reno#hasUnitPrice" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "1000"
   } ],
-  "https://w3id.org/reno#requiresMultiPhase" : [ {
-    "@language" : "nl",
-    "@value" : "nee"
-  }, {
-    "@language" : "en",
-    "@value" : "no"
-  } ]
-}, {
-  "@id" : "https://w3id.org/reno#PlaceFloorHeating",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "nl",
-    "@value" : "plaats vloerverwarming"
-  }, {
-    "@language" : "en",
-    "@value" : "place floor heating"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/reno#RenovationSuggestion"
-  } ],
-  "https://w3id.org/reno#hasNuisanceLevel" : [ {
-    "@language" : "nl",
-    "@value" : "matig"
-  }, {
-    "@language" : "en",
-    "@value" : "moderate"
+  "https://w3id.org/reno#ordering" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "82"
   } ],
   "https://w3id.org/reno#permitNeeded" : [ {
     "@language" : "nl",
@@ -3105,6 +3190,14 @@
     "@language" : "en",
     "@value" : "moderate"
   } ],
+  "https://w3id.org/reno#hasUnitPrice" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "14500"
+  } ],
+  "https://w3id.org/reno#ordering" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "64"
+  } ],
   "https://w3id.org/reno#permitNeeded" : [ {
     "@language" : "nl",
     "@value" : "niet nodig (Vlaanderen)"
@@ -3138,6 +3231,14 @@
   }, {
     "@language" : "en",
     "@value" : "moderate"
+  } ],
+  "https://w3id.org/reno#hasUnitPrice" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "15500"
+  } ],
+  "https://w3id.org/reno#ordering" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "61"
   } ],
   "https://w3id.org/reno#permitNeeded" : [ {
     "@language" : "nl",
@@ -3173,6 +3274,14 @@
     "@language" : "en",
     "@value" : "moderate"
   } ],
+  "https://w3id.org/reno#hasUnitPrice" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "4000"
+  } ],
+  "https://w3id.org/reno#ordering" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "76"
+  } ],
   "https://w3id.org/reno#permitNeeded" : [ {
     "@language" : "nl",
     "@value" : "niet nodig (Vlaanderen)"
@@ -3207,6 +3316,17 @@
     "@language" : "en",
     "@value" : "moderate"
   } ],
+  "https://w3id.org/reno#hasPriceUnit" : [ {
+    "@id" : "http://qudt.org/vocab/unit/PER-M2"
+  } ],
+  "https://w3id.org/reno#hasUnitPrice" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "100"
+  } ],
+  "https://w3id.org/reno#ordering" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "70"
+  } ],
   "https://w3id.org/reno#permitNeeded" : [ {
     "@language" : "nl",
     "@value" : "niet nodig (Vlaanderen)"
@@ -3240,6 +3360,17 @@
   }, {
     "@language" : "en",
     "@value" : "low"
+  } ],
+  "https://w3id.org/reno#hasPriceUnit" : [ {
+    "@id" : "http://qudt.org/vocab/unit/PER-M2"
+  } ],
+  "https://w3id.org/reno#hasUnitPrice" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "275"
+  } ],
+  "https://w3id.org/reno#ordering" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "88"
   } ],
   "https://w3id.org/reno#permitNeeded" : [ {
     "@language" : "nl",
@@ -3288,18 +3419,23 @@
     "@language" : "en",
     "@value" : "Since PV panels are attached to the roof structure, it is crucial to remove any asbestos present in the roof first. Installing solar panels on a building with an asbestos-containing roof covering or an asbestos-containing sub-roof is prohibited."
   } ],
+  "https://w3id.org/reno#hasPriceUnit" : [ {
+    "@id" : "http://qudt.org/vocab/unit/PER-M2"
+  } ],
+  "https://w3id.org/reno#hasUnitPrice" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "275"
+  } ],
+  "https://w3id.org/reno#ordering" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "85"
+  } ],
   "https://w3id.org/reno#permitNeeded" : [ {
-    "@language" : "en",
-    "@value" : "flat roof: not necessary if less than 1m above edges (Flanders)"
-  }, {
-    "@language" : "en",
-    "@value" : "gable roof: not necessary if the panels are in the same plane (Flanders)"
-  }, {
     "@language" : "nl",
-    "@value" : "plat dak: niet nodig indien minder dan 1m boven dakrand (Vlaanderen)"
+    "@value" : "niet nodig indien de panelen in hetzelfde vlak zitten (Vlaanderen)"
   }, {
-    "@language" : "nl",
-    "@value" : "schuin dak: niet nodig indien de panelen in hetzelfde vlak zitten (Vlaanderen)"
+    "@language" : "en",
+    "@value" : "not necessary if the panels are in the same plane (Flanders)"
   } ],
   "https://w3id.org/reno#requiresMultiPhase" : [ {
     "@language" : "en",
@@ -3334,6 +3470,17 @@
   }, {
     "@language" : "en",
     "@value" : "Pay extra attention when installing the roof underlayment so that it is completely air- and watertight."
+  } ],
+  "https://w3id.org/reno#hasPriceUnit" : [ {
+    "@id" : "http://qudt.org/vocab/unit/PER-M2"
+  } ],
+  "https://w3id.org/reno#hasUnitPrice" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "65"
+  } ],
+  "https://w3id.org/reno#ordering" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "16"
   } ],
   "https://w3id.org/reno#permitNeeded" : [ {
     "@language" : "nl",
@@ -3375,6 +3522,14 @@
   }, {
     "@language" : "en",
     "@value" : "Outdoor blinds are generally more efficient than indoor blinds."
+  } ],
+  "https://w3id.org/reno#hasUnitPrice" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "750"
+  } ],
+  "https://w3id.org/reno#ordering" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "79"
   } ],
   "https://w3id.org/reno#permitNeeded" : [ {
     "@language" : "nl",
@@ -3434,6 +3589,14 @@
   }, {
     "@language" : "en",
     "@value" : "Not all devices on the (Belgian) market are homologated, always check Synergrid's official list before purchasing a panel."
+  } ],
+  "https://w3id.org/reno#hasUnitPrice" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "550"
+  } ],
+  "https://w3id.org/reno#ordering" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "91"
   } ],
   "https://w3id.org/reno#permitNeeded" : [ {
     "@language" : "nl",
@@ -3560,6 +3723,17 @@
     "@language" : "en",
     "@value" : "You can remove bonded asbestos yourself, but take the correct precautions. To remove non-bonded asbestos, hire a licensed asbestos removal company."
   } ],
+  "https://w3id.org/reno#hasPriceUnit" : [ {
+    "@id" : "http://qudt.org/vocab/unit/PER-M2"
+  } ],
+  "https://w3id.org/reno#hasUnitPrice" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "40"
+  } ],
+  "https://w3id.org/reno#ordering" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "19"
+  } ],
   "https://w3id.org/reno#permitNeeded" : [ {
     "@language" : "nl",
     "@value" : "niet nodig (Vlaanderen)"
@@ -3600,6 +3774,17 @@
   }, {
     "@language" : "en",
     "@value" : "You can remove bonded asbestos yourself, but take the correct precautions. To remove non-bonded asbestos, hire a licensed asbestos removal company."
+  } ],
+  "https://w3id.org/reno#hasPriceUnit" : [ {
+    "@id" : "http://qudt.org/vocab/unit/PER-M2"
+  } ],
+  "https://w3id.org/reno#hasUnitPrice" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "45"
+  } ],
+  "https://w3id.org/reno#ordering" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "22"
   } ],
   "https://w3id.org/reno#permitNeeded" : [ {
     "@language" : "nl",
@@ -3761,6 +3946,17 @@
     "@language" : "nl",
     "@value" : "Zonder een dampscherm kunnen zich condensatieproblemen voordoen. Plaats het dampscherm steeds aan de warme zijde van de isolatie."
   } ],
+  "https://w3id.org/reno#hasPriceUnit" : [ {
+    "@id" : "http://qudt.org/vocab/unit/PER-M2"
+  } ],
+  "https://w3id.org/reno#hasUnitPrice" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "120"
+  } ],
+  "https://w3id.org/reno#ordering" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "10"
+  } ],
   "https://w3id.org/reno#permitNeeded" : [ {
     "@language" : "nl",
     "@value" : "meldingsplicht (Vlaanderen)"
@@ -3814,6 +4010,17 @@
     "@language" : "en",
     "@value" : "When renewing your roof, already take into account any ducts which may be needed for a ventilation system, solar water heater or solar panels."
   } ],
+  "https://w3id.org/reno#hasPriceUnit" : [ {
+    "@id" : "http://qudt.org/vocab/unit/PER-M2"
+  } ],
+  "https://w3id.org/reno#hasUnitPrice" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "260"
+  } ],
+  "https://w3id.org/reno#ordering" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "13"
+  } ],
   "https://w3id.org/reno#permitNeeded" : [ {
     "@language" : "nl",
     "@value" : "enkel indien dakgebinte wordt vernieuwd (Vlaanderen)"
@@ -3860,6 +4067,17 @@
   }, {
     "@language" : "nl",
     "@value" : "Controleer of je raamkaders nog in goede staat zijn, ze moeten namelijk recht genoeg zijn om nieuw glas in te plaatsen, en ook sterk genoeg, aangezien het nieuwe glas vermoedelijk meer zal wegen dan het oude glas."
+  } ],
+  "https://w3id.org/reno#hasPriceUnit" : [ {
+    "@id" : "http://qudt.org/vocab/unit/PER-M2"
+  } ],
+  "https://w3id.org/reno#hasUnitPrice" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "200"
+  } ],
+  "https://w3id.org/reno#ordering" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "43"
   } ],
   "https://w3id.org/reno#permitNeeded" : [ {
     "@language" : "nl",
@@ -3908,6 +4126,14 @@
     "@language" : "nl",
     "@value" : "Voor een ventilatiesysteem C heb je roosters in je raamkaders nodig."
   } ],
+  "https://w3id.org/reno#hasUnitPrice" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "3500"
+  } ],
+  "https://w3id.org/reno#ordering" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "52"
+  } ],
   "https://w3id.org/reno#permitNeeded" : [ {
     "@language" : "nl",
     "@value" : "niet nodig indien de bovengrondse onderdelen minstens 2m verwijderd zijn van de perceelsgrens (Vlaanderen)"
@@ -3948,6 +4174,17 @@
   }, {
     "@language" : "nl",
     "@value" : "Heb je momenteel een ventilatiesysteem A of C, of ben je van plan een systeem met natuurlijke toevoer te plaatsen? Voorzie dan zeker voldoende roosters aan je raamkaders, zodat er voldoende verse lucht in je woning kan binnenstromen."
+  } ],
+  "https://w3id.org/reno#hasPriceUnit" : [ {
+    "@id" : "http://qudt.org/vocab/unit/PER-M2"
+  } ],
+  "https://w3id.org/reno#hasUnitPrice" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "800"
+  } ],
+  "https://w3id.org/reno#ordering" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "46"
   } ],
   "https://w3id.org/reno#permitNeeded" : [ {
     "@language" : "nl",
@@ -5458,6 +5695,15 @@
     "@id" : "https://w3id.org/reno#isGlazingOf"
   } ]
 }, {
+  "@id" : "https://w3id.org/reno#hasGlazingPercentage",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/bot#Building"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ]
+}, {
   "@id" : "https://w3id.org/reno#hasGlazingType",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -5892,6 +6138,29 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/reno#PowerConnection"
+  } ]
+}, {
+  "@id" : "https://w3id.org/reno#hasPriceUnit",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "nl",
+    "@value" : "Geeft de prijseenheid aan voor de renovatiesuggestie. Dit kan per stuk of per vierkante meter zijn, afhankelijk van het type renovatie."
+  }, {
+    "@language" : "en",
+    "@value" : "Indicates the price unit for the renovation suggestion. This can be per piece or per sqm, depending on the type of renovation."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/reno#RenovationSuggestion"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has price unit"
+  }, {
+    "@language" : "nl",
+    "@value" : "heeft prijseenheid"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://qudt.org/schema/qudt/Unit"
   } ]
 }, {
   "@id" : "https://w3id.org/reno#hasProtection",
@@ -6925,6 +7194,29 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#date"
+  } ]
+}, {
+  "@id" : "https://w3id.org/reno#ordering",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "nl",
+    "@value" : "Geeft de ordening van de renovatiesuggesties aan, waarbij een lagere ordening eerst moet uitgevoerd worden."
+  }, {
+    "@language" : "en",
+    "@value" : "Indicates the ordering of the renovation suggestions, where a lower ordering should be executed first."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/reno#RenovationSuggestion"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "nl",
+    "@value" : "ordening"
+  }, {
+    "@language" : "en",
+    "@value" : "ordering"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
   } ]
 }, {
   "@id" : "https://w3id.org/reno#ownerSince",

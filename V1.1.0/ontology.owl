@@ -10,17 +10,13 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
-     xmlns:prov="http://www.w3.org/ns/prov#"
-     xmlns:qudt="http://qudt.org/schema/qudt/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:reno="https://w3id.org/reno#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-     xmlns:vaem="http://www.linkedmodel.org/schema/vaem#"
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:schema="https://schema.org/">
     <owl:Ontology rdf:about="https://w3id.org/reno#">
-        <owl:imports rdf:resource="http://qudt.org/vocab/unit"/>
         <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl"/>
         <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
         <owl:imports rdf:resource="https://bimerr.iot.linkeddata.es/def/material-properties/ontology.ttl"/>
@@ -38,7 +34,7 @@
         <terms:title xml:lang="en">Renovation and ENergy Optimization (RENO)</terms:title>
         <vann:preferredNamespacePrefix>reno</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri>https://w3id.org/reno#</vann:preferredNamespaceUri>
-        <owl:versionInfo>1.1.0</owl:versionInfo>
+        <owl:versionInfo>1.0.0</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -132,20 +128,6 @@
     
 
 
-    <!-- https://w3id.org/reno#hasPriceUnit -->
-
-
-    <owl:AnnotationProperty rdf:about="https://w3id.org/reno#hasPriceUnit">
-        <rdfs:comment xml:lang="nl">Geeft de prijseenheid aan voor de renovatiesuggestie. Dit kan per stuk of per vierkante meter zijn, afhankelijk van het type renovatie.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Indicates the price unit for the renovation suggestion. This can be per piece or per sqm, depending on the type of renovation.</rdfs:comment>
-        <rdfs:label xml:lang="en">has price unit</rdfs:label>
-        <rdfs:label xml:lang="nl">heeft prijseenheid</rdfs:label>
-        <rdfs:range rdf:resource="http://qudt.org/schema/qudt/Unit"/>
-        <rdfs:domain rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
-    </owl:AnnotationProperty>
-    
-
-
     <!-- https://w3id.org/reno#hasUnitPrice -->
 
 
@@ -155,20 +137,6 @@
         <rdfs:label xml:lang="en">has unit price</rdfs:label>
         <rdfs:label xml:lang="nl">heeft eenheidsprijs</rdfs:label>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-        <rdfs:domain rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- https://w3id.org/reno#ordering -->
-
-
-    <owl:AnnotationProperty rdf:about="https://w3id.org/reno#ordering">
-        <rdfs:comment xml:lang="nl">Geeft de ordening van de renovatiesuggesties aan, waarbij een lagere ordening eerst moet uitgevoerd worden.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Indicates the ordering of the renovation suggestions, where a lower ordering should be executed first.</rdfs:comment>
-        <rdfs:label xml:lang="nl">ordening</rdfs:label>
-        <rdfs:label xml:lang="en">ordering</rdfs:label>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
         <rdfs:domain rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
     </owl:AnnotationProperty>
     
@@ -1092,16 +1060,6 @@
         <rdfs:comment xml:lang="nl">Linkt een raamkader aan zijn dikte.</rdfs:comment>
         <rdfs:label xml:lang="en">has frame thickness</rdfs:label>
         <rdfs:label xml:lang="nl">heeft raamkader dikte</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/reno#hasGlazingPercentage -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/reno#hasGlazingPercentage">
-        <rdfs:domain rdf:resource="https://w3id.org/bot#Building"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
     </owl:DatatypeProperty>
     
 
@@ -2297,8 +2255,6 @@
         <hasPointOfAttention xml:lang="en">Contact your municipality or grid operator for more information.</hasPointOfAttention>
         <hasPointOfAttention xml:lang="nl">Contacteer uw gemeente of netbeheerder voor meer informatie.</hasPointOfAttention>
         <hasPointOfAttention xml:lang="nl">Controleer of uw afgiftesysteem correspondeert met de aanvoer- en retourtemperatuur van het warmtenet.</hasPointOfAttention>
-        <hasUnitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">7000</hasUnitPrice>
-        <ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">55</ordering>
         <permitNeeded xml:lang="nl">niet nodig (Vlaanderen)</permitNeeded>
         <permitNeeded xml:lang="en">not necessary (Flanders)</permitNeeded>
         <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
@@ -2863,9 +2819,6 @@
         <hasPointOfAttention xml:lang="nl">In veel gevallen is een dampscherm noodzakelijk bij het isoleren van de zoldervloer. Zonder een dampscherm kunnen zich condensatieproblemen voordoen. Plaats het dampscherm steeds aan de warme zijde van de isolatie.</hasPointOfAttention>
         <hasPointOfAttention xml:lang="nl">Niet elk type isolatie is beloopbaar. Afhankelijk van uw situatie, kan beloopbare isolatie de voorkeur krijgen.</hasPointOfAttention>
         <hasPointOfAttention xml:lang="en">Not every type of insulation is walkable. Depending on your situation, walkable insulation may be preferred.</hasPointOfAttention>
-        <hasPriceUnit rdf:resource="http://qudt.org/vocab/unit/PER-M2"/>
-        <hasUnitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">55</hasUnitPrice>
-        <ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">31</ordering>
         <permitNeeded xml:lang="nl">niet nodig (Vlaanderen)</permitNeeded>
         <permitNeeded xml:lang="en">not necessary (Flanders)</permitNeeded>
         <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
@@ -2885,9 +2838,6 @@
         <hasNuisanceLevel xml:lang="nl">hoog</hasNuisanceLevel>
         <hasPointOfAttention xml:lang="en">Opt for an inverted roof structure, not a cold roof. Place the insulation on top of the roof covering, do not insulate the flat roof on the inside.</hasPointOfAttention>
         <hasPointOfAttention xml:lang="nl">Opteer voor een omgekeerde dakopbouw, niet voor een koud dak. Plaats de isolatie dus bovenop de dakbedekking, isoleer het plat dak niet aan de binnenzijde.</hasPointOfAttention>
-        <hasPriceUnit rdf:resource="http://qudt.org/vocab/unit/PER-M2"/>
-        <hasUnitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">50</hasUnitPrice>
-        <ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</ordering>
         <permitNeeded xml:lang="nl">enkel indien dikte totaal pakket &gt;26cm (Vlaanderen)</permitNeeded>
         <permitNeeded xml:lang="en">only if thickness of total pack &gt;26cm (Flanders)</permitNeeded>
         <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
@@ -2905,9 +2855,6 @@
         <rdfs:label xml:lang="nl">isoleer vloer boven kelder</rdfs:label>
         <hasNuisanceLevel xml:lang="nl">laag</hasNuisanceLevel>
         <hasNuisanceLevel xml:lang="en">low</hasNuisanceLevel>
-        <hasPriceUnit rdf:resource="http://qudt.org/vocab/unit/PER-M2"/>
-        <hasUnitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">30</hasUnitPrice>
-        <ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">49</ordering>
         <permitNeeded xml:lang="nl">niet nodig (Vlaanderen)</permitNeeded>
         <permitNeeded xml:lang="en">not necessary (Flanders)</permitNeeded>
         <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
@@ -2929,9 +2876,6 @@
         <hasPointOfAttention xml:lang="en">Condensation problems can occur without a vapour barrier. Always install the vapour barrier on the warm side of the insulation.</hasPointOfAttention>
         <hasPointOfAttention xml:lang="en">Pay extra attention when installing the roof underlayment so that it is completely air- and watertight.</hasPointOfAttention>
         <hasPointOfAttention xml:lang="nl">Zonder een dampscherm kunnen zich condensatieproblemen voordoen. Plaats het dampscherm steeds aan de warme zijde van de isolatie.</hasPointOfAttention>
-        <hasPriceUnit rdf:resource="http://qudt.org/vocab/unit/PER-M2"/>
-        <hasUnitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">60</hasUnitPrice>
-        <ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">28</ordering>
         <permitNeeded xml:lang="nl">niet nodig (Vlaanderen)</permitNeeded>
         <permitNeeded xml:lang="en">not necessary (Flanders)</permitNeeded>
         <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
@@ -2951,9 +2895,6 @@
         <hasNuisanceLevel xml:lang="en">low</hasNuisanceLevel>
         <hasPointOfAttention xml:lang="en">Have an inspection carried out by a contractor, who can determine whether the cavity wall is suitable for injecting insulation. Namely, it should be checked whether the cavity is wide enough, whether there is no contamination in the cavity, whether the cladding is vapour-permeable enough, etc.</hasPointOfAttention>
         <hasPointOfAttention xml:lang="nl">Laat een inspectie uitvoeren door een aannemer, die kan bepalen of de spouwmuur geschikt is om isolatie in te spuiten. Er moet namelijk nagegaan worden of de spouw breed genoeg is, of er geen vervuiling in de spouw is, of de gevelbekleding dampopen genoeg is, etc.</hasPointOfAttention>
-        <hasPriceUnit rdf:resource="http://qudt.org/vocab/unit/PER-M2"/>
-        <hasUnitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">22</hasUnitPrice>
-        <ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">34</ordering>
         <permitNeeded xml:lang="nl">niet nodig (Vlaanderen)</permitNeeded>
         <permitNeeded xml:lang="en">not necessary (Flanders)</permitNeeded>
         <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
@@ -2973,9 +2914,6 @@
         <hasNuisanceLevel xml:lang="nl">hoog</hasNuisanceLevel>
         <hasPointOfAttention xml:lang="nl">Niet elk type gevelbekleding zal mogelijk zijn, afhankelijk van de positie van de rooilijn en de richtlijnen van de gemeente.</hasPointOfAttention>
         <hasPointOfAttention xml:lang="en">Not every type of cladding will be possible, depending on the position of the building line and the council&apos;s guidelines.</hasPointOfAttention>
-        <hasPriceUnit rdf:resource="http://qudt.org/vocab/unit/PER-M2"/>
-        <hasUnitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">200</hasUnitPrice>
-        <ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">40</ordering>
         <permitNeeded xml:lang="nl">enkel indien dikte totaal pakket &gt;26cm of de rooilijn wordt overgeschreden (Vlaanderen)</permitNeeded>
         <permitNeeded xml:lang="en">only if thickness of total pack &gt;26cm or the building line is overrun (Flanders)</permitNeeded>
         <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
@@ -2997,9 +2935,6 @@
         <hasPointOfAttention xml:lang="en">Insulating walls on the inside is a delicate job. Get assistance from an architect, contractor or craftsman for expert advice and proper execution of the works.</hasPointOfAttention>
         <hasPointOfAttention xml:lang="en">Sockets, pipes and radiators against the outer walls will have to be relocated.</hasPointOfAttention>
         <hasPointOfAttention xml:lang="nl">Stopcontacten, leidingen en radiatoren tegen de buitenwanden zullen verplaatst moeten worden.</hasPointOfAttention>
-        <hasPriceUnit rdf:resource="http://qudt.org/vocab/unit/PER-M2"/>
-        <hasUnitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">150</hasUnitPrice>
-        <ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">37</ordering>
         <permitNeeded xml:lang="nl">niet nodig (Vlaanderen)</permitNeeded>
         <permitNeeded xml:lang="en">not necessary (Flanders)</permitNeeded>
         <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
@@ -3299,8 +3234,6 @@
         <rdfs:label xml:lang="en">place air-air heatpump</rdfs:label>
         <hasNuisanceLevel xml:lang="nl">matig</hasNuisanceLevel>
         <hasNuisanceLevel xml:lang="en">moderate</hasNuisanceLevel>
-        <hasUnitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2500</hasUnitPrice>
-        <ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">58</ordering>
         <permitNeeded xml:lang="nl">niet nodig indien de bovengrondse onderdelen minstens 2m verwijderd zijn van de perceelsgrens (Vlaanderen)</permitNeeded>
         <permitNeeded xml:lang="en">not necessary if the above-ground parts are at least 2m away from the parcel boundary (Flanders)</permitNeeded>
         <requiresMultiPhase xml:lang="en">maybe, depending on the system</requiresMultiPhase>
@@ -3318,8 +3251,6 @@
         <rdfs:label xml:lang="en">place air-water heatpump</rdfs:label>
         <hasNuisanceLevel xml:lang="nl">matig</hasNuisanceLevel>
         <hasNuisanceLevel xml:lang="en">moderate</hasNuisanceLevel>
-        <hasUnitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">11500</hasUnitPrice>
-        <ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">67</ordering>
         <permitNeeded xml:lang="nl">niet nodig indien de bovengrondse onderdelen minstens 2m verwijderd zijn van de perceelsgrens (Vlaanderen)</permitNeeded>
         <permitNeeded xml:lang="en">not necessary if the above-ground parts are at least 2m away from the parcel boundary (Flanders)</permitNeeded>
         <requiresMultiPhase xml:lang="en">maybe, depending on the system</requiresMultiPhase>
@@ -3337,8 +3268,6 @@
         <rdfs:label xml:lang="en">place air-water heatpump with cooling</rdfs:label>
         <hasNuisanceLevel xml:lang="nl">matig</hasNuisanceLevel>
         <hasNuisanceLevel xml:lang="en">moderate</hasNuisanceLevel>
-        <hasUnitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">12500</hasUnitPrice>
-        <ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">73</ordering>
         <permitNeeded xml:lang="nl">niet nodig indien de bovengrondse onderdelen minstens 2m verwijderd zijn van de perceelsgrens (Vlaanderen)</permitNeeded>
         <permitNeeded xml:lang="en">not necessary if the above-ground parts are at least 2m away from the parcel boundary (Flanders)</permitNeeded>
         <requiresMultiPhase xml:lang="en">maybe, depending on the system</requiresMultiPhase>
@@ -3356,8 +3285,23 @@
         <rdfs:label xml:lang="en">place airconditioning</rdfs:label>
         <hasNuisanceLevel xml:lang="nl">laag</hasNuisanceLevel>
         <hasNuisanceLevel xml:lang="en">low</hasNuisanceLevel>
-        <hasUnitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1000</hasUnitPrice>
-        <ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">82</ordering>
+        <permitNeeded xml:lang="nl">niet nodig (Vlaanderen)</permitNeeded>
+        <permitNeeded xml:lang="en">not necessary (Flanders)</permitNeeded>
+        <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
+        <requiresMultiPhase xml:lang="en">no</requiresMultiPhase>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/reno#PlaceFloorHeating -->
+
+
+    <owl:Class rdf:about="https://w3id.org/reno#PlaceFloorHeating">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/reno#RenovationSuggestion"/>
+        <rdfs:label xml:lang="nl">plaats vloerverwarming</rdfs:label>
+        <rdfs:label xml:lang="en">place floor heating</rdfs:label>
+        <hasNuisanceLevel xml:lang="nl">matig</hasNuisanceLevel>
+        <hasNuisanceLevel xml:lang="en">moderate</hasNuisanceLevel>
         <permitNeeded xml:lang="nl">niet nodig (Vlaanderen)</permitNeeded>
         <permitNeeded xml:lang="en">not necessary (Flanders)</permitNeeded>
         <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
@@ -3375,8 +3319,6 @@
         <rdfs:label xml:lang="en">place horizontal geothermal heatpump</rdfs:label>
         <hasNuisanceLevel xml:lang="nl">matig</hasNuisanceLevel>
         <hasNuisanceLevel xml:lang="en">moderate</hasNuisanceLevel>
-        <hasUnitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">14500</hasUnitPrice>
-        <ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">64</ordering>
         <permitNeeded xml:lang="nl">niet nodig (Vlaanderen)</permitNeeded>
         <permitNeeded xml:lang="en">not necessary (Flanders)</permitNeeded>
         <requiresMultiPhase xml:lang="en">maybe, depending on the system</requiresMultiPhase>
@@ -3394,8 +3336,6 @@
         <rdfs:label xml:lang="en">place vertical geothermal heatpump</rdfs:label>
         <hasNuisanceLevel xml:lang="nl">matig</hasNuisanceLevel>
         <hasNuisanceLevel xml:lang="en">moderate</hasNuisanceLevel>
-        <hasUnitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">15500</hasUnitPrice>
-        <ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">61</ordering>
         <permitNeeded xml:lang="nl">meldings- of vergunningsplicht is afhankelijk van diepte boring, bodemkenmerken en grondwater(Vlaanderen)</permitNeeded>
         <permitNeeded xml:lang="en">reporting or permit requirement depends on depth of drilling, soil characteristics and groundwater(Flanders)</permitNeeded>
         <requiresMultiPhase xml:lang="en">maybe, depending on the system</requiresMultiPhase>
@@ -3413,8 +3353,6 @@
         <rdfs:label xml:lang="en">place heatpumpboiler</rdfs:label>
         <hasNuisanceLevel xml:lang="nl">matig</hasNuisanceLevel>
         <hasNuisanceLevel xml:lang="en">moderate</hasNuisanceLevel>
-        <hasUnitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4000</hasUnitPrice>
-        <ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">76</ordering>
         <permitNeeded xml:lang="nl">niet nodig (Vlaanderen)</permitNeeded>
         <permitNeeded xml:lang="en">not necessary (Flanders)</permitNeeded>
         <requiresMultiPhase xml:lang="en">maybe, depending on the system</requiresMultiPhase>
@@ -3432,9 +3370,6 @@
         <rdfs:label xml:lang="en">place emission system on low temperature</rdfs:label>
         <hasNuisanceLevel xml:lang="nl">matig</hasNuisanceLevel>
         <hasNuisanceLevel xml:lang="en">moderate</hasNuisanceLevel>
-        <hasPriceUnit rdf:resource="http://qudt.org/vocab/unit/PER-M2"/>
-        <hasUnitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">100</hasUnitPrice>
-        <ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">70</ordering>
         <permitNeeded xml:lang="nl">niet nodig (Vlaanderen)</permitNeeded>
         <permitNeeded xml:lang="en">not necessary (Flanders)</permitNeeded>
         <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
@@ -3452,9 +3387,6 @@
         <rdfs:label xml:lang="en">place PV-panels in garden</rdfs:label>
         <hasNuisanceLevel xml:lang="nl">laag</hasNuisanceLevel>
         <hasNuisanceLevel xml:lang="en">low</hasNuisanceLevel>
-        <hasPriceUnit rdf:resource="http://qudt.org/vocab/unit/PER-M2"/>
-        <hasUnitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">275</hasUnitPrice>
-        <ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">88</ordering>
         <permitNeeded xml:lang="nl">niet nodig (Vlaanderen)</permitNeeded>
         <permitNeeded xml:lang="en">not necessary (Flanders)</permitNeeded>
         <requiresMultiPhase xml:lang="en">maybe, depending on the system</requiresMultiPhase>
@@ -3476,11 +3408,10 @@
         <hasPointOfAttention xml:lang="nl">Bekijk op de Zonnekaart of uw dak goed georiënteerd is en voldoende zonlicht opvangt. De opbrengst is het grootst als uw panelen naar het zuiden gericht zijn (zuid-oost tot zuid-west) onder een hoek van 30° tot 50°. De opbrengst van zonnepanelen daalt bij schaduw van gebouwen, schoorstenen of bomen.</hasPointOfAttention>
         <hasPointOfAttention xml:lang="en">Check on the &apos;Zonnekaart&apos; whether your roof is properly oriented and captures enough sunlight. The yield is greatest if your panels face south (south-east to south-west) at an angle of 30° to 50°. The yield of solar panels decreases when shaded by buildings, chimneys or trees.</hasPointOfAttention>
         <hasPointOfAttention xml:lang="en">Since PV panels are attached to the roof structure, it is crucial to remove any asbestos present in the roof first. Installing solar panels on a building with an asbestos-containing roof covering or an asbestos-containing sub-roof is prohibited.</hasPointOfAttention>
-        <hasPriceUnit rdf:resource="http://qudt.org/vocab/unit/PER-M2"/>
-        <hasUnitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">275</hasUnitPrice>
-        <ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">85</ordering>
-        <permitNeeded xml:lang="nl">niet nodig indien de panelen in hetzelfde vlak zitten (Vlaanderen)</permitNeeded>
-        <permitNeeded xml:lang="en">not necessary if the panels are in the same plane (Flanders)</permitNeeded>
+        <permitNeeded xml:lang="en">flat roof: not necessary if less than 1m above edges (Flanders)</permitNeeded>
+        <permitNeeded xml:lang="en">gable roof: not necessary if the panels are in the same plane (Flanders)</permitNeeded>
+        <permitNeeded xml:lang="nl">plat dak: niet nodig indien minder dan 1m boven dakrand (Vlaanderen)</permitNeeded>
+        <permitNeeded xml:lang="nl">schuin dak: niet nodig indien de panelen in hetzelfde vlak zitten (Vlaanderen)</permitNeeded>
         <requiresMultiPhase xml:lang="en">maybe, depending on the system</requiresMultiPhase>
         <requiresMultiPhase xml:lang="nl">mogelijks, afhankelijk van het systeem</requiresMultiPhase>
     </owl:Class>
@@ -3498,9 +3429,6 @@
         <hasNuisanceLevel xml:lang="en">low</hasNuisanceLevel>
         <hasPointOfAttention xml:lang="nl">Besteed extra aandacht bij de plaatsing van het onderdak, zodat dit volledig lucht- en waterdicht wordt uitgevoerd.</hasPointOfAttention>
         <hasPointOfAttention xml:lang="en">Pay extra attention when installing the roof underlayment so that it is completely air- and watertight.</hasPointOfAttention>
-        <hasPriceUnit rdf:resource="http://qudt.org/vocab/unit/PER-M2"/>
-        <hasUnitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">65</hasUnitPrice>
-        <ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</ordering>
         <permitNeeded xml:lang="nl">niet nodig (Vlaanderen)</permitNeeded>
         <permitNeeded xml:lang="en">not necessary (Flanders)</permitNeeded>
         <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
@@ -3520,8 +3448,6 @@
         <hasNuisanceLevel xml:lang="en">low</hasNuisanceLevel>
         <hasPointOfAttention xml:lang="nl">Buitenzonwering is over het algemeen efficiënter dan binnenzonwering.</hasPointOfAttention>
         <hasPointOfAttention xml:lang="en">Outdoor blinds are generally more efficient than indoor blinds.</hasPointOfAttention>
-        <hasUnitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">750</hasUnitPrice>
-        <ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">79</ordering>
         <permitNeeded xml:lang="nl">niet nodig (Vlaanderen)</permitNeeded>
         <permitNeeded xml:lang="en">not necessary (Flanders)</permitNeeded>
         <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
@@ -3547,8 +3473,6 @@
         <hasPointOfAttention xml:lang="nl">In Vlaanderen mogen er maximaal twee zonnepanelen per gezin geïnstalleerd worden. Verder mag de omvormer van een plug-and-play zonnepaneel maximaal 800W bedragen.</hasPointOfAttention>
         <hasPointOfAttention xml:lang="nl">Niet alle toestellen op de (Belgische) markt zijn gehomologeerd, controleer steeds de officiële lijst van Synergrid vooraleer u een paneel aankoopt. </hasPointOfAttention>
         <hasPointOfAttention xml:lang="en">Not all devices on the (Belgian) market are homologated, always check Synergrid&apos;s official list before purchasing a panel.</hasPointOfAttention>
-        <hasUnitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">550</hasUnitPrice>
-        <ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">91</ordering>
         <permitNeeded xml:lang="nl">niet nodig (Vlaanderen)</permitNeeded>
         <permitNeeded xml:lang="en">not necessary (Flanders)</permitNeeded>
         <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
@@ -3653,9 +3577,6 @@
         <hasNuisanceLevel xml:lang="en">moderate</hasNuisanceLevel>
         <hasPointOfAttention xml:lang="nl">Hechtgebonden asbest kan u zelf verwijderen, maar neem de correcte voorzorgsmaatregelen. Voor het verwijderen van niet-hechtgebonden asbest moet u een erkend asbestverwijderaar inschakelen.</hasPointOfAttention>
         <hasPointOfAttention xml:lang="en">You can remove bonded asbestos yourself, but take the correct precautions. To remove non-bonded asbestos, hire a licensed asbestos removal company.</hasPointOfAttention>
-        <hasPriceUnit rdf:resource="http://qudt.org/vocab/unit/PER-M2"/>
-        <hasUnitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">40</hasUnitPrice>
-        <ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">19</ordering>
         <permitNeeded xml:lang="nl">niet nodig (Vlaanderen)</permitNeeded>
         <permitNeeded xml:lang="en">not necessary (Flanders)</permitNeeded>
         <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
@@ -3675,9 +3596,6 @@
         <hasNuisanceLevel xml:lang="en">low</hasNuisanceLevel>
         <hasPointOfAttention xml:lang="nl">Hechtgebonden asbest kan u zelf verwijderen, maar neem de correcte voorzorgsmaatregelen. Voor het verwijderen van niet-hechtgebonden asbest moet u een erkend asbestverwijderaar inschakelen.</hasPointOfAttention>
         <hasPointOfAttention xml:lang="en">You can remove bonded asbestos yourself, but take the correct precautions. To remove non-bonded asbestos, hire a licensed asbestos removal company.</hasPointOfAttention>
-        <hasPriceUnit rdf:resource="http://qudt.org/vocab/unit/PER-M2"/>
-        <hasUnitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">45</hasUnitPrice>
-        <ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">22</ordering>
         <permitNeeded xml:lang="nl">niet nodig (Vlaanderen)</permitNeeded>
         <permitNeeded xml:lang="en">not necessary (Flanders)</permitNeeded>
         <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
@@ -3819,9 +3737,6 @@
         <hasPointOfAttention xml:lang="nl">Idealiter voorziet u een dakopstand van 15cm, en een minimale hellingsgraad van 2% om correcte afwatering te garanderen. We raden aan om voor een warme dakopbouw te opteren.</hasPointOfAttention>
         <hasPointOfAttention xml:lang="en">Ideally, you should provide a roof edge of 15cm, and a minimum gradient of 2% to ensure correct drainage. We recommend opting for a warm roof setup.</hasPointOfAttention>
         <hasPointOfAttention xml:lang="nl">Zonder een dampscherm kunnen zich condensatieproblemen voordoen. Plaats het dampscherm steeds aan de warme zijde van de isolatie.</hasPointOfAttention>
-        <hasPriceUnit rdf:resource="http://qudt.org/vocab/unit/PER-M2"/>
-        <hasUnitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">120</hasUnitPrice>
-        <ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</ordering>
         <permitNeeded xml:lang="nl">meldingsplicht (Vlaanderen)</permitNeeded>
         <permitNeeded xml:lang="en">reporting obligation (Flanders)</permitNeeded>
         <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
@@ -3845,9 +3760,6 @@
         <hasPointOfAttention xml:lang="en">If your facades are not yet insulated, extend the roof overhangs now so that the external wall insulation can connect to the roof insulation. Also place the rainwater drains so that the external wall insulation can still be placed.</hasPointOfAttention>
         <hasPointOfAttention xml:lang="nl">Indien uw gevels nog niet geïsoleerd zijn, verleng dan nu al de dakoversteken zodat de buitenmuurisolatie op de dakisolatie kan aansluiten. Plaats ook de regenwaterafvoer zodanig dat de buitenmuurisolatie nog geplaatst kan worden.</hasPointOfAttention>
         <hasPointOfAttention xml:lang="en">When renewing your roof, already take into account any ducts which may be needed for a ventilation system, solar water heater or solar panels.</hasPointOfAttention>
-        <hasPriceUnit rdf:resource="http://qudt.org/vocab/unit/PER-M2"/>
-        <hasUnitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">260</hasUnitPrice>
-        <ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">13</ordering>
         <permitNeeded xml:lang="nl">enkel indien dakgebinte wordt vernieuwd (Vlaanderen)</permitNeeded>
         <permitNeeded xml:lang="en">only if roof framework is renewed (Flanders)</permitNeeded>
         <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
@@ -3869,9 +3781,6 @@
         <hasPointOfAttention xml:lang="en">Check that your window frames have the right thickness, which depends on the type of glazing you want to install in them.</hasPointOfAttention>
         <hasPointOfAttention xml:lang="nl">Controleer of je raamkaders de juiste dikte hebben, welke afhankelijk is van het type beglazing dat je erin wil plaatsen.</hasPointOfAttention>
         <hasPointOfAttention xml:lang="nl">Controleer of je raamkaders nog in goede staat zijn, ze moeten namelijk recht genoeg zijn om nieuw glas in te plaatsen, en ook sterk genoeg, aangezien het nieuwe glas vermoedelijk meer zal wegen dan het oude glas.</hasPointOfAttention>
-        <hasPriceUnit rdf:resource="http://qudt.org/vocab/unit/PER-M2"/>
-        <hasUnitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">200</hasUnitPrice>
-        <ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">43</ordering>
         <permitNeeded xml:lang="nl">niet nodig (Vlaanderen)</permitNeeded>
         <permitNeeded xml:lang="en">not necessary (Flanders)</permitNeeded>
         <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>
@@ -3893,8 +3802,6 @@
         <hasPointOfAttention xml:lang="nl">Een ventilatiesysteem D zal iets meer impact hebben op je woning, aangezien er kanalen nodig zijn voor zowel toe- als afvoer.</hasPointOfAttention>
         <hasPointOfAttention xml:lang="en">For a ventilation system C, you need grilles in your window frames.</hasPointOfAttention>
         <hasPointOfAttention xml:lang="nl">Voor een ventilatiesysteem C heb je roosters in je raamkaders nodig.</hasPointOfAttention>
-        <hasUnitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3500</hasUnitPrice>
-        <ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">52</ordering>
         <permitNeeded xml:lang="nl">niet nodig indien de bovengrondse onderdelen minstens 2m verwijderd zijn van de perceelsgrens (Vlaanderen)</permitNeeded>
         <permitNeeded xml:lang="en">not necessary if the above-ground parts are at least 2m away from the parcel boundary (Flanders)</permitNeeded>
         <requiresMultiPhase xml:lang="en">maybe, depending on the system</requiresMultiPhase>
@@ -3914,9 +3821,6 @@
         <hasNuisanceLevel xml:lang="nl">hoog</hasNuisanceLevel>
         <hasPointOfAttention xml:lang="en">Do you currently have a ventilation system type A or C, or are you planning to install a natural supply system? If so, be sure to provide enough grilles on your window frames so that enough fresh air can flow into your home.</hasPointOfAttention>
         <hasPointOfAttention xml:lang="nl">Heb je momenteel een ventilatiesysteem A of C, of ben je van plan een systeem met natuurlijke toevoer te plaatsen? Voorzie dan zeker voldoende roosters aan je raamkaders, zodat er voldoende verse lucht in je woning kan binnenstromen.</hasPointOfAttention>
-        <hasPriceUnit rdf:resource="http://qudt.org/vocab/unit/PER-M2"/>
-        <hasUnitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">800</hasUnitPrice>
-        <ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">46</ordering>
         <permitNeeded xml:lang="nl">niet nodig indien de afmetingen worden behouden (Vlaanderen)</permitNeeded>
         <permitNeeded xml:lang="en">not necessary if the measurements are kept (Flanders)</permitNeeded>
         <requiresMultiPhase xml:lang="nl">nee</requiresMultiPhase>

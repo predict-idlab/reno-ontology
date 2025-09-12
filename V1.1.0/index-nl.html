@@ -17,7 +17,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/reno#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/reno#","name":"Renovatie en ENergie Optimalisatie (RENO)", "headline":"Deze ontologie werd ontwikkeld als onderdeel van het RE-ENNOVATE project. Het doel is om concepten vast te leggen, die relevant zijn bij het ontwerpen van energetische renovatie suggesties.", "dateReleased":"Fri Sep 12 15:55:57 CEST 2025", "dateModified":"2025-09-12", "version":"1.1.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Emma Nuyts"},{"@type":"Person","name":"Mathias De Brouwer"},{"@type":"Person","name":"Femke Ongenae"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/reno#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/reno#","name":"Renovatie en ENergie Optimalisatie (RENO)", "headline":"Deze ontologie werd ontwikkeld als onderdeel van het RE-ENNOVATE project. Het doel is om concepten vast te leggen, die relevant zijn bij het ontwerpen van energetische renovatie suggesties.", "dateReleased":"Mon Jul 14 14:43:37 CEST 2025", "dateModified":"2025-07-14", "version":"1.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Emma Nuyts"},{"@type":"Person","name":"Femke Ongenae"},{"@type":"Person","name":"Mathias De Brouwer"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -69,17 +69,17 @@ $(function(){
 
 
 <dl>
-<dt>Datum gewijzigd: 2025-09-12</dt>
+<dt>Datum gewijzigd: 2025-07-14</dt>
 <dt>Laatste versie:</dt>
 <dd><a href="https://w3id.org/reno#">https://w3id.org/reno#</a></dd>
 <dt>Revisie:</dt>
-<dd>1.1.0</dd>
+<dd>1.0.0</dd>
 <dt>Auteurs:</dt>
 <dd>Emma Nuyts</dd><dd>Mathias De Brouwer</dd><dd>Femke Ongenae</dd>
 
 <dt>Download serialisatie:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>Licentie:</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-https://creativecommons.org/licenses/by/4.0/-blue.svg" alt="https://creativecommons.org/licenses/by/4.0/" /></a>
 </dd><!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Citeren als:</dt>
-<dd>Emma Nuyts, Mathias De Brouwer, Femke Ongenae. Renovatie en ENergie Optimalisatie (RENO). Revision: 1.1.0.</dd>
+<dd>Emma Nuyts, Mathias De Brouwer, Femke Ongenae. Renovatie en ENergie Optimalisatie (RENO). Revision: 1.0.0.</dd>
 </dl>
 
 <hr/>
@@ -98,41 +98,26 @@ $(function(){
 
 <!--INTRODUCTION SECTION-->
     <div id="introduction"><h2 id="intro" class="list">Inleiding <span class="backlink"> terug naar <a href="#toc">Index</a></span></h2>
-<span class="markdown"></span>
 <div id="namespacedeclarations">
 <h3 id="ns" class="list">Naamruimtedefinities</h3>
 <div id="ns" align="center">
 <table>
-<caption> <a href="#ns"> Table 1</a>: Gebruikte naamruimten in dit document </caption>
+<caption> <a href="#ns"> Tabel 1</a>: Gebruikte naamruimten in dit document </caption>
 <tbody>
-<tr><td><b>beo</b></td><td>&lt;https://pi.pauwel.be/voc/buildingelement#&gt;</td></tr>
-<tr><td><b>bot</b></td><td>&lt;https://w3id.org/bot#&gt;</td></tr>
-<tr><td><b>dc</b></td><td>&lt;http://purl.org/dc/elements/1.1/&gt;</td></tr>
-<tr><td><b>dct</b></td><td>&lt;http://purl.org/dc/terms/&gt;</td></tr>
-<tr><td><b>dtype</b></td><td>&lt;http://www.linkedmodel.org/schema/dtype#&gt;</td></tr>
-<tr><td><b>expr</b></td><td>&lt;http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#&gt;</td></tr>
-<tr><td><b>foaf</b></td><td>&lt;http://xmlns.com/foaf/spec/&gt;</td></tr>
-<tr><td><b>foaf1</b></td><td>&lt;http://xmlns.com/foaf/0.1/&gt;</td></tr>
-<tr><td><b>mat</b></td><td>&lt;http://bimerr.iot.linkeddata.es/def/material-properties#&gt;</td></tr>
-<tr><td><b>ns</b></td><td>&lt;http://www.w3.org/2003/06/sw-vocab-status/ns#&gt;</td></tr>
-<tr><td><b>ns2</b></td><td>&lt;http://www.w3.org/2006/vcard/ns#&gt;</td></tr>
-<tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl#&gt;</td></tr>
-<tr><td><b>process</b></td><td>&lt;http://www.daml.org/services/owl-s/1.1/Process.owl#&gt;</td></tr>
-<tr><td><b>prov</b></td><td>&lt;http://www.w3.org/ns/prov#&gt;</td></tr>
-<tr><td><b>qudt</b></td><td>&lt;http://qudt.org/schema/qudt/&gt;</td></tr>
-<tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</td></tr>
-<tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</td></tr>
-<tr><td><b>reno</b></td><td>&lt;https://w3id.org/reno#&gt;</td></tr>
-<tr><td><b>s4bldg</b></td><td>&lt;https://saref.etsi.org/saref4bldg/&gt;</td></tr>
-<tr><td><b>saref</b></td><td>&lt;https://saref.etsi.org/core/&gt;</td></tr>
-<tr><td><b>schema</b></td><td>&lt;https://schema.org/&gt;</td></tr>
-<tr><td><b>skos</b></td><td>&lt;http://www.w3.org/2004/02/skos/core#&gt;</td></tr>
-<tr><td><b>unit</b></td><td>&lt;http://qudt.org/vocab/unit/&gt;</td></tr>
-<tr><td><b>vaem</b></td><td>&lt;http://www.linkedmodel.org/schema/vaem#&gt;</td></tr>
-<tr><td><b>vann</b></td><td>&lt;http://purl.org/vocab/vann/&gt;</td></tr>
-<tr><td><b>wot</b></td><td>&lt;http://xmlns.com/wot/0.1/&gt;</td></tr>
-<tr><td><b>xml</b></td><td>&lt;http://www.w3.org/XML/1998/namespace&gt;</td></tr>
-<tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema#&gt;</td></tr>
+   <tr><td><b>beo</b></td><td>&lt;https://pi.pauwel.be/voc/buildingelement#&gt;</td></tr>
+   <tr><td><b>bot</b></td><td>&lt;https://w3id.org/bot#&gt;</td></tr>
+   <tr><td><b>expr</b></td><td>&lt;http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#&gt;</td></tr>
+   <tr><td><b>foaf</b></td><td>&lt;http://xmlns.com/foaf/spec/&gt;</td></tr>
+   <tr><td><b>mat</b></td><td>&lt;http://bimerr.iot.linkeddata.es/def/material-properties#&gt;</td></tr>
+   <tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl#&gt;</td></tr>
+   <tr><td><b>process</b></td><td>&lt;http://www.daml.org/services/owl-s/1.1/Process.owl#&gt;</td></tr>
+   <tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</td></tr>
+   <tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</td></tr>
+   <tr><td><b>reno</b></td><td>&lt;https://w3id.org/reno#&gt;</td></tr>
+   <tr><td><b>s4bldg</b></td><td>&lt;https://saref.etsi.org/saref4bldg/&gt;</td></tr>
+   <tr><td><b>saref</b></td><td>&lt;https://saref.etsi.org/core/&gt;</td></tr>
+   <tr><td><b>xml</b></td><td>&lt;http://www.w3.org/XML/1998/namespace&gt;</td></tr>
+   <tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema#&gt;</td></tr>
 </tbody>
 </table>
 </div>
@@ -432,6 +417,9 @@ Deze ontologie heeft de volgende klassen en eigenschappen.</span>
    <li>
       <a href="#PlaceGeothermalHeatpumpVertical"
          title="https://w3id.org/reno#PlaceGeothermalHeatpumpVertical">plaats verticale geothermische warmtepomp</a>
+   </li>
+   <li>
+      <a href="#PlaceFloorHeating" title="https://w3id.org/reno#PlaceFloorHeating">plaats vloerverwarming</a>
    </li>
    <li>
       <a href="#PlaceHeatPumpBoiler" title="https://w3id.org/reno#PlaceHeatPumpBoiler">plaats warmtepompboiler</a>
@@ -746,11 +734,6 @@ Deze ontologie heeft de volgende klassen en eigenschappen.</span>
          title="https://w3id.org/reno#hadNegativeExperiencesWithPastRenovations">had negatieve ervaringen met eerdere renovaties</a>
    </li>
    <li>
-      <a href="#hasGlazingPercentage" title="https://w3id.org/reno#hasGlazingPercentage">
-         <span>has Glazing Percentage</span>
-      </a>
-   </li>
-   <li>
       <a href="#hasAmountOfStories" title="https://w3id.org/reno#hasAmountOfStories">heeft aantal verdiepingen</a>
    </li>
    <li>
@@ -907,6 +890,21 @@ Deze ontologie heeft de volgende klassen en eigenschappen.</span>
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     class="hlist">
    <li>
+      <a href="#http://purl.org/dc/terms/abstract" title="http://purl.org/dc/terms/abstract">
+         <span>abstract</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/contributor" title="http://purl.org/dc/terms/contributor">
+         <span>contributor</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator">
+         <span>creator</span>
+      </a>
+   </li>
+   <li>
       <a href="#hasPointOfAttention" title="https://w3id.org/reno#hasPointOfAttention">heeft aandachtspunt</a>
    </li>
    <li>
@@ -916,10 +914,14 @@ Deze ontologie heeft de volgende klassen en eigenschappen.</span>
       <a href="#hasNuisanceLevel" title="https://w3id.org/reno#hasNuisanceLevel">heeft overlastniveau</a>
    </li>
    <li>
-      <a href="#hasPriceUnit" title="https://w3id.org/reno#hasPriceUnit">heeft prijseenheid</a>
+      <a href="#http://purl.org/dc/terms/license" title="http://purl.org/dc/terms/license">
+         <span>license</span>
+      </a>
    </li>
    <li>
-      <a href="#ordering" title="https://w3id.org/reno#ordering">ordening</a>
+      <a href="#http://purl.org/dc/terms/title" title="http://purl.org/dc/terms/title">
+         <span>title</span>
+      </a>
    </li>
    <li>
       <a href="#requiresMultiPhase" title="https://w3id.org/reno#requiresMultiPhase">vereist meerfasig</a>
@@ -929,7 +931,6 @@ Deze ontologie heeft de volgende klassen en eigenschappen.</span>
    </li>
 </ul>
 </div>
-  
    
 
 <!--CROSSREF SECTION-->
@@ -1029,6 +1030,7 @@ Deze sectie geeft details voor elke klasse en eigenschap gedefinieerd door Renov
   <li><a href="#PlacePVPanelsInGarden" title="https://w3id.org/reno#PlacePVPanelsInGarden">plaats PV-panelen in tuin</a></li>
   <li><a href="#PlacePVPanelsOnRoof" title="https://w3id.org/reno#PlacePVPanelsOnRoof">plaats PV-panelen op dak</a></li>
   <li><a href="#PlaceGeothermalHeatpumpVertical" title="https://w3id.org/reno#PlaceGeothermalHeatpumpVertical">plaats verticale geothermische warmtepomp</a></li>
+  <li><a href="#PlaceFloorHeating" title="https://w3id.org/reno#PlaceFloorHeating">plaats vloerverwarming</a></li>
   <li><a href="#PlaceHeatPumpBoiler" title="https://w3id.org/reno#PlaceHeatPumpBoiler">plaats warmtepompboiler</a></li>
   <li><a href="#PlaceSunShade" title="https://w3id.org/reno#PlaceSunShade">plaats zonnewering</a></li>
   <li><a href="#PVC" title="https://w3id.org/reno#PVC">PVC</a></li>
@@ -2525,6 +2527,18 @@ Deze sectie geeft details voor elke klasse en eigenschap gedefinieerd door Renov
    </dd>
   </dl>
  </div>
+ <div class="entity" id="PlaceFloorHeating">
+  <h3>plaats vloerverwarming<sup class="type-c" title="klasse">c</sup> <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#classes">Index van klassen</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/reno#PlaceFloorHeating</p>
+  <dl class="description">
+   <dt>
+    heeft superklassen
+   </dt>
+   <dd>
+    <a href="#RenovationSuggestion" title="https://w3id.org/reno#RenovationSuggestion">renovatiesuggestie</a> <sup class="type-c" title="klasse">c</sup>
+   </dd>
+  </dl>
+ </div>
  <div class="entity" id="PlaceHeatPumpBoiler">
   <h3>plaats warmtepompboiler<sup class="type-c" title="klasse">c</sup> <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#classes">Index van klassen</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/reno#PlaceHeatPumpBoiler</p>
@@ -2753,13 +2767,13 @@ Deze sectie geeft details voor elke klasse en eigenschap gedefinieerd door Renov
     heeft subklassen
    </dt>
    <dd>
-    <a href="#InsulateGableRoof" title="https://w3id.org/reno#InsulateGableRoof">isoleer hellend dak</a> <sup class="type-c" title="klasse">c</sup>, <a href="#InsulateFlatRoof" title="https://w3id.org/reno#InsulateFlatRoof">isoleer plat dak</a> <sup class="type-c" title="klasse">c</sup>, <a href="#InsulateWallCavity" title="https://w3id.org/reno#InsulateWallCavity">isoleer spouwmuur</a> <sup class="type-c" title="klasse">c</sup>, <a href="#InsulateFloorAboveBasement" title="https://w3id.org/reno#InsulateFloorAboveBasement">isoleer vloer boven kelder</a> <sup class="type-c" title="klasse">c</sup>, <a href="#InsulateWallInterior" title="https://w3id.org/reno#InsulateWallInterior">isoleer wand aan binnenzijde</a> <sup class="type-c" title="klasse">c</sup>, <a href="#InsulateWallExterior" title="https://w3id.org/reno#InsulateWallExterior">isoleer wand aan buitenzijde</a> <sup class="type-c" title="klasse">c</sup>, <a href="#InsulateAtticFloor" title="https://w3id.org/reno#InsulateAtticFloor">isoleer zoldervloer</a> <sup class="type-c" title="klasse">c</sup>, <a href="#PlacePVPanelsInGarden" title="https://w3id.org/reno#PlacePVPanelsInGarden">plaats PV-panelen in tuin</a> <sup class="type-c" title="klasse">c</sup>, <a href="#PlacePVPanelsOnRoof" title="https://w3id.org/reno#PlacePVPanelsOnRoof">plaats PV-panelen op dak</a> <sup class="type-c" title="klasse">c</sup>, <a href="#PlaceLowTemperatureEmission" title="https://w3id.org/reno#PlaceLowTemperatureEmission">plaats afgiftesysteem op lage temperatuur</a> <sup class="type-c" title="klasse">c</sup>, <a href="#PlaceAirconditioning" title="https://w3id.org/reno#PlaceAirconditioning">plaats airconditioning</a> <sup class="type-c" title="klasse">c</sup>, <a href="#PlaceGeothermalHeatpumpHorizontal" title="https://w3id.org/reno#PlaceGeothermalHeatpumpHorizontal">plaats horizontale geothermische warmtepomp</a> <sup class="type-c" title="klasse">c</sup>, <a href="#PlaceAirAirHeatpump" title="https://w3id.org/reno#PlaceAirAirHeatpump">plaats lucht-lucht warmtepomp</a> <sup class="type-c" title="klasse">c</sup>, <a href="#PlaceAirWaterHeatpump" title="https://w3id.org/reno#PlaceAirWaterHeatpump">plaats lucht-water warmtepomp</a> <sup class="type-c" title="klasse">c</sup>, <a href="#PlaceAirWaterHeatpumpWithCooling" title="https://w3id.org/reno#PlaceAirWaterHeatpumpWithCooling">plaats lucht-water warmtepomp met koeling</a> <sup class="type-c" title="klasse">c</sup>, <a href="#PlaceRoofUnderlayment" title="https://w3id.org/reno#PlaceRoofUnderlayment">plaats onderdak</a> <sup class="type-c" title="klasse">c</sup>, <a href="#PlugAndPlayPanels" title="https://w3id.org/reno#PlugAndPlayPanels">plaats plug and play PV-panelen</a> <sup class="type-c" title="klasse">c</sup>, <a href="#PlaceGeothermalHeatpumpVertical" title="https://w3id.org/reno#PlaceGeothermalHeatpumpVertical">plaats verticale geothermische warmtepomp</a> <sup class="type-c" title="klasse">c</sup>, <a href="#PlaceHeatPumpBoiler" title="https://w3id.org/reno#PlaceHeatPumpBoiler">plaats warmtepompboiler</a> <sup class="type-c" title="klasse">c</sup>, <a href="#PlaceSunShade" title="https://w3id.org/reno#PlaceSunShade">plaats zonnewering</a> <sup class="type-c" title="klasse">c</sup>, <a href="#ConnectToHeatGrid" title="https://w3id.org/reno#ConnectToHeatGrid">sluit aan op warmtenet</a> <sup class="type-c" title="klasse">c</sup>, <a href="#ReplaceGlazing" title="https://w3id.org/reno#ReplaceGlazing">vervang glas</a> <sup class="type-c" title="klasse">c</sup>, <a href="#ReplaceGableRoof" title="https://w3id.org/reno#ReplaceGableRoof">vervang hellend dak</a> <sup class="type-c" title="klasse">c</sup>, <a href="#ReplaceFlatRoof" title="https://w3id.org/reno#ReplaceFlatRoof">vervang plat dak</a> <sup class="type-c" title="klasse">c</sup>, <a href="#ReplaceWindows" title="https://w3id.org/reno#ReplaceWindows">vervang ramen</a> <sup class="type-c" title="klasse">c</sup>, <a href="#ReplaceVentilationSystem" title="https://w3id.org/reno#ReplaceVentilationSystem">vervang ventilatiesysteem</a> <sup class="type-c" title="klasse">c</sup>, <a href="#RemoveAsbestosGableRoof" title="https://w3id.org/reno#RemoveAsbestosGableRoof">verwijder asbest van hellend dak</a> <sup class="type-c" title="klasse">c</sup>, <a href="#RemoveAsbestosFlatRoof" title="https://w3id.org/reno#RemoveAsbestosFlatRoof">verwijder asbest van plat dak</a> <sup class="type-c" title="klasse">c</sup>
+    <a href="#InsulateGableRoof" title="https://w3id.org/reno#InsulateGableRoof">isoleer hellend dak</a> <sup class="type-c" title="klasse">c</sup>, <a href="#InsulateFlatRoof" title="https://w3id.org/reno#InsulateFlatRoof">isoleer plat dak</a> <sup class="type-c" title="klasse">c</sup>, <a href="#InsulateWallCavity" title="https://w3id.org/reno#InsulateWallCavity">isoleer spouwmuur</a> <sup class="type-c" title="klasse">c</sup>, <a href="#InsulateFloorAboveBasement" title="https://w3id.org/reno#InsulateFloorAboveBasement">isoleer vloer boven kelder</a> <sup class="type-c" title="klasse">c</sup>, <a href="#InsulateWallInterior" title="https://w3id.org/reno#InsulateWallInterior">isoleer wand aan binnenzijde</a> <sup class="type-c" title="klasse">c</sup>, <a href="#InsulateWallExterior" title="https://w3id.org/reno#InsulateWallExterior">isoleer wand aan buitenzijde</a> <sup class="type-c" title="klasse">c</sup>, <a href="#InsulateAtticFloor" title="https://w3id.org/reno#InsulateAtticFloor">isoleer zoldervloer</a> <sup class="type-c" title="klasse">c</sup>, <a href="#PlacePVPanelsInGarden" title="https://w3id.org/reno#PlacePVPanelsInGarden">plaats PV-panelen in tuin</a> <sup class="type-c" title="klasse">c</sup>, <a href="#PlacePVPanelsOnRoof" title="https://w3id.org/reno#PlacePVPanelsOnRoof">plaats PV-panelen op dak</a> <sup class="type-c" title="klasse">c</sup>, <a href="#PlaceLowTemperatureEmission" title="https://w3id.org/reno#PlaceLowTemperatureEmission">plaats afgiftesysteem op lage temperatuur</a> <sup class="type-c" title="klasse">c</sup>, <a href="#PlaceAirconditioning" title="https://w3id.org/reno#PlaceAirconditioning">plaats airconditioning</a> <sup class="type-c" title="klasse">c</sup>, <a href="#PlaceGeothermalHeatpumpHorizontal" title="https://w3id.org/reno#PlaceGeothermalHeatpumpHorizontal">plaats horizontale geothermische warmtepomp</a> <sup class="type-c" title="klasse">c</sup>, <a href="#PlaceAirAirHeatpump" title="https://w3id.org/reno#PlaceAirAirHeatpump">plaats lucht-lucht warmtepomp</a> <sup class="type-c" title="klasse">c</sup>, <a href="#PlaceAirWaterHeatpump" title="https://w3id.org/reno#PlaceAirWaterHeatpump">plaats lucht-water warmtepomp</a> <sup class="type-c" title="klasse">c</sup>, <a href="#PlaceAirWaterHeatpumpWithCooling" title="https://w3id.org/reno#PlaceAirWaterHeatpumpWithCooling">plaats lucht-water warmtepomp met koeling</a> <sup class="type-c" title="klasse">c</sup>, <a href="#PlaceRoofUnderlayment" title="https://w3id.org/reno#PlaceRoofUnderlayment">plaats onderdak</a> <sup class="type-c" title="klasse">c</sup>, <a href="#PlugAndPlayPanels" title="https://w3id.org/reno#PlugAndPlayPanels">plaats plug and play PV-panelen</a> <sup class="type-c" title="klasse">c</sup>, <a href="#PlaceGeothermalHeatpumpVertical" title="https://w3id.org/reno#PlaceGeothermalHeatpumpVertical">plaats verticale geothermische warmtepomp</a> <sup class="type-c" title="klasse">c</sup>, <a href="#PlaceFloorHeating" title="https://w3id.org/reno#PlaceFloorHeating">plaats vloerverwarming</a> <sup class="type-c" title="klasse">c</sup>, <a href="#PlaceHeatPumpBoiler" title="https://w3id.org/reno#PlaceHeatPumpBoiler">plaats warmtepompboiler</a> <sup class="type-c" title="klasse">c</sup>, <a href="#PlaceSunShade" title="https://w3id.org/reno#PlaceSunShade">plaats zonnewering</a> <sup class="type-c" title="klasse">c</sup>, <a href="#ConnectToHeatGrid" title="https://w3id.org/reno#ConnectToHeatGrid">sluit aan op warmtenet</a> <sup class="type-c" title="klasse">c</sup>, <a href="#ReplaceGlazing" title="https://w3id.org/reno#ReplaceGlazing">vervang glas</a> <sup class="type-c" title="klasse">c</sup>, <a href="#ReplaceGableRoof" title="https://w3id.org/reno#ReplaceGableRoof">vervang hellend dak</a> <sup class="type-c" title="klasse">c</sup>, <a href="#ReplaceFlatRoof" title="https://w3id.org/reno#ReplaceFlatRoof">vervang plat dak</a> <sup class="type-c" title="klasse">c</sup>, <a href="#ReplaceWindows" title="https://w3id.org/reno#ReplaceWindows">vervang ramen</a> <sup class="type-c" title="klasse">c</sup>, <a href="#ReplaceVentilationSystem" title="https://w3id.org/reno#ReplaceVentilationSystem">vervang ventilatiesysteem</a> <sup class="type-c" title="klasse">c</sup>, <a href="#RemoveAsbestosGableRoof" title="https://w3id.org/reno#RemoveAsbestosGableRoof">verwijder asbest van hellend dak</a> <sup class="type-c" title="klasse">c</sup>, <a href="#RemoveAsbestosFlatRoof" title="https://w3id.org/reno#RemoveAsbestosFlatRoof">verwijder asbest van plat dak</a> <sup class="type-c" title="klasse">c</sup>
    </dd>
    <dt>
     is in domein van
    </dt>
    <dd>
-    <a href="hasPointOfAttention" title="https://w3id.org/reno#hasPointOfAttention">heeft aandachtspunt</a> <sup class="type-ap" title="annotatie-eigenschap">ap</sup>, <a href="hasUnitPrice" title="https://w3id.org/reno#hasUnitPrice">heeft eenheidsprijs</a> <sup class="type-ap" title="annotatie-eigenschap">ap</sup>, <a href="hasNuisanceLevel" title="https://w3id.org/reno#hasNuisanceLevel">heeft overlastniveau</a> <sup class="type-ap" title="annotatie-eigenschap">ap</sup>, <a href="hasPriceUnit" title="https://w3id.org/reno#hasPriceUnit">heeft prijseenheid</a> <sup class="type-ap" title="annotatie-eigenschap">ap</sup>, <a href="ordering" title="https://w3id.org/reno#ordering">ordening</a> <sup class="type-ap" title="annotatie-eigenschap">ap</sup>, <a href="requiresMultiPhase" title="https://w3id.org/reno#requiresMultiPhase">vereist meerfasig</a> <sup class="type-ap" title="annotatie-eigenschap">ap</sup>, <a href="permitNeeded" title="https://w3id.org/reno#permitNeeded">vergunning nodig</a> <sup class="type-ap" title="annotatie-eigenschap">ap</sup>
+    <a href="hasPointOfAttention" title="https://w3id.org/reno#hasPointOfAttention">heeft aandachtspunt</a> <sup class="type-ap" title="annotatie-eigenschap">ap</sup>, <a href="hasUnitPrice" title="https://w3id.org/reno#hasUnitPrice">heeft eenheidsprijs</a> <sup class="type-ap" title="annotatie-eigenschap">ap</sup>, <a href="hasNuisanceLevel" title="https://w3id.org/reno#hasNuisanceLevel">heeft overlastniveau</a> <sup class="type-ap" title="annotatie-eigenschap">ap</sup>, <a href="requiresMultiPhase" title="https://w3id.org/reno#requiresMultiPhase">vereist meerfasig</a> <sup class="type-ap" title="annotatie-eigenschap">ap</sup>, <a href="permitNeeded" title="https://w3id.org/reno#permitNeeded">vergunning nodig</a> <sup class="type-ap" title="annotatie-eigenschap">ap</sup>
    </dd>
    <dt>
     is in bereik van
@@ -3133,7 +3147,7 @@ Deze sectie geeft details voor elke klasse en eigenschap gedefinieerd door Renov
     heeft superklassen
    </dt>
    <dd>
-    <a href="https://pi.pauwel.be/voc/buildingelement#Slab-FLOOR" target="_blank" title="https://pi.pauwel.be/voc/buildingelement#Slab-FLOOR">Floor</a> <sup class="type-c" title="klasse">c</sup>
+    <a href="https://pi.pauwel.be/voc/buildingelement#Slab-FLOOR" target="_blank" title="https://pi.pauwel.be/voc/buildingelement#Slab-FLOOR">dekke</a> <sup class="type-c" title="klasse">c</sup>
    </dd>
   </dl>
  </div>
@@ -3148,7 +3162,7 @@ Deze sectie geeft details voor elke klasse en eigenschap gedefinieerd door Renov
     heeft superklassen
    </dt>
    <dd>
-    <a href="https://pi.pauwel.be/voc/buildingelement#Slab-FLOOR" target="_blank" title="https://pi.pauwel.be/voc/buildingelement#Slab-FLOOR">Floor</a> <sup class="type-c" title="klasse">c</sup>
+    <a href="https://pi.pauwel.be/voc/buildingelement#Slab-FLOOR" target="_blank" title="https://pi.pauwel.be/voc/buildingelement#Slab-FLOOR">dekke</a> <sup class="type-c" title="klasse">c</sup>
    </dd>
   </dl>
  </div>
@@ -3334,7 +3348,7 @@ Deze sectie geeft details voor elke klasse en eigenschap gedefinieerd door Renov
     heeft superklassen
    </dt>
    <dd>
-    <a href="https://pi.pauwel.be/voc/buildingelement#Slab-FLOOR" target="_blank" title="https://pi.pauwel.be/voc/buildingelement#Slab-FLOOR">Floor</a> <sup class="type-c" title="klasse">c</sup>
+    <a href="https://pi.pauwel.be/voc/buildingelement#Slab-FLOOR" target="_blank" title="https://pi.pauwel.be/voc/buildingelement#Slab-FLOOR">dekke</a> <sup class="type-c" title="klasse">c</sup>
    </dd>
   </dl>
  </div>
@@ -4422,7 +4436,6 @@ Deze sectie geeft details voor elke klasse en eigenschap gedefinieerd door Renov
   <li><a href="#ownerSince" title="https://w3id.org/reno#ownerSince">eigenaar sinds</a></li>
   <li><a href="#ownerUntil" title="https://w3id.org/reno#ownerUntil">eigenaar tot</a></li>
   <li><a href="#hadNegativeExperiencesWithPastRenovations" title="https://w3id.org/reno#hadNegativeExperiencesWithPastRenovations">had negatieve ervaringen met eerdere renovaties</a></li>
-  <li><a href="#hasGlazingPercentage" title="https://w3id.org/reno#hasGlazingPercentage"> <span>has Glazing Percentage</span> </a></li>
   <li><a href="#hasAmountOfStories" title="https://w3id.org/reno#hasAmountOfStories">heeft aantal verdiepingen</a></li>
   <li><a href="#hasProtection" title="https://w3id.org/reno#hasProtection">heeft bescherming</a></li>
   <li><a href="#hasWidth" title="https://w3id.org/reno#hasWidth">heeft breedte</a></li>
@@ -4632,26 +4645,6 @@ Deze sectie geeft details voor elke klasse en eigenschap gedefinieerd door Renov
     </dt>
     <dd>
      <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="hasGlazingPercentage">
-  <h3>has Glazing Percentage<sup class="type-dp" title="data-eigenschap">dp</sup> <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#dataproperties">Index data-eigenschappen</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/reno#hasGlazingPercentage</p>
-  <div class="description">
-   <dl>
-    <dt>
-     heeft domein
-    </dt>
-    <dd>
-     <a href="https://w3id.org/bot#Building" target="_blank" title="https://w3id.org/bot#Building">Gebouw</a> <sup class="type-c" title="klasse">c</sup>
-    </dd>
-    <dt>
-     heeft bereik
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
     </dd>
    </dl>
   </div>
@@ -5152,7 +5145,7 @@ Deze sectie geeft details voor elke klasse en eigenschap gedefinieerd door Renov
      heeft domein
     </dt>
     <dd>
-     <a href="https://pi.pauwel.be/voc/buildingelement#Roof-GABLE_ROOF" target="_blank" title="https://pi.pauwel.be/voc/buildingelement#Roof-GABLE_ROOF">Gable Roof</a> <sup class="type-c" title="klasse">c</sup>
+     <a href="https://pi.pauwel.be/voc/buildingelement#Roof-GABLE_ROOF" target="_blank" title="https://pi.pauwel.be/voc/buildingelement#Roof-GABLE_ROOF">gavl</a> <sup class="type-c" title="klasse">c</sup>
     </dd>
     <dt>
      heeft bereik
@@ -5830,14 +5823,29 @@ Deze sectie geeft details voor elke klasse en eigenschap gedefinieerd door Renov
 </div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="annotationproperties">
  <h3 id="annotationproperties" class="list">Annotatie-eigenschappen</h3>
  <ul class="hlist">
+  <li><a href="#http://purl.org/dc/terms/abstract" title="http://purl.org/dc/terms/abstract"> <span>abstract</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/contributor" title="http://purl.org/dc/terms/contributor"> <span>contributor</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator"> <span>creator</span> </a></li>
   <li><a href="#hasPointOfAttention" title="https://w3id.org/reno#hasPointOfAttention">heeft aandachtspunt</a></li>
   <li><a href="#hasUnitPrice" title="https://w3id.org/reno#hasUnitPrice">heeft eenheidsprijs</a></li>
   <li><a href="#hasNuisanceLevel" title="https://w3id.org/reno#hasNuisanceLevel">heeft overlastniveau</a></li>
-  <li><a href="#hasPriceUnit" title="https://w3id.org/reno#hasPriceUnit">heeft prijseenheid</a></li>
-  <li><a href="#ordering" title="https://w3id.org/reno#ordering">ordening</a></li>
+  <li><a href="#http://purl.org/dc/terms/license" title="http://purl.org/dc/terms/license"> <span>license</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/title" title="http://purl.org/dc/terms/title"> <span>title</span> </a></li>
   <li><a href="#requiresMultiPhase" title="https://w3id.org/reno#requiresMultiPhase">vereist meerfasig</a></li>
   <li><a href="#permitNeeded" title="https://w3id.org/reno#permitNeeded">vergunning nodig</a></li>
  </ul>
+ <div class="entity" id="http://purl.org/dc/terms/abstract">
+  <h3>abstract<sup class="type-ap" title="annotatie-eigenschap">ap</sup> <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#annotationproperties">Index annotatie-eigenschappen</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/abstract</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/contributor">
+  <h3>contributor<sup class="type-ap" title="annotatie-eigenschap">ap</sup> <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#annotationproperties">Index annotatie-eigenschappen</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/contributor</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/creator">
+  <h3>creator<sup class="type-ap" title="annotatie-eigenschap">ap</sup> <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#annotationproperties">Index annotatie-eigenschappen</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/creator</p>
+ </div>
  <div class="entity" id="hasPointOfAttention">
   <h3>heeft aandachtspunt<sup class="type-ap" title="annotatie-eigenschap">ap</sup> <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#annotationproperties">Index annotatie-eigenschappen</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/reno#hasPointOfAttention</p>
@@ -5907,51 +5915,12 @@ Deze sectie geeft details voor elke klasse en eigenschap gedefinieerd door Renov
    </dl>
   </div>
  </div>
- <div class="entity" id="hasPriceUnit">
-  <h3>heeft prijseenheid<sup class="type-ap" title="annotatie-eigenschap">ap</sup> <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#annotationproperties">Index annotatie-eigenschappen</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/reno#hasPriceUnit</p>
-  <div class="comment">
-   <span class="markdown">Geeft de prijseenheid aan voor de renovatiesuggestie. Dit kan per stuk of per vierkante meter zijn, afhankelijk van het type renovatie.</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     heeft domein
-    </dt>
-    <dd>
-     <a href="#RenovationSuggestion" title="https://w3id.org/reno#RenovationSuggestion">renovatiesuggestie</a> <sup class="type-c" title="klasse">c</sup>
-    </dd>
-    <dt>
-     heeft bereik
-    </dt>
-    <dd>
-     <a href="http://qudt.org/schema/qudt/Unit" target="_blank" title="http://qudt.org/schema/qudt/Unit">Unit</a> <sup class="type-c" title="klasse">c</sup>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="ordering">
-  <h3>ordening<sup class="type-ap" title="annotatie-eigenschap">ap</sup> <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#annotationproperties">Index annotatie-eigenschappen</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/reno#ordering</p>
-  <div class="comment">
-   <span class="markdown">Geeft de ordening van de renovatiesuggesties aan, waarbij een lagere ordening eerst moet uitgevoerd worden.</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     heeft domein
-    </dt>
-    <dd>
-     <a href="#RenovationSuggestion" title="https://w3id.org/reno#RenovationSuggestion">renovatiesuggestie</a> <sup class="type-c" title="klasse">c</sup>
-    </dd>
-    <dt>
-     heeft bereik
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
-    </dd>
-   </dl>
-  </div>
+ <div class="entity" id="http://purl.org/dc/terms/license">
+  <h3>license<sup class="type-ap" title="annotatie-eigenschap">ap</sup> <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#annotationproperties">Index annotatie-eigenschappen</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/license</p>
+ <div class="entity" id="http://purl.org/dc/terms/title">
+  <h3>title<sup class="type-ap" title="annotatie-eigenschap">ap</sup> <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#annotationproperties">Index annotatie-eigenschappen</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/title</p>
  </div>
  <div class="entity" id="requiresMultiPhase">
   <h3>vereist meerfasig<sup class="type-ap" title="annotatie-eigenschap">ap</sup> <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#annotationproperties">Index annotatie-eigenschappen</a> </span></h3>
@@ -6008,6 +5977,7 @@ Deze sectie geeft details voor elke klasse en eigenschap gedefinieerd door Renov
 </div>
 </div>
 </div>
+    
 <div id="acknowledgments">
 <h2 id="ack" class="list">Dankbetuiging <span class="backlink"> terug naar <a href="#toc">Index</a></span></h2>
 <p>

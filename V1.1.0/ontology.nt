@@ -1,5 +1,4 @@
 <https://w3id.org/reno#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<https://w3id.org/reno#> <http://www.w3.org/2002/07/owl#imports> <http://qudt.org/vocab/unit> .
 <https://w3id.org/reno#> <http://www.w3.org/2002/07/owl#imports> <http://www.daml.org/services/owl-s/1.1/Process.owl> .
 <https://w3id.org/reno#> <http://www.w3.org/2002/07/owl#imports> <http://xmlns.com/foaf/0.1/> .
 <https://w3id.org/reno#> <http://www.w3.org/2002/07/owl#imports> <https://bimerr.iot.linkeddata.es/def/material-properties/ontology.ttl> .
@@ -17,7 +16,7 @@
 <https://w3id.org/reno#> <http://purl.org/dc/terms/title> "Renovation and ENergy Optimization (RENO)"@en .
 <https://w3id.org/reno#> <http://purl.org/vocab/vann/preferredNamespacePrefix> "reno" .
 <https://w3id.org/reno#> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/reno#" .
-<https://w3id.org/reno#> <http://www.w3.org/2002/07/owl#versionInfo> "1.1.0" .
+<https://w3id.org/reno#> <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0" .
 # 
 # 
 # #################################################################
@@ -66,15 +65,6 @@
 <https://w3id.org/reno#hasPointOfAttention> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
 <https://w3id.org/reno#hasPointOfAttention> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/reno#RenovationSuggestion> .
 # 
-# https://w3id.org/reno#hasPriceUnit
-<https://w3id.org/reno#hasPriceUnit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-<https://w3id.org/reno#hasPriceUnit> <http://www.w3.org/2000/01/rdf-schema#comment> "Geeft de prijseenheid aan voor de renovatiesuggestie. Dit kan per stuk of per vierkante meter zijn, afhankelijk van het type renovatie."@nl .
-<https://w3id.org/reno#hasPriceUnit> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the price unit for the renovation suggestion. This can be per piece or per sqm, depending on the type of renovation."@en .
-<https://w3id.org/reno#hasPriceUnit> <http://www.w3.org/2000/01/rdf-schema#label> "has price unit"@en .
-<https://w3id.org/reno#hasPriceUnit> <http://www.w3.org/2000/01/rdf-schema#label> "heeft prijseenheid"@nl .
-<https://w3id.org/reno#hasPriceUnit> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/Unit> .
-<https://w3id.org/reno#hasPriceUnit> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/reno#RenovationSuggestion> .
-# 
 # https://w3id.org/reno#hasUnitPrice
 <https://w3id.org/reno#hasUnitPrice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 <https://w3id.org/reno#hasUnitPrice> <http://www.w3.org/2000/01/rdf-schema#comment> "Geeft de eenheidsprijs aan voor de renovatiesuggestie. Dit kan per stuk of per vierkante meter zijn, afhankelijk van het type renovatie."@nl .
@@ -83,15 +73,6 @@
 <https://w3id.org/reno#hasUnitPrice> <http://www.w3.org/2000/01/rdf-schema#label> "heeft eenheidsprijs"@nl .
 <https://w3id.org/reno#hasUnitPrice> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
 <https://w3id.org/reno#hasUnitPrice> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/reno#RenovationSuggestion> .
-# 
-# https://w3id.org/reno#ordering
-<https://w3id.org/reno#ordering> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-<https://w3id.org/reno#ordering> <http://www.w3.org/2000/01/rdf-schema#comment> "Geeft de ordening van de renovatiesuggesties aan, waarbij een lagere ordening eerst moet uitgevoerd worden."@nl .
-<https://w3id.org/reno#ordering> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the ordering of the renovation suggestions, where a lower ordering should be executed first."@en .
-<https://w3id.org/reno#ordering> <http://www.w3.org/2000/01/rdf-schema#label> "ordening"@nl .
-<https://w3id.org/reno#ordering> <http://www.w3.org/2000/01/rdf-schema#label> "ordering"@en .
-<https://w3id.org/reno#ordering> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
-<https://w3id.org/reno#ordering> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/reno#RenovationSuggestion> .
 # 
 # https://w3id.org/reno#permitNeeded
 <https://w3id.org/reno#permitNeeded> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
@@ -711,11 +692,6 @@ _:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://w3id.org/reno#hasFrameThickness> <http://www.w3.org/2000/01/rdf-schema#comment> "Linkt een raamkader aan zijn dikte."@nl .
 <https://w3id.org/reno#hasFrameThickness> <http://www.w3.org/2000/01/rdf-schema#label> "has frame thickness"@en .
 <https://w3id.org/reno#hasFrameThickness> <http://www.w3.org/2000/01/rdf-schema#label> "heeft raamkader dikte"@nl .
-# 
-# https://w3id.org/reno#hasGlazingPercentage
-<https://w3id.org/reno#hasGlazingPercentage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/reno#hasGlazingPercentage> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/bot#Building> .
-<https://w3id.org/reno#hasGlazingPercentage> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
 # 
 # https://w3id.org/reno#hasHeatIssue
 <https://w3id.org/reno#hasHeatIssue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -1506,8 +1482,6 @@ _:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 <https://w3id.org/reno#ConnectToHeatGrid> <https://w3id.org/reno#hasPointOfAttention> "Contact your municipality or grid operator for more information."@en .
 <https://w3id.org/reno#ConnectToHeatGrid> <https://w3id.org/reno#hasPointOfAttention> "Contacteer uw gemeente of netbeheerder voor meer informatie."@nl .
 <https://w3id.org/reno#ConnectToHeatGrid> <https://w3id.org/reno#hasPointOfAttention> "Controleer of uw afgiftesysteem correspondeert met de aanvoer- en retourtemperatuur van het warmtenet."@nl .
-<https://w3id.org/reno#ConnectToHeatGrid> <https://w3id.org/reno#hasUnitPrice> "7000"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-<https://w3id.org/reno#ConnectToHeatGrid> <https://w3id.org/reno#ordering> "55"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <https://w3id.org/reno#ConnectToHeatGrid> <https://w3id.org/reno#permitNeeded> "niet nodig (Vlaanderen)"@nl .
 <https://w3id.org/reno#ConnectToHeatGrid> <https://w3id.org/reno#permitNeeded> "not necessary (Flanders)"@en .
 <https://w3id.org/reno#ConnectToHeatGrid> <https://w3id.org/reno#requiresMultiPhase> "nee"@nl .
@@ -1893,9 +1867,6 @@ _:genid123 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://w3id.org/reno#InsulateAtticFloor> <https://w3id.org/reno#hasPointOfAttention> "In veel gevallen is een dampscherm noodzakelijk bij het isoleren van de zoldervloer. Zonder een dampscherm kunnen zich condensatieproblemen voordoen. Plaats het dampscherm steeds aan de warme zijde van de isolatie."@nl .
 <https://w3id.org/reno#InsulateAtticFloor> <https://w3id.org/reno#hasPointOfAttention> "Niet elk type isolatie is beloopbaar. Afhankelijk van uw situatie, kan beloopbare isolatie de voorkeur krijgen."@nl .
 <https://w3id.org/reno#InsulateAtticFloor> <https://w3id.org/reno#hasPointOfAttention> "Not every type of insulation is walkable. Depending on your situation, walkable insulation may be preferred."@en .
-<https://w3id.org/reno#InsulateAtticFloor> <https://w3id.org/reno#hasPriceUnit> <http://qudt.org/vocab/unit/PER-M2> .
-<https://w3id.org/reno#InsulateAtticFloor> <https://w3id.org/reno#hasUnitPrice> "55"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-<https://w3id.org/reno#InsulateAtticFloor> <https://w3id.org/reno#ordering> "31"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <https://w3id.org/reno#InsulateAtticFloor> <https://w3id.org/reno#permitNeeded> "niet nodig (Vlaanderen)"@nl .
 <https://w3id.org/reno#InsulateAtticFloor> <https://w3id.org/reno#permitNeeded> "not necessary (Flanders)"@en .
 <https://w3id.org/reno#InsulateAtticFloor> <https://w3id.org/reno#requiresMultiPhase> "nee"@nl .
@@ -1910,9 +1881,6 @@ _:genid123 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://w3id.org/reno#InsulateFlatRoof> <https://w3id.org/reno#hasNuisanceLevel> "hoog"@nl .
 <https://w3id.org/reno#InsulateFlatRoof> <https://w3id.org/reno#hasPointOfAttention> "Opt for an inverted roof structure, not a cold roof. Place the insulation on top of the roof covering, do not insulate the flat roof on the inside."@en .
 <https://w3id.org/reno#InsulateFlatRoof> <https://w3id.org/reno#hasPointOfAttention> "Opteer voor een omgekeerde dakopbouw, niet voor een koud dak. Plaats de isolatie dus bovenop de dakbedekking, isoleer het plat dak niet aan de binnenzijde."@nl .
-<https://w3id.org/reno#InsulateFlatRoof> <https://w3id.org/reno#hasPriceUnit> <http://qudt.org/vocab/unit/PER-M2> .
-<https://w3id.org/reno#InsulateFlatRoof> <https://w3id.org/reno#hasUnitPrice> "50"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-<https://w3id.org/reno#InsulateFlatRoof> <https://w3id.org/reno#ordering> "25"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <https://w3id.org/reno#InsulateFlatRoof> <https://w3id.org/reno#permitNeeded> "enkel indien dikte totaal pakket >26cm (Vlaanderen)"@nl .
 <https://w3id.org/reno#InsulateFlatRoof> <https://w3id.org/reno#permitNeeded> "only if thickness of total pack >26cm (Flanders)"@en .
 <https://w3id.org/reno#InsulateFlatRoof> <https://w3id.org/reno#requiresMultiPhase> "nee"@nl .
@@ -1925,9 +1893,6 @@ _:genid123 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://w3id.org/reno#InsulateFloorAboveBasement> <http://www.w3.org/2000/01/rdf-schema#label> "isoleer vloer boven kelder"@nl .
 <https://w3id.org/reno#InsulateFloorAboveBasement> <https://w3id.org/reno#hasNuisanceLevel> "laag"@nl .
 <https://w3id.org/reno#InsulateFloorAboveBasement> <https://w3id.org/reno#hasNuisanceLevel> "low"@en .
-<https://w3id.org/reno#InsulateFloorAboveBasement> <https://w3id.org/reno#hasPriceUnit> <http://qudt.org/vocab/unit/PER-M2> .
-<https://w3id.org/reno#InsulateFloorAboveBasement> <https://w3id.org/reno#hasUnitPrice> "30"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-<https://w3id.org/reno#InsulateFloorAboveBasement> <https://w3id.org/reno#ordering> "49"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <https://w3id.org/reno#InsulateFloorAboveBasement> <https://w3id.org/reno#permitNeeded> "niet nodig (Vlaanderen)"@nl .
 <https://w3id.org/reno#InsulateFloorAboveBasement> <https://w3id.org/reno#permitNeeded> "not necessary (Flanders)"@en .
 <https://w3id.org/reno#InsulateFloorAboveBasement> <https://w3id.org/reno#requiresMultiPhase> "nee"@nl .
@@ -1944,9 +1909,6 @@ _:genid123 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://w3id.org/reno#InsulateGableRoof> <https://w3id.org/reno#hasPointOfAttention> "Condensation problems can occur without a vapour barrier. Always install the vapour barrier on the warm side of the insulation."@en .
 <https://w3id.org/reno#InsulateGableRoof> <https://w3id.org/reno#hasPointOfAttention> "Pay extra attention when installing the roof underlayment so that it is completely air- and watertight."@en .
 <https://w3id.org/reno#InsulateGableRoof> <https://w3id.org/reno#hasPointOfAttention> "Zonder een dampscherm kunnen zich condensatieproblemen voordoen. Plaats het dampscherm steeds aan de warme zijde van de isolatie."@nl .
-<https://w3id.org/reno#InsulateGableRoof> <https://w3id.org/reno#hasPriceUnit> <http://qudt.org/vocab/unit/PER-M2> .
-<https://w3id.org/reno#InsulateGableRoof> <https://w3id.org/reno#hasUnitPrice> "60"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-<https://w3id.org/reno#InsulateGableRoof> <https://w3id.org/reno#ordering> "28"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <https://w3id.org/reno#InsulateGableRoof> <https://w3id.org/reno#permitNeeded> "niet nodig (Vlaanderen)"@nl .
 <https://w3id.org/reno#InsulateGableRoof> <https://w3id.org/reno#permitNeeded> "not necessary (Flanders)"@en .
 <https://w3id.org/reno#InsulateGableRoof> <https://w3id.org/reno#requiresMultiPhase> "nee"@nl .
@@ -1961,9 +1923,6 @@ _:genid123 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://w3id.org/reno#InsulateWallCavity> <https://w3id.org/reno#hasNuisanceLevel> "low"@en .
 <https://w3id.org/reno#InsulateWallCavity> <https://w3id.org/reno#hasPointOfAttention> "Have an inspection carried out by a contractor, who can determine whether the cavity wall is suitable for injecting insulation. Namely, it should be checked whether the cavity is wide enough, whether there is no contamination in the cavity, whether the cladding is vapour-permeable enough, etc."@en .
 <https://w3id.org/reno#InsulateWallCavity> <https://w3id.org/reno#hasPointOfAttention> "Laat een inspectie uitvoeren door een aannemer, die kan bepalen of de spouwmuur geschikt is om isolatie in te spuiten. Er moet namelijk nagegaan worden of de spouw breed genoeg is, of er geen vervuiling in de spouw is, of de gevelbekleding dampopen genoeg is, etc."@nl .
-<https://w3id.org/reno#InsulateWallCavity> <https://w3id.org/reno#hasPriceUnit> <http://qudt.org/vocab/unit/PER-M2> .
-<https://w3id.org/reno#InsulateWallCavity> <https://w3id.org/reno#hasUnitPrice> "22"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-<https://w3id.org/reno#InsulateWallCavity> <https://w3id.org/reno#ordering> "34"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <https://w3id.org/reno#InsulateWallCavity> <https://w3id.org/reno#permitNeeded> "niet nodig (Vlaanderen)"@nl .
 <https://w3id.org/reno#InsulateWallCavity> <https://w3id.org/reno#permitNeeded> "not necessary (Flanders)"@en .
 <https://w3id.org/reno#InsulateWallCavity> <https://w3id.org/reno#requiresMultiPhase> "nee"@nl .
@@ -1978,9 +1937,6 @@ _:genid123 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://w3id.org/reno#InsulateWallExterior> <https://w3id.org/reno#hasNuisanceLevel> "hoog"@nl .
 <https://w3id.org/reno#InsulateWallExterior> <https://w3id.org/reno#hasPointOfAttention> "Niet elk type gevelbekleding zal mogelijk zijn, afhankelijk van de positie van de rooilijn en de richtlijnen van de gemeente."@nl .
 <https://w3id.org/reno#InsulateWallExterior> <https://w3id.org/reno#hasPointOfAttention> "Not every type of cladding will be possible, depending on the position of the building line and the council's guidelines."@en .
-<https://w3id.org/reno#InsulateWallExterior> <https://w3id.org/reno#hasPriceUnit> <http://qudt.org/vocab/unit/PER-M2> .
-<https://w3id.org/reno#InsulateWallExterior> <https://w3id.org/reno#hasUnitPrice> "200"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-<https://w3id.org/reno#InsulateWallExterior> <https://w3id.org/reno#ordering> "40"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <https://w3id.org/reno#InsulateWallExterior> <https://w3id.org/reno#permitNeeded> "enkel indien dikte totaal pakket >26cm of de rooilijn wordt overgeschreden (Vlaanderen)"@nl .
 <https://w3id.org/reno#InsulateWallExterior> <https://w3id.org/reno#permitNeeded> "only if thickness of total pack >26cm or the building line is overrun (Flanders)"@en .
 <https://w3id.org/reno#InsulateWallExterior> <https://w3id.org/reno#requiresMultiPhase> "nee"@nl .
@@ -1997,9 +1953,6 @@ _:genid123 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://w3id.org/reno#InsulateWallInterior> <https://w3id.org/reno#hasPointOfAttention> "Insulating walls on the inside is a delicate job. Get assistance from an architect, contractor or craftsman for expert advice and proper execution of the works."@en .
 <https://w3id.org/reno#InsulateWallInterior> <https://w3id.org/reno#hasPointOfAttention> "Sockets, pipes and radiators against the outer walls will have to be relocated."@en .
 <https://w3id.org/reno#InsulateWallInterior> <https://w3id.org/reno#hasPointOfAttention> "Stopcontacten, leidingen en radiatoren tegen de buitenwanden zullen verplaatst moeten worden."@nl .
-<https://w3id.org/reno#InsulateWallInterior> <https://w3id.org/reno#hasPriceUnit> <http://qudt.org/vocab/unit/PER-M2> .
-<https://w3id.org/reno#InsulateWallInterior> <https://w3id.org/reno#hasUnitPrice> "150"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-<https://w3id.org/reno#InsulateWallInterior> <https://w3id.org/reno#ordering> "37"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <https://w3id.org/reno#InsulateWallInterior> <https://w3id.org/reno#permitNeeded> "niet nodig (Vlaanderen)"@nl .
 <https://w3id.org/reno#InsulateWallInterior> <https://w3id.org/reno#permitNeeded> "not necessary (Flanders)"@en .
 <https://w3id.org/reno#InsulateWallInterior> <https://w3id.org/reno#requiresMultiPhase> "nee"@nl .
@@ -2195,8 +2148,6 @@ _:genid137 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://w3id.org/reno#PlaceAirAirHeatpump> <http://www.w3.org/2000/01/rdf-schema#label> "place air-air heatpump"@en .
 <https://w3id.org/reno#PlaceAirAirHeatpump> <https://w3id.org/reno#hasNuisanceLevel> "matig"@nl .
 <https://w3id.org/reno#PlaceAirAirHeatpump> <https://w3id.org/reno#hasNuisanceLevel> "moderate"@en .
-<https://w3id.org/reno#PlaceAirAirHeatpump> <https://w3id.org/reno#hasUnitPrice> "2500"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-<https://w3id.org/reno#PlaceAirAirHeatpump> <https://w3id.org/reno#ordering> "58"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <https://w3id.org/reno#PlaceAirAirHeatpump> <https://w3id.org/reno#permitNeeded> "niet nodig indien de bovengrondse onderdelen minstens 2m verwijderd zijn van de perceelsgrens (Vlaanderen)"@nl .
 <https://w3id.org/reno#PlaceAirAirHeatpump> <https://w3id.org/reno#permitNeeded> "not necessary if the above-ground parts are at least 2m away from the parcel boundary (Flanders)"@en .
 <https://w3id.org/reno#PlaceAirAirHeatpump> <https://w3id.org/reno#requiresMultiPhase> "maybe, depending on the system"@en .
@@ -2209,8 +2160,6 @@ _:genid137 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://w3id.org/reno#PlaceAirWaterHeatpump> <http://www.w3.org/2000/01/rdf-schema#label> "place air-water heatpump"@en .
 <https://w3id.org/reno#PlaceAirWaterHeatpump> <https://w3id.org/reno#hasNuisanceLevel> "matig"@nl .
 <https://w3id.org/reno#PlaceAirWaterHeatpump> <https://w3id.org/reno#hasNuisanceLevel> "moderate"@en .
-<https://w3id.org/reno#PlaceAirWaterHeatpump> <https://w3id.org/reno#hasUnitPrice> "11500"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-<https://w3id.org/reno#PlaceAirWaterHeatpump> <https://w3id.org/reno#ordering> "67"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <https://w3id.org/reno#PlaceAirWaterHeatpump> <https://w3id.org/reno#permitNeeded> "niet nodig indien de bovengrondse onderdelen minstens 2m verwijderd zijn van de perceelsgrens (Vlaanderen)"@nl .
 <https://w3id.org/reno#PlaceAirWaterHeatpump> <https://w3id.org/reno#permitNeeded> "not necessary if the above-ground parts are at least 2m away from the parcel boundary (Flanders)"@en .
 <https://w3id.org/reno#PlaceAirWaterHeatpump> <https://w3id.org/reno#requiresMultiPhase> "maybe, depending on the system"@en .
@@ -2223,8 +2172,6 @@ _:genid137 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://w3id.org/reno#PlaceAirWaterHeatpumpWithCooling> <http://www.w3.org/2000/01/rdf-schema#label> "place air-water heatpump with cooling"@en .
 <https://w3id.org/reno#PlaceAirWaterHeatpumpWithCooling> <https://w3id.org/reno#hasNuisanceLevel> "matig"@nl .
 <https://w3id.org/reno#PlaceAirWaterHeatpumpWithCooling> <https://w3id.org/reno#hasNuisanceLevel> "moderate"@en .
-<https://w3id.org/reno#PlaceAirWaterHeatpumpWithCooling> <https://w3id.org/reno#hasUnitPrice> "12500"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-<https://w3id.org/reno#PlaceAirWaterHeatpumpWithCooling> <https://w3id.org/reno#ordering> "73"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <https://w3id.org/reno#PlaceAirWaterHeatpumpWithCooling> <https://w3id.org/reno#permitNeeded> "niet nodig indien de bovengrondse onderdelen minstens 2m verwijderd zijn van de perceelsgrens (Vlaanderen)"@nl .
 <https://w3id.org/reno#PlaceAirWaterHeatpumpWithCooling> <https://w3id.org/reno#permitNeeded> "not necessary if the above-ground parts are at least 2m away from the parcel boundary (Flanders)"@en .
 <https://w3id.org/reno#PlaceAirWaterHeatpumpWithCooling> <https://w3id.org/reno#requiresMultiPhase> "maybe, depending on the system"@en .
@@ -2237,12 +2184,22 @@ _:genid137 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://w3id.org/reno#PlaceAirconditioning> <http://www.w3.org/2000/01/rdf-schema#label> "place airconditioning"@en .
 <https://w3id.org/reno#PlaceAirconditioning> <https://w3id.org/reno#hasNuisanceLevel> "laag"@nl .
 <https://w3id.org/reno#PlaceAirconditioning> <https://w3id.org/reno#hasNuisanceLevel> "low"@en .
-<https://w3id.org/reno#PlaceAirconditioning> <https://w3id.org/reno#hasUnitPrice> "1000"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-<https://w3id.org/reno#PlaceAirconditioning> <https://w3id.org/reno#ordering> "82"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <https://w3id.org/reno#PlaceAirconditioning> <https://w3id.org/reno#permitNeeded> "niet nodig (Vlaanderen)"@nl .
 <https://w3id.org/reno#PlaceAirconditioning> <https://w3id.org/reno#permitNeeded> "not necessary (Flanders)"@en .
 <https://w3id.org/reno#PlaceAirconditioning> <https://w3id.org/reno#requiresMultiPhase> "nee"@nl .
 <https://w3id.org/reno#PlaceAirconditioning> <https://w3id.org/reno#requiresMultiPhase> "no"@en .
+# 
+# https://w3id.org/reno#PlaceFloorHeating
+<https://w3id.org/reno#PlaceFloorHeating> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/reno#PlaceFloorHeating> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/reno#RenovationSuggestion> .
+<https://w3id.org/reno#PlaceFloorHeating> <http://www.w3.org/2000/01/rdf-schema#label> "plaats vloerverwarming"@nl .
+<https://w3id.org/reno#PlaceFloorHeating> <http://www.w3.org/2000/01/rdf-schema#label> "place floor heating"@en .
+<https://w3id.org/reno#PlaceFloorHeating> <https://w3id.org/reno#hasNuisanceLevel> "matig"@nl .
+<https://w3id.org/reno#PlaceFloorHeating> <https://w3id.org/reno#hasNuisanceLevel> "moderate"@en .
+<https://w3id.org/reno#PlaceFloorHeating> <https://w3id.org/reno#permitNeeded> "niet nodig (Vlaanderen)"@nl .
+<https://w3id.org/reno#PlaceFloorHeating> <https://w3id.org/reno#permitNeeded> "not necessary (Flanders)"@en .
+<https://w3id.org/reno#PlaceFloorHeating> <https://w3id.org/reno#requiresMultiPhase> "nee"@nl .
+<https://w3id.org/reno#PlaceFloorHeating> <https://w3id.org/reno#requiresMultiPhase> "no"@en .
 # 
 # https://w3id.org/reno#PlaceGeothermalHeatpumpHorizontal
 <https://w3id.org/reno#PlaceGeothermalHeatpumpHorizontal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -2251,8 +2208,6 @@ _:genid137 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://w3id.org/reno#PlaceGeothermalHeatpumpHorizontal> <http://www.w3.org/2000/01/rdf-schema#label> "place horizontal geothermal heatpump"@en .
 <https://w3id.org/reno#PlaceGeothermalHeatpumpHorizontal> <https://w3id.org/reno#hasNuisanceLevel> "matig"@nl .
 <https://w3id.org/reno#PlaceGeothermalHeatpumpHorizontal> <https://w3id.org/reno#hasNuisanceLevel> "moderate"@en .
-<https://w3id.org/reno#PlaceGeothermalHeatpumpHorizontal> <https://w3id.org/reno#hasUnitPrice> "14500"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-<https://w3id.org/reno#PlaceGeothermalHeatpumpHorizontal> <https://w3id.org/reno#ordering> "64"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <https://w3id.org/reno#PlaceGeothermalHeatpumpHorizontal> <https://w3id.org/reno#permitNeeded> "niet nodig (Vlaanderen)"@nl .
 <https://w3id.org/reno#PlaceGeothermalHeatpumpHorizontal> <https://w3id.org/reno#permitNeeded> "not necessary (Flanders)"@en .
 <https://w3id.org/reno#PlaceGeothermalHeatpumpHorizontal> <https://w3id.org/reno#requiresMultiPhase> "maybe, depending on the system"@en .
@@ -2265,8 +2220,6 @@ _:genid137 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://w3id.org/reno#PlaceGeothermalHeatpumpVertical> <http://www.w3.org/2000/01/rdf-schema#label> "place vertical geothermal heatpump"@en .
 <https://w3id.org/reno#PlaceGeothermalHeatpumpVertical> <https://w3id.org/reno#hasNuisanceLevel> "matig"@nl .
 <https://w3id.org/reno#PlaceGeothermalHeatpumpVertical> <https://w3id.org/reno#hasNuisanceLevel> "moderate"@en .
-<https://w3id.org/reno#PlaceGeothermalHeatpumpVertical> <https://w3id.org/reno#hasUnitPrice> "15500"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-<https://w3id.org/reno#PlaceGeothermalHeatpumpVertical> <https://w3id.org/reno#ordering> "61"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <https://w3id.org/reno#PlaceGeothermalHeatpumpVertical> <https://w3id.org/reno#permitNeeded> "meldings- of vergunningsplicht is afhankelijk van diepte boring, bodemkenmerken en grondwater(Vlaanderen)"@nl .
 <https://w3id.org/reno#PlaceGeothermalHeatpumpVertical> <https://w3id.org/reno#permitNeeded> "reporting or permit requirement depends on depth of drilling, soil characteristics and groundwater(Flanders)"@en .
 <https://w3id.org/reno#PlaceGeothermalHeatpumpVertical> <https://w3id.org/reno#requiresMultiPhase> "maybe, depending on the system"@en .
@@ -2279,8 +2232,6 @@ _:genid137 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://w3id.org/reno#PlaceHeatPumpBoiler> <http://www.w3.org/2000/01/rdf-schema#label> "place heatpumpboiler"@en .
 <https://w3id.org/reno#PlaceHeatPumpBoiler> <https://w3id.org/reno#hasNuisanceLevel> "matig"@nl .
 <https://w3id.org/reno#PlaceHeatPumpBoiler> <https://w3id.org/reno#hasNuisanceLevel> "moderate"@en .
-<https://w3id.org/reno#PlaceHeatPumpBoiler> <https://w3id.org/reno#hasUnitPrice> "4000"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-<https://w3id.org/reno#PlaceHeatPumpBoiler> <https://w3id.org/reno#ordering> "76"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <https://w3id.org/reno#PlaceHeatPumpBoiler> <https://w3id.org/reno#permitNeeded> "niet nodig (Vlaanderen)"@nl .
 <https://w3id.org/reno#PlaceHeatPumpBoiler> <https://w3id.org/reno#permitNeeded> "not necessary (Flanders)"@en .
 <https://w3id.org/reno#PlaceHeatPumpBoiler> <https://w3id.org/reno#requiresMultiPhase> "maybe, depending on the system"@en .
@@ -2293,9 +2244,6 @@ _:genid137 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://w3id.org/reno#PlaceLowTemperatureEmission> <http://www.w3.org/2000/01/rdf-schema#label> "place emission system on low temperature"@en .
 <https://w3id.org/reno#PlaceLowTemperatureEmission> <https://w3id.org/reno#hasNuisanceLevel> "matig"@nl .
 <https://w3id.org/reno#PlaceLowTemperatureEmission> <https://w3id.org/reno#hasNuisanceLevel> "moderate"@en .
-<https://w3id.org/reno#PlaceLowTemperatureEmission> <https://w3id.org/reno#hasPriceUnit> <http://qudt.org/vocab/unit/PER-M2> .
-<https://w3id.org/reno#PlaceLowTemperatureEmission> <https://w3id.org/reno#hasUnitPrice> "100"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-<https://w3id.org/reno#PlaceLowTemperatureEmission> <https://w3id.org/reno#ordering> "70"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <https://w3id.org/reno#PlaceLowTemperatureEmission> <https://w3id.org/reno#permitNeeded> "niet nodig (Vlaanderen)"@nl .
 <https://w3id.org/reno#PlaceLowTemperatureEmission> <https://w3id.org/reno#permitNeeded> "not necessary (Flanders)"@en .
 <https://w3id.org/reno#PlaceLowTemperatureEmission> <https://w3id.org/reno#requiresMultiPhase> "nee"@nl .
@@ -2308,9 +2256,6 @@ _:genid137 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://w3id.org/reno#PlacePVPanelsInGarden> <http://www.w3.org/2000/01/rdf-schema#label> "place PV-panels in garden"@en .
 <https://w3id.org/reno#PlacePVPanelsInGarden> <https://w3id.org/reno#hasNuisanceLevel> "laag"@nl .
 <https://w3id.org/reno#PlacePVPanelsInGarden> <https://w3id.org/reno#hasNuisanceLevel> "low"@en .
-<https://w3id.org/reno#PlacePVPanelsInGarden> <https://w3id.org/reno#hasPriceUnit> <http://qudt.org/vocab/unit/PER-M2> .
-<https://w3id.org/reno#PlacePVPanelsInGarden> <https://w3id.org/reno#hasUnitPrice> "275"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-<https://w3id.org/reno#PlacePVPanelsInGarden> <https://w3id.org/reno#ordering> "88"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <https://w3id.org/reno#PlacePVPanelsInGarden> <https://w3id.org/reno#permitNeeded> "niet nodig (Vlaanderen)"@nl .
 <https://w3id.org/reno#PlacePVPanelsInGarden> <https://w3id.org/reno#permitNeeded> "not necessary (Flanders)"@en .
 <https://w3id.org/reno#PlacePVPanelsInGarden> <https://w3id.org/reno#requiresMultiPhase> "maybe, depending on the system"@en .
@@ -2327,11 +2272,10 @@ _:genid137 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://w3id.org/reno#PlacePVPanelsOnRoof> <https://w3id.org/reno#hasPointOfAttention> "Bekijk op de Zonnekaart of uw dak goed georiënteerd is en voldoende zonlicht opvangt. De opbrengst is het grootst als uw panelen naar het zuiden gericht zijn (zuid-oost tot zuid-west) onder een hoek van 30° tot 50°. De opbrengst van zonnepanelen daalt bij schaduw van gebouwen, schoorstenen of bomen."@nl .
 <https://w3id.org/reno#PlacePVPanelsOnRoof> <https://w3id.org/reno#hasPointOfAttention> "Check on the 'Zonnekaart' whether your roof is properly oriented and captures enough sunlight. The yield is greatest if your panels face south (south-east to south-west) at an angle of 30° to 50°. The yield of solar panels decreases when shaded by buildings, chimneys or trees."@en .
 <https://w3id.org/reno#PlacePVPanelsOnRoof> <https://w3id.org/reno#hasPointOfAttention> "Since PV panels are attached to the roof structure, it is crucial to remove any asbestos present in the roof first. Installing solar panels on a building with an asbestos-containing roof covering or an asbestos-containing sub-roof is prohibited."@en .
-<https://w3id.org/reno#PlacePVPanelsOnRoof> <https://w3id.org/reno#hasPriceUnit> <http://qudt.org/vocab/unit/PER-M2> .
-<https://w3id.org/reno#PlacePVPanelsOnRoof> <https://w3id.org/reno#hasUnitPrice> "275"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-<https://w3id.org/reno#PlacePVPanelsOnRoof> <https://w3id.org/reno#ordering> "85"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<https://w3id.org/reno#PlacePVPanelsOnRoof> <https://w3id.org/reno#permitNeeded> "niet nodig indien de panelen in hetzelfde vlak zitten (Vlaanderen)"@nl .
-<https://w3id.org/reno#PlacePVPanelsOnRoof> <https://w3id.org/reno#permitNeeded> "not necessary if the panels are in the same plane (Flanders)"@en .
+<https://w3id.org/reno#PlacePVPanelsOnRoof> <https://w3id.org/reno#permitNeeded> "flat roof: not necessary if less than 1m above edges (Flanders)"@en .
+<https://w3id.org/reno#PlacePVPanelsOnRoof> <https://w3id.org/reno#permitNeeded> "gable roof: not necessary if the panels are in the same plane (Flanders)"@en .
+<https://w3id.org/reno#PlacePVPanelsOnRoof> <https://w3id.org/reno#permitNeeded> "plat dak: niet nodig indien minder dan 1m boven dakrand (Vlaanderen)"@nl .
+<https://w3id.org/reno#PlacePVPanelsOnRoof> <https://w3id.org/reno#permitNeeded> "schuin dak: niet nodig indien de panelen in hetzelfde vlak zitten (Vlaanderen)"@nl .
 <https://w3id.org/reno#PlacePVPanelsOnRoof> <https://w3id.org/reno#requiresMultiPhase> "maybe, depending on the system"@en .
 <https://w3id.org/reno#PlacePVPanelsOnRoof> <https://w3id.org/reno#requiresMultiPhase> "mogelijks, afhankelijk van het systeem"@nl .
 # 
@@ -2344,9 +2288,6 @@ _:genid137 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://w3id.org/reno#PlaceRoofUnderlayment> <https://w3id.org/reno#hasNuisanceLevel> "low"@en .
 <https://w3id.org/reno#PlaceRoofUnderlayment> <https://w3id.org/reno#hasPointOfAttention> "Besteed extra aandacht bij de plaatsing van het onderdak, zodat dit volledig lucht- en waterdicht wordt uitgevoerd."@nl .
 <https://w3id.org/reno#PlaceRoofUnderlayment> <https://w3id.org/reno#hasPointOfAttention> "Pay extra attention when installing the roof underlayment so that it is completely air- and watertight."@en .
-<https://w3id.org/reno#PlaceRoofUnderlayment> <https://w3id.org/reno#hasPriceUnit> <http://qudt.org/vocab/unit/PER-M2> .
-<https://w3id.org/reno#PlaceRoofUnderlayment> <https://w3id.org/reno#hasUnitPrice> "65"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-<https://w3id.org/reno#PlaceRoofUnderlayment> <https://w3id.org/reno#ordering> "16"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <https://w3id.org/reno#PlaceRoofUnderlayment> <https://w3id.org/reno#permitNeeded> "niet nodig (Vlaanderen)"@nl .
 <https://w3id.org/reno#PlaceRoofUnderlayment> <https://w3id.org/reno#permitNeeded> "not necessary (Flanders)"@en .
 <https://w3id.org/reno#PlaceRoofUnderlayment> <https://w3id.org/reno#requiresMultiPhase> "nee"@nl .
@@ -2361,8 +2302,6 @@ _:genid137 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://w3id.org/reno#PlaceSunShade> <https://w3id.org/reno#hasNuisanceLevel> "low"@en .
 <https://w3id.org/reno#PlaceSunShade> <https://w3id.org/reno#hasPointOfAttention> "Buitenzonwering is over het algemeen efficiënter dan binnenzonwering."@nl .
 <https://w3id.org/reno#PlaceSunShade> <https://w3id.org/reno#hasPointOfAttention> "Outdoor blinds are generally more efficient than indoor blinds."@en .
-<https://w3id.org/reno#PlaceSunShade> <https://w3id.org/reno#hasUnitPrice> "750"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-<https://w3id.org/reno#PlaceSunShade> <https://w3id.org/reno#ordering> "79"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <https://w3id.org/reno#PlaceSunShade> <https://w3id.org/reno#permitNeeded> "niet nodig (Vlaanderen)"@nl .
 <https://w3id.org/reno#PlaceSunShade> <https://w3id.org/reno#permitNeeded> "not necessary (Flanders)"@en .
 <https://w3id.org/reno#PlaceSunShade> <https://w3id.org/reno#requiresMultiPhase> "nee"@nl .
@@ -2383,8 +2322,6 @@ _:genid137 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://w3id.org/reno#PlugAndPlayPanels> <https://w3id.org/reno#hasPointOfAttention> "In Vlaanderen mogen er maximaal twee zonnepanelen per gezin geïnstalleerd worden. Verder mag de omvormer van een plug-and-play zonnepaneel maximaal 800W bedragen."@nl .
 <https://w3id.org/reno#PlugAndPlayPanels> <https://w3id.org/reno#hasPointOfAttention> "Niet alle toestellen op de (Belgische) markt zijn gehomologeerd, controleer steeds de officiële lijst van Synergrid vooraleer u een paneel aankoopt. "@nl .
 <https://w3id.org/reno#PlugAndPlayPanels> <https://w3id.org/reno#hasPointOfAttention> "Not all devices on the (Belgian) market are homologated, always check Synergrid's official list before purchasing a panel."@en .
-<https://w3id.org/reno#PlugAndPlayPanels> <https://w3id.org/reno#hasUnitPrice> "550"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-<https://w3id.org/reno#PlugAndPlayPanels> <https://w3id.org/reno#ordering> "91"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <https://w3id.org/reno#PlugAndPlayPanels> <https://w3id.org/reno#permitNeeded> "niet nodig (Vlaanderen)"@nl .
 <https://w3id.org/reno#PlugAndPlayPanels> <https://w3id.org/reno#permitNeeded> "not necessary (Flanders)"@en .
 <https://w3id.org/reno#PlugAndPlayPanels> <https://w3id.org/reno#requiresMultiPhase> "nee"@nl .
@@ -2476,9 +2413,6 @@ _:genid138 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://w3id.org/reno#RemoveAsbestosFlatRoof> <https://w3id.org/reno#hasNuisanceLevel> "moderate"@en .
 <https://w3id.org/reno#RemoveAsbestosFlatRoof> <https://w3id.org/reno#hasPointOfAttention> "Hechtgebonden asbest kan u zelf verwijderen, maar neem de correcte voorzorgsmaatregelen. Voor het verwijderen van niet-hechtgebonden asbest moet u een erkend asbestverwijderaar inschakelen."@nl .
 <https://w3id.org/reno#RemoveAsbestosFlatRoof> <https://w3id.org/reno#hasPointOfAttention> "You can remove bonded asbestos yourself, but take the correct precautions. To remove non-bonded asbestos, hire a licensed asbestos removal company."@en .
-<https://w3id.org/reno#RemoveAsbestosFlatRoof> <https://w3id.org/reno#hasPriceUnit> <http://qudt.org/vocab/unit/PER-M2> .
-<https://w3id.org/reno#RemoveAsbestosFlatRoof> <https://w3id.org/reno#hasUnitPrice> "40"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-<https://w3id.org/reno#RemoveAsbestosFlatRoof> <https://w3id.org/reno#ordering> "19"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <https://w3id.org/reno#RemoveAsbestosFlatRoof> <https://w3id.org/reno#permitNeeded> "niet nodig (Vlaanderen)"@nl .
 <https://w3id.org/reno#RemoveAsbestosFlatRoof> <https://w3id.org/reno#permitNeeded> "not necessary (Flanders)"@en .
 <https://w3id.org/reno#RemoveAsbestosFlatRoof> <https://w3id.org/reno#requiresMultiPhase> "nee"@nl .
@@ -2493,9 +2427,6 @@ _:genid138 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://w3id.org/reno#RemoveAsbestosGableRoof> <https://w3id.org/reno#hasNuisanceLevel> "low"@en .
 <https://w3id.org/reno#RemoveAsbestosGableRoof> <https://w3id.org/reno#hasPointOfAttention> "Hechtgebonden asbest kan u zelf verwijderen, maar neem de correcte voorzorgsmaatregelen. Voor het verwijderen van niet-hechtgebonden asbest moet u een erkend asbestverwijderaar inschakelen."@nl .
 <https://w3id.org/reno#RemoveAsbestosGableRoof> <https://w3id.org/reno#hasPointOfAttention> "You can remove bonded asbestos yourself, but take the correct precautions. To remove non-bonded asbestos, hire a licensed asbestos removal company."@en .
-<https://w3id.org/reno#RemoveAsbestosGableRoof> <https://w3id.org/reno#hasPriceUnit> <http://qudt.org/vocab/unit/PER-M2> .
-<https://w3id.org/reno#RemoveAsbestosGableRoof> <https://w3id.org/reno#hasUnitPrice> "45"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-<https://w3id.org/reno#RemoveAsbestosGableRoof> <https://w3id.org/reno#ordering> "22"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <https://w3id.org/reno#RemoveAsbestosGableRoof> <https://w3id.org/reno#permitNeeded> "niet nodig (Vlaanderen)"@nl .
 <https://w3id.org/reno#RemoveAsbestosGableRoof> <https://w3id.org/reno#permitNeeded> "not necessary (Flanders)"@en .
 <https://w3id.org/reno#RemoveAsbestosGableRoof> <https://w3id.org/reno#requiresMultiPhase> "nee"@nl .
@@ -2603,9 +2534,6 @@ _:genid168 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://w3id.org/reno#ReplaceFlatRoof> <https://w3id.org/reno#hasPointOfAttention> "Idealiter voorziet u een dakopstand van 15cm, en een minimale hellingsgraad van 2% om correcte afwatering te garanderen. We raden aan om voor een warme dakopbouw te opteren."@nl .
 <https://w3id.org/reno#ReplaceFlatRoof> <https://w3id.org/reno#hasPointOfAttention> "Ideally, you should provide a roof edge of 15cm, and a minimum gradient of 2% to ensure correct drainage. We recommend opting for a warm roof setup."@en .
 <https://w3id.org/reno#ReplaceFlatRoof> <https://w3id.org/reno#hasPointOfAttention> "Zonder een dampscherm kunnen zich condensatieproblemen voordoen. Plaats het dampscherm steeds aan de warme zijde van de isolatie."@nl .
-<https://w3id.org/reno#ReplaceFlatRoof> <https://w3id.org/reno#hasPriceUnit> <http://qudt.org/vocab/unit/PER-M2> .
-<https://w3id.org/reno#ReplaceFlatRoof> <https://w3id.org/reno#hasUnitPrice> "120"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-<https://w3id.org/reno#ReplaceFlatRoof> <https://w3id.org/reno#ordering> "10"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <https://w3id.org/reno#ReplaceFlatRoof> <https://w3id.org/reno#permitNeeded> "meldingsplicht (Vlaanderen)"@nl .
 <https://w3id.org/reno#ReplaceFlatRoof> <https://w3id.org/reno#permitNeeded> "reporting obligation (Flanders)"@en .
 <https://w3id.org/reno#ReplaceFlatRoof> <https://w3id.org/reno#requiresMultiPhase> "nee"@nl .
@@ -2624,9 +2552,6 @@ _:genid168 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://w3id.org/reno#ReplaceGableRoof> <https://w3id.org/reno#hasPointOfAttention> "If your facades are not yet insulated, extend the roof overhangs now so that the external wall insulation can connect to the roof insulation. Also place the rainwater drains so that the external wall insulation can still be placed."@en .
 <https://w3id.org/reno#ReplaceGableRoof> <https://w3id.org/reno#hasPointOfAttention> "Indien uw gevels nog niet geïsoleerd zijn, verleng dan nu al de dakoversteken zodat de buitenmuurisolatie op de dakisolatie kan aansluiten. Plaats ook de regenwaterafvoer zodanig dat de buitenmuurisolatie nog geplaatst kan worden."@nl .
 <https://w3id.org/reno#ReplaceGableRoof> <https://w3id.org/reno#hasPointOfAttention> "When renewing your roof, already take into account any ducts which may be needed for a ventilation system, solar water heater or solar panels."@en .
-<https://w3id.org/reno#ReplaceGableRoof> <https://w3id.org/reno#hasPriceUnit> <http://qudt.org/vocab/unit/PER-M2> .
-<https://w3id.org/reno#ReplaceGableRoof> <https://w3id.org/reno#hasUnitPrice> "260"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-<https://w3id.org/reno#ReplaceGableRoof> <https://w3id.org/reno#ordering> "13"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <https://w3id.org/reno#ReplaceGableRoof> <https://w3id.org/reno#permitNeeded> "enkel indien dakgebinte wordt vernieuwd (Vlaanderen)"@nl .
 <https://w3id.org/reno#ReplaceGableRoof> <https://w3id.org/reno#permitNeeded> "only if roof framework is renewed (Flanders)"@en .
 <https://w3id.org/reno#ReplaceGableRoof> <https://w3id.org/reno#requiresMultiPhase> "nee"@nl .
@@ -2643,9 +2568,6 @@ _:genid168 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://w3id.org/reno#ReplaceGlazing> <https://w3id.org/reno#hasPointOfAttention> "Check that your window frames have the right thickness, which depends on the type of glazing you want to install in them."@en .
 <https://w3id.org/reno#ReplaceGlazing> <https://w3id.org/reno#hasPointOfAttention> "Controleer of je raamkaders de juiste dikte hebben, welke afhankelijk is van het type beglazing dat je erin wil plaatsen."@nl .
 <https://w3id.org/reno#ReplaceGlazing> <https://w3id.org/reno#hasPointOfAttention> "Controleer of je raamkaders nog in goede staat zijn, ze moeten namelijk recht genoeg zijn om nieuw glas in te plaatsen, en ook sterk genoeg, aangezien het nieuwe glas vermoedelijk meer zal wegen dan het oude glas."@nl .
-<https://w3id.org/reno#ReplaceGlazing> <https://w3id.org/reno#hasPriceUnit> <http://qudt.org/vocab/unit/PER-M2> .
-<https://w3id.org/reno#ReplaceGlazing> <https://w3id.org/reno#hasUnitPrice> "200"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-<https://w3id.org/reno#ReplaceGlazing> <https://w3id.org/reno#ordering> "43"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <https://w3id.org/reno#ReplaceGlazing> <https://w3id.org/reno#permitNeeded> "niet nodig (Vlaanderen)"@nl .
 <https://w3id.org/reno#ReplaceGlazing> <https://w3id.org/reno#permitNeeded> "not necessary (Flanders)"@en .
 <https://w3id.org/reno#ReplaceGlazing> <https://w3id.org/reno#requiresMultiPhase> "nee"@nl .
@@ -2662,8 +2584,6 @@ _:genid168 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://w3id.org/reno#ReplaceVentilationSystem> <https://w3id.org/reno#hasPointOfAttention> "Een ventilatiesysteem D zal iets meer impact hebben op je woning, aangezien er kanalen nodig zijn voor zowel toe- als afvoer."@nl .
 <https://w3id.org/reno#ReplaceVentilationSystem> <https://w3id.org/reno#hasPointOfAttention> "For a ventilation system C, you need grilles in your window frames."@en .
 <https://w3id.org/reno#ReplaceVentilationSystem> <https://w3id.org/reno#hasPointOfAttention> "Voor een ventilatiesysteem C heb je roosters in je raamkaders nodig."@nl .
-<https://w3id.org/reno#ReplaceVentilationSystem> <https://w3id.org/reno#hasUnitPrice> "3500"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-<https://w3id.org/reno#ReplaceVentilationSystem> <https://w3id.org/reno#ordering> "52"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <https://w3id.org/reno#ReplaceVentilationSystem> <https://w3id.org/reno#permitNeeded> "niet nodig indien de bovengrondse onderdelen minstens 2m verwijderd zijn van de perceelsgrens (Vlaanderen)"@nl .
 <https://w3id.org/reno#ReplaceVentilationSystem> <https://w3id.org/reno#permitNeeded> "not necessary if the above-ground parts are at least 2m away from the parcel boundary (Flanders)"@en .
 <https://w3id.org/reno#ReplaceVentilationSystem> <https://w3id.org/reno#requiresMultiPhase> "maybe, depending on the system"@en .
@@ -2678,9 +2598,6 @@ _:genid168 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <https://w3id.org/reno#ReplaceWindows> <https://w3id.org/reno#hasNuisanceLevel> "hoog"@nl .
 <https://w3id.org/reno#ReplaceWindows> <https://w3id.org/reno#hasPointOfAttention> "Do you currently have a ventilation system type A or C, or are you planning to install a natural supply system? If so, be sure to provide enough grilles on your window frames so that enough fresh air can flow into your home."@en .
 <https://w3id.org/reno#ReplaceWindows> <https://w3id.org/reno#hasPointOfAttention> "Heb je momenteel een ventilatiesysteem A of C, of ben je van plan een systeem met natuurlijke toevoer te plaatsen? Voorzie dan zeker voldoende roosters aan je raamkaders, zodat er voldoende verse lucht in je woning kan binnenstromen."@nl .
-<https://w3id.org/reno#ReplaceWindows> <https://w3id.org/reno#hasPriceUnit> <http://qudt.org/vocab/unit/PER-M2> .
-<https://w3id.org/reno#ReplaceWindows> <https://w3id.org/reno#hasUnitPrice> "800"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-<https://w3id.org/reno#ReplaceWindows> <https://w3id.org/reno#ordering> "46"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <https://w3id.org/reno#ReplaceWindows> <https://w3id.org/reno#permitNeeded> "niet nodig indien de afmetingen worden behouden (Vlaanderen)"@nl .
 <https://w3id.org/reno#ReplaceWindows> <https://w3id.org/reno#permitNeeded> "not necessary if the measurements are kept (Flanders)"@en .
 <https://w3id.org/reno#ReplaceWindows> <https://w3id.org/reno#requiresMultiPhase> "nee"@nl .

@@ -7,8 +7,7 @@
 @base <https://w3id.org/reno#> .
 
 <https://w3id.org/reno#> rdf:type owl:Ontology ;
-                          owl:imports <http://qudt.org/vocab/unit> ,
-                                      <http://www.daml.org/services/owl-s/1.1/Process.owl> ,
+                          owl:imports <http://www.daml.org/services/owl-s/1.1/Process.owl> ,
                                       <http://xmlns.com/foaf/0.1/> ,
                                       <https://bimerr.iot.linkeddata.es/def/material-properties/ontology.ttl> ,
                                       <https://pi.pauwel.be/voc/buildingelement> ,
@@ -25,7 +24,7 @@
                                                            "Renovation and ENergy Optimization (RENO)"@en ;
                           <http://purl.org/vocab/vann/preferredNamespacePrefix> "reno" ;
                           <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/reno#" ;
-                          owl:versionInfo "1.1.0" .
+                          owl:versionInfo "1.0.0" .
 
 #################################################################
 #    Annotation properties
@@ -79,16 +78,6 @@
                      rdfs:domain :RenovationSuggestion .
 
 
-###  https://w3id.org/reno#hasPriceUnit
-:hasPriceUnit rdf:type owl:AnnotationProperty ;
-              rdfs:comment "Geeft de prijseenheid aan voor de renovatiesuggestie. Dit kan per stuk of per vierkante meter zijn, afhankelijk van het type renovatie."@nl ,
-                           "Indicates the price unit for the renovation suggestion. This can be per piece or per sqm, depending on the type of renovation."@en ;
-              rdfs:label "has price unit"@en ,
-                         "heeft prijseenheid"@nl ;
-              rdfs:range <http://qudt.org/schema/qudt/Unit> ;
-              rdfs:domain :RenovationSuggestion .
-
-
 ###  https://w3id.org/reno#hasUnitPrice
 :hasUnitPrice rdf:type owl:AnnotationProperty ;
               rdfs:comment "Geeft de eenheidsprijs aan voor de renovatiesuggestie. Dit kan per stuk of per vierkante meter zijn, afhankelijk van het type renovatie."@nl ,
@@ -97,16 +86,6 @@
                          "heeft eenheidsprijs"@nl ;
               rdfs:range xsd:decimal ;
               rdfs:domain :RenovationSuggestion .
-
-
-###  https://w3id.org/reno#ordering
-:ordering rdf:type owl:AnnotationProperty ;
-          rdfs:comment "Geeft de ordening van de renovatiesuggesties aan, waarbij een lagere ordening eerst moet uitgevoerd worden."@nl ,
-                       "Indicates the ordering of the renovation suggestions, where a lower ordering should be executed first."@en ;
-          rdfs:label "ordening"@nl ,
-                     "ordering"@en ;
-          rdfs:range xsd:integer ;
-          rdfs:domain :RenovationSuggestion .
 
 
 ###  https://w3id.org/reno#permitNeeded
@@ -742,12 +721,6 @@ xsd:time rdf:type rdfs:Datatype .
                                 "Linkt een raamkader aan zijn dikte."@nl ;
                    rdfs:label "has frame thickness"@en ,
                               "heeft raamkader dikte"@nl .
-
-
-###  https://w3id.org/reno#hasGlazingPercentage
-:hasGlazingPercentage rdf:type owl:DatatypeProperty ;
-                      rdfs:domain <https://w3id.org/bot#Building> ;
-                      rdfs:range xsd:decimal .
 
 
 ###  https://w3id.org/reno#hasHeatIssue
@@ -1564,8 +1537,6 @@ xsd:time rdf:type rdfs:Datatype .
                                         "Contact your municipality or grid operator for more information."@en ,
                                         "Contacteer uw gemeente of netbeheerder voor meer informatie."@nl ,
                                         "Controleer of uw afgiftesysteem correspondeert met de aanvoer- en retourtemperatuur van het warmtenet."@nl ;
-                   :hasUnitPrice 7000 ;
-                   :ordering 55 ;
                    :permitNeeded "niet nodig (Vlaanderen)"@nl ,
                                  "not necessary (Flanders)"@en ;
                    :requiresMultiPhase "nee"@nl ,
@@ -1961,9 +1932,6 @@ xsd:time rdf:type rdfs:Datatype .
                                          "In veel gevallen is een dampscherm noodzakelijk bij het isoleren van de zoldervloer. Zonder een dampscherm kunnen zich condensatieproblemen voordoen. Plaats het dampscherm steeds aan de warme zijde van de isolatie."@nl ,
                                          "Niet elk type isolatie is beloopbaar. Afhankelijk van uw situatie, kan beloopbare isolatie de voorkeur krijgen."@nl ,
                                          "Not every type of insulation is walkable. Depending on your situation, walkable insulation may be preferred."@en ;
-                    :hasPriceUnit <http://qudt.org/vocab/unit/PER-M2> ;
-                    :hasUnitPrice 55 ;
-                    :ordering 31 ;
                     :permitNeeded "niet nodig (Vlaanderen)"@nl ,
                                   "not necessary (Flanders)"@en ;
                     :requiresMultiPhase "nee"@nl ,
@@ -1979,9 +1947,6 @@ xsd:time rdf:type rdfs:Datatype .
                                     "hoog"@nl ;
                   :hasPointOfAttention "Opt for an inverted roof structure, not a cold roof. Place the insulation on top of the roof covering, do not insulate the flat roof on the inside."@en ,
                                        "Opteer voor een omgekeerde dakopbouw, niet voor een koud dak. Plaats de isolatie dus bovenop de dakbedekking, isoleer het plat dak niet aan de binnenzijde."@nl ;
-                  :hasPriceUnit <http://qudt.org/vocab/unit/PER-M2> ;
-                  :hasUnitPrice 50 ;
-                  :ordering 25 ;
                   :permitNeeded "enkel indien dikte totaal pakket >26cm (Vlaanderen)"@nl ,
                                 "only if thickness of total pack >26cm (Flanders)"@en ;
                   :requiresMultiPhase "nee"@nl ,
@@ -1995,9 +1960,6 @@ xsd:time rdf:type rdfs:Datatype .
                                        "isoleer vloer boven kelder"@nl ;
                             :hasNuisanceLevel "laag"@nl ,
                                               "low"@en ;
-                            :hasPriceUnit <http://qudt.org/vocab/unit/PER-M2> ;
-                            :hasUnitPrice 30 ;
-                            :ordering 49 ;
                             :permitNeeded "niet nodig (Vlaanderen)"@nl ,
                                           "not necessary (Flanders)"@en ;
                             :requiresMultiPhase "nee"@nl ,
@@ -2015,9 +1977,6 @@ xsd:time rdf:type rdfs:Datatype .
                                         "Condensation problems can occur without a vapour barrier. Always install the vapour barrier on the warm side of the insulation."@en ,
                                         "Pay extra attention when installing the roof underlayment so that it is completely air- and watertight."@en ,
                                         "Zonder een dampscherm kunnen zich condensatieproblemen voordoen. Plaats het dampscherm steeds aan de warme zijde van de isolatie."@nl ;
-                   :hasPriceUnit <http://qudt.org/vocab/unit/PER-M2> ;
-                   :hasUnitPrice 60 ;
-                   :ordering 28 ;
                    :permitNeeded "niet nodig (Vlaanderen)"@nl ,
                                  "not necessary (Flanders)"@en ;
                    :requiresMultiPhase "nee"@nl ,
@@ -2033,9 +1992,6 @@ xsd:time rdf:type rdfs:Datatype .
                                       "low"@en ;
                     :hasPointOfAttention "Have an inspection carried out by a contractor, who can determine whether the cavity wall is suitable for injecting insulation. Namely, it should be checked whether the cavity is wide enough, whether there is no contamination in the cavity, whether the cladding is vapour-permeable enough, etc."@en ,
                                          "Laat een inspectie uitvoeren door een aannemer, die kan bepalen of de spouwmuur geschikt is om isolatie in te spuiten. Er moet namelijk nagegaan worden of de spouw breed genoeg is, of er geen vervuiling in de spouw is, of de gevelbekleding dampopen genoeg is, etc."@nl ;
-                    :hasPriceUnit <http://qudt.org/vocab/unit/PER-M2> ;
-                    :hasUnitPrice 22 ;
-                    :ordering 34 ;
                     :permitNeeded "niet nodig (Vlaanderen)"@nl ,
                                   "not necessary (Flanders)"@en ;
                     :requiresMultiPhase "nee"@nl ,
@@ -2051,9 +2007,6 @@ xsd:time rdf:type rdfs:Datatype .
                                         "hoog"@nl ;
                       :hasPointOfAttention "Niet elk type gevelbekleding zal mogelijk zijn, afhankelijk van de positie van de rooilijn en de richtlijnen van de gemeente."@nl ,
                                            "Not every type of cladding will be possible, depending on the position of the building line and the council's guidelines."@en ;
-                      :hasPriceUnit <http://qudt.org/vocab/unit/PER-M2> ;
-                      :hasUnitPrice 200 ;
-                      :ordering 40 ;
                       :permitNeeded "enkel indien dikte totaal pakket >26cm of de rooilijn wordt overgeschreden (Vlaanderen)"@nl ,
                                     "only if thickness of total pack >26cm or the building line is overrun (Flanders)"@en ;
                       :requiresMultiPhase "nee"@nl ,
@@ -2071,9 +2024,6 @@ xsd:time rdf:type rdfs:Datatype .
                                            "Insulating walls on the inside is a delicate job. Get assistance from an architect, contractor or craftsman for expert advice and proper execution of the works."@en ,
                                            "Sockets, pipes and radiators against the outer walls will have to be relocated."@en ,
                                            "Stopcontacten, leidingen en radiatoren tegen de buitenwanden zullen verplaatst moeten worden."@nl ;
-                      :hasPriceUnit <http://qudt.org/vocab/unit/PER-M2> ;
-                      :hasUnitPrice 150 ;
-                      :ordering 37 ;
                       :permitNeeded "niet nodig (Vlaanderen)"@nl ,
                                     "not necessary (Flanders)"@en ;
                       :requiresMultiPhase "nee"@nl ,
@@ -2282,8 +2232,6 @@ xsd:time rdf:type rdfs:Datatype .
                                 "place air-air heatpump"@en ;
                      :hasNuisanceLevel "matig"@nl ,
                                        "moderate"@en ;
-                     :hasUnitPrice 2500 ;
-                     :ordering 58 ;
                      :permitNeeded "niet nodig indien de bovengrondse onderdelen minstens 2m verwijderd zijn van de perceelsgrens (Vlaanderen)"@nl ,
                                    "not necessary if the above-ground parts are at least 2m away from the parcel boundary (Flanders)"@en ;
                      :requiresMultiPhase "maybe, depending on the system"@en ,
@@ -2297,8 +2245,6 @@ xsd:time rdf:type rdfs:Datatype .
                                   "place air-water heatpump"@en ;
                        :hasNuisanceLevel "matig"@nl ,
                                          "moderate"@en ;
-                       :hasUnitPrice 11500 ;
-                       :ordering 67 ;
                        :permitNeeded "niet nodig indien de bovengrondse onderdelen minstens 2m verwijderd zijn van de perceelsgrens (Vlaanderen)"@nl ,
                                      "not necessary if the above-ground parts are at least 2m away from the parcel boundary (Flanders)"@en ;
                        :requiresMultiPhase "maybe, depending on the system"@en ,
@@ -2312,8 +2258,6 @@ xsd:time rdf:type rdfs:Datatype .
                                              "place air-water heatpump with cooling"@en ;
                                   :hasNuisanceLevel "matig"@nl ,
                                                     "moderate"@en ;
-                                  :hasUnitPrice 12500 ;
-                                  :ordering 73 ;
                                   :permitNeeded "niet nodig indien de bovengrondse onderdelen minstens 2m verwijderd zijn van de perceelsgrens (Vlaanderen)"@nl ,
                                                 "not necessary if the above-ground parts are at least 2m away from the parcel boundary (Flanders)"@en ;
                                   :requiresMultiPhase "maybe, depending on the system"@en ,
@@ -2327,12 +2271,23 @@ xsd:time rdf:type rdfs:Datatype .
                                  "place airconditioning"@en ;
                       :hasNuisanceLevel "laag"@nl ,
                                         "low"@en ;
-                      :hasUnitPrice 1000 ;
-                      :ordering 82 ;
                       :permitNeeded "niet nodig (Vlaanderen)"@nl ,
                                     "not necessary (Flanders)"@en ;
                       :requiresMultiPhase "nee"@nl ,
                                           "no"@en .
+
+
+###  https://w3id.org/reno#PlaceFloorHeating
+:PlaceFloorHeating rdf:type owl:Class ;
+                   rdfs:subClassOf :RenovationSuggestion ;
+                   rdfs:label "plaats vloerverwarming"@nl ,
+                              "place floor heating"@en ;
+                   :hasNuisanceLevel "matig"@nl ,
+                                     "moderate"@en ;
+                   :permitNeeded "niet nodig (Vlaanderen)"@nl ,
+                                 "not necessary (Flanders)"@en ;
+                   :requiresMultiPhase "nee"@nl ,
+                                       "no"@en .
 
 
 ###  https://w3id.org/reno#PlaceGeothermalHeatpumpHorizontal
@@ -2342,8 +2297,6 @@ xsd:time rdf:type rdfs:Datatype .
                                               "place horizontal geothermal heatpump"@en ;
                                    :hasNuisanceLevel "matig"@nl ,
                                                      "moderate"@en ;
-                                   :hasUnitPrice 14500 ;
-                                   :ordering 64 ;
                                    :permitNeeded "niet nodig (Vlaanderen)"@nl ,
                                                  "not necessary (Flanders)"@en ;
                                    :requiresMultiPhase "maybe, depending on the system"@en ,
@@ -2357,8 +2310,6 @@ xsd:time rdf:type rdfs:Datatype .
                                             "place vertical geothermal heatpump"@en ;
                                  :hasNuisanceLevel "matig"@nl ,
                                                    "moderate"@en ;
-                                 :hasUnitPrice 15500 ;
-                                 :ordering 61 ;
                                  :permitNeeded "meldings- of vergunningsplicht is afhankelijk van diepte boring, bodemkenmerken en grondwater(Vlaanderen)"@nl ,
                                                "reporting or permit requirement depends on depth of drilling, soil characteristics and groundwater(Flanders)"@en ;
                                  :requiresMultiPhase "maybe, depending on the system"@en ,
@@ -2372,8 +2323,6 @@ xsd:time rdf:type rdfs:Datatype .
                                 "place heatpumpboiler"@en ;
                      :hasNuisanceLevel "matig"@nl ,
                                        "moderate"@en ;
-                     :hasUnitPrice 4000 ;
-                     :ordering 76 ;
                      :permitNeeded "niet nodig (Vlaanderen)"@nl ,
                                    "not necessary (Flanders)"@en ;
                      :requiresMultiPhase "maybe, depending on the system"@en ,
@@ -2387,9 +2336,6 @@ xsd:time rdf:type rdfs:Datatype .
                                         "place emission system on low temperature"@en ;
                              :hasNuisanceLevel "matig"@nl ,
                                                "moderate"@en ;
-                             :hasPriceUnit <http://qudt.org/vocab/unit/PER-M2> ;
-                             :hasUnitPrice 100 ;
-                             :ordering 70 ;
                              :permitNeeded "niet nodig (Vlaanderen)"@nl ,
                                            "not necessary (Flanders)"@en ;
                              :requiresMultiPhase "nee"@nl ,
@@ -2403,9 +2349,6 @@ xsd:time rdf:type rdfs:Datatype .
                                   "place PV-panels in garden"@en ;
                        :hasNuisanceLevel "laag"@nl ,
                                          "low"@en ;
-                       :hasPriceUnit <http://qudt.org/vocab/unit/PER-M2> ;
-                       :hasUnitPrice 275 ;
-                       :ordering 88 ;
                        :permitNeeded "niet nodig (Vlaanderen)"@nl ,
                                      "not necessary (Flanders)"@en ;
                        :requiresMultiPhase "maybe, depending on the system"@en ,
@@ -2423,11 +2366,10 @@ xsd:time rdf:type rdfs:Datatype .
                                           "Bekijk op de Zonnekaart of uw dak goed georiënteerd is en voldoende zonlicht opvangt. De opbrengst is het grootst als uw panelen naar het zuiden gericht zijn (zuid-oost tot zuid-west) onder een hoek van 30° tot 50°. De opbrengst van zonnepanelen daalt bij schaduw van gebouwen, schoorstenen of bomen."@nl ,
                                           "Check on the 'Zonnekaart' whether your roof is properly oriented and captures enough sunlight. The yield is greatest if your panels face south (south-east to south-west) at an angle of 30° to 50°. The yield of solar panels decreases when shaded by buildings, chimneys or trees."@en ,
                                           "Since PV panels are attached to the roof structure, it is crucial to remove any asbestos present in the roof first. Installing solar panels on a building with an asbestos-containing roof covering or an asbestos-containing sub-roof is prohibited."@en ;
-                     :hasPriceUnit <http://qudt.org/vocab/unit/PER-M2> ;
-                     :hasUnitPrice 275 ;
-                     :ordering 85 ;
-                     :permitNeeded "niet nodig indien de panelen in hetzelfde vlak zitten (Vlaanderen)"@nl ,
-                                   "not necessary if the panels are in the same plane (Flanders)"@en ;
+                     :permitNeeded "flat roof: not necessary if less than 1m above edges (Flanders)"@en ,
+                                   "gable roof: not necessary if the panels are in the same plane (Flanders)"@en ,
+                                   "plat dak: niet nodig indien minder dan 1m boven dakrand (Vlaanderen)"@nl ,
+                                   "schuin dak: niet nodig indien de panelen in hetzelfde vlak zitten (Vlaanderen)"@nl ;
                      :requiresMultiPhase "maybe, depending on the system"@en ,
                                          "mogelijks, afhankelijk van het systeem"@nl .
 
@@ -2441,9 +2383,6 @@ xsd:time rdf:type rdfs:Datatype .
                                          "low"@en ;
                        :hasPointOfAttention "Besteed extra aandacht bij de plaatsing van het onderdak, zodat dit volledig lucht- en waterdicht wordt uitgevoerd."@nl ,
                                             "Pay extra attention when installing the roof underlayment so that it is completely air- and watertight."@en ;
-                       :hasPriceUnit <http://qudt.org/vocab/unit/PER-M2> ;
-                       :hasUnitPrice 65 ;
-                       :ordering 16 ;
                        :permitNeeded "niet nodig (Vlaanderen)"@nl ,
                                      "not necessary (Flanders)"@en ;
                        :requiresMultiPhase "nee"@nl ,
@@ -2459,8 +2398,6 @@ xsd:time rdf:type rdfs:Datatype .
                                  "low"@en ;
                :hasPointOfAttention "Buitenzonwering is over het algemeen efficiënter dan binnenzonwering."@nl ,
                                     "Outdoor blinds are generally more efficient than indoor blinds."@en ;
-               :hasUnitPrice 750 ;
-               :ordering 79 ;
                :permitNeeded "niet nodig (Vlaanderen)"@nl ,
                              "not necessary (Flanders)"@en ;
                :requiresMultiPhase "nee"@nl ,
@@ -2482,8 +2419,6 @@ xsd:time rdf:type rdfs:Datatype .
                                         "In Vlaanderen mogen er maximaal twee zonnepanelen per gezin geïnstalleerd worden. Verder mag de omvormer van een plug-and-play zonnepaneel maximaal 800W bedragen."@nl ,
                                         "Niet alle toestellen op de (Belgische) markt zijn gehomologeerd, controleer steeds de officiële lijst van Synergrid vooraleer u een paneel aankoopt. "@nl ,
                                         "Not all devices on the (Belgian) market are homologated, always check Synergrid's official list before purchasing a panel."@en ;
-                   :hasUnitPrice 550 ;
-                   :ordering 91 ;
                    :permitNeeded "niet nodig (Vlaanderen)"@nl ,
                                  "not necessary (Flanders)"@en ;
                    :requiresMultiPhase "nee"@nl ,
@@ -2562,9 +2497,6 @@ xsd:time rdf:type rdfs:Datatype .
                                           "moderate"@en ;
                         :hasPointOfAttention "Hechtgebonden asbest kan u zelf verwijderen, maar neem de correcte voorzorgsmaatregelen. Voor het verwijderen van niet-hechtgebonden asbest moet u een erkend asbestverwijderaar inschakelen."@nl ,
                                              "You can remove bonded asbestos yourself, but take the correct precautions. To remove non-bonded asbestos, hire a licensed asbestos removal company."@en ;
-                        :hasPriceUnit <http://qudt.org/vocab/unit/PER-M2> ;
-                        :hasUnitPrice 40 ;
-                        :ordering 19 ;
                         :permitNeeded "niet nodig (Vlaanderen)"@nl ,
                                       "not necessary (Flanders)"@en ;
                         :requiresMultiPhase "nee"@nl ,
@@ -2580,9 +2512,6 @@ xsd:time rdf:type rdfs:Datatype .
                                            "low"@en ;
                          :hasPointOfAttention "Hechtgebonden asbest kan u zelf verwijderen, maar neem de correcte voorzorgsmaatregelen. Voor het verwijderen van niet-hechtgebonden asbest moet u een erkend asbestverwijderaar inschakelen."@nl ,
                                               "You can remove bonded asbestos yourself, but take the correct precautions. To remove non-bonded asbestos, hire a licensed asbestos removal company."@en ;
-                         :hasPriceUnit <http://qudt.org/vocab/unit/PER-M2> ;
-                         :hasUnitPrice 45 ;
-                         :ordering 22 ;
                          :permitNeeded "niet nodig (Vlaanderen)"@nl ,
                                        "not necessary (Flanders)"@en ;
                          :requiresMultiPhase "nee"@nl ,
@@ -2686,9 +2615,6 @@ xsd:time rdf:type rdfs:Datatype .
                                       "Idealiter voorziet u een dakopstand van 15cm, en een minimale hellingsgraad van 2% om correcte afwatering te garanderen. We raden aan om voor een warme dakopbouw te opteren."@nl ,
                                       "Ideally, you should provide a roof edge of 15cm, and a minimum gradient of 2% to ensure correct drainage. We recommend opting for a warm roof setup."@en ,
                                       "Zonder een dampscherm kunnen zich condensatieproblemen voordoen. Plaats het dampscherm steeds aan de warme zijde van de isolatie."@nl ;
-                 :hasPriceUnit <http://qudt.org/vocab/unit/PER-M2> ;
-                 :hasUnitPrice 120 ;
-                 :ordering 10 ;
                  :permitNeeded "meldingsplicht (Vlaanderen)"@nl ,
                                "reporting obligation (Flanders)"@en ;
                  :requiresMultiPhase "nee"@nl ,
@@ -2708,9 +2634,6 @@ xsd:time rdf:type rdfs:Datatype .
                                        "If your facades are not yet insulated, extend the roof overhangs now so that the external wall insulation can connect to the roof insulation. Also place the rainwater drains so that the external wall insulation can still be placed."@en ,
                                        "Indien uw gevels nog niet geïsoleerd zijn, verleng dan nu al de dakoversteken zodat de buitenmuurisolatie op de dakisolatie kan aansluiten. Plaats ook de regenwaterafvoer zodanig dat de buitenmuurisolatie nog geplaatst kan worden."@nl ,
                                        "When renewing your roof, already take into account any ducts which may be needed for a ventilation system, solar water heater or solar panels."@en ;
-                  :hasPriceUnit <http://qudt.org/vocab/unit/PER-M2> ;
-                  :hasUnitPrice 260 ;
-                  :ordering 13 ;
                   :permitNeeded "enkel indien dakgebinte wordt vernieuwd (Vlaanderen)"@nl ,
                                 "only if roof framework is renewed (Flanders)"@en ;
                   :requiresMultiPhase "nee"@nl ,
@@ -2728,9 +2651,6 @@ xsd:time rdf:type rdfs:Datatype .
                                      "Check that your window frames have the right thickness, which depends on the type of glazing you want to install in them."@en ,
                                      "Controleer of je raamkaders de juiste dikte hebben, welke afhankelijk is van het type beglazing dat je erin wil plaatsen."@nl ,
                                      "Controleer of je raamkaders nog in goede staat zijn, ze moeten namelijk recht genoeg zijn om nieuw glas in te plaatsen, en ook sterk genoeg, aangezien het nieuwe glas vermoedelijk meer zal wegen dan het oude glas."@nl ;
-                :hasPriceUnit <http://qudt.org/vocab/unit/PER-M2> ;
-                :hasUnitPrice 200 ;
-                :ordering 43 ;
                 :permitNeeded "niet nodig (Vlaanderen)"@nl ,
                               "not necessary (Flanders)"@en ;
                 :requiresMultiPhase "nee"@nl ,
@@ -2748,8 +2668,6 @@ xsd:time rdf:type rdfs:Datatype .
                                                "Een ventilatiesysteem D zal iets meer impact hebben op je woning, aangezien er kanalen nodig zijn voor zowel toe- als afvoer."@nl ,
                                                "For a ventilation system C, you need grilles in your window frames."@en ,
                                                "Voor een ventilatiesysteem C heb je roosters in je raamkaders nodig."@nl ;
-                          :hasUnitPrice 3500 ;
-                          :ordering 52 ;
                           :permitNeeded "niet nodig indien de bovengrondse onderdelen minstens 2m verwijderd zijn van de perceelsgrens (Vlaanderen)"@nl ,
                                         "not necessary if the above-ground parts are at least 2m away from the parcel boundary (Flanders)"@en ;
                           :requiresMultiPhase "maybe, depending on the system"@en ,
@@ -2765,9 +2683,6 @@ xsd:time rdf:type rdfs:Datatype .
                                   "hoog"@nl ;
                 :hasPointOfAttention "Do you currently have a ventilation system type A or C, or are you planning to install a natural supply system? If so, be sure to provide enough grilles on your window frames so that enough fresh air can flow into your home."@en ,
                                      "Heb je momenteel een ventilatiesysteem A of C, of ben je van plan een systeem met natuurlijke toevoer te plaatsen? Voorzie dan zeker voldoende roosters aan je raamkaders, zodat er voldoende verse lucht in je woning kan binnenstromen."@nl ;
-                :hasPriceUnit <http://qudt.org/vocab/unit/PER-M2> ;
-                :hasUnitPrice 800 ;
-                :ordering 46 ;
                 :permitNeeded "niet nodig indien de afmetingen worden behouden (Vlaanderen)"@nl ,
                               "not necessary if the measurements are kept (Flanders)"@en ;
                 :requiresMultiPhase "nee"@nl ,
